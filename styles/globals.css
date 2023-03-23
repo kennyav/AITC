@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+   font-family: "Articulat";
+   src: url('../fonts/Articulat-CF-Bold.ttf');
+   font-weight: normal;
+   font-style: normal;
+ }
