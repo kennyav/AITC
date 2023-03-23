@@ -15,7 +15,6 @@ export default function Login() {
       e.preventDefault();
 
       if (process.env.NEXT_PUBLIC_LOGIN_PASSWORD === password) {
-         console.log("password correct", password);
          router.push('/section/landingPage');
          dispatch(toggleState(true));
       } else {

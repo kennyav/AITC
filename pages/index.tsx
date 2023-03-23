@@ -14,38 +14,38 @@ export default function Home() {
   // for these relays and these filters I will give you 
   // back events and let you know when I am done or do something when
   // it is done
-  //const { subscribe, relayUrl, activeRelay } = useContext(RelayContext);
-  //const [events, setEvents] = useState<any>([]);
+  const { subscribe, relayUrl, activeRelay } = useContext(RelayContext);
+  const [events, setEvents] = useState<any>([]);
 
   const login = useSelector((state: RootState) => state.login.value);
 
-  // const getEvents = () => {
+  const getEvents = () => {
 
-  //   const filter = {
-  //     kinds: [30023],
-  //     limit: 10,
-  //   };
+    const filter = {
+      kinds: [30023],
+      limit: 10,
+    };
 
-  //   let newEvents: any[] = [];
+    let newEvents: any[] = [];
 
-  //   const onEvent = (event: any) => {
-  //     newEvents.push(event);
-  //   };
+    const onEvent = (event: any) => {
+      newEvents.push(event);
+    };
 
-  //   const onEOSE = () => {
-  //     setEvents(newEvents);
-  //     // if (newEvents.length === 0) {
-  //     //   setEvents([]);
-  //     //   return;
-  //     // }
-  //   };
+    const onEOSE = () => {
+      setEvents(newEvents);
+      // if (newEvents.length === 0) {
+      //   setEvents([]);
+      //   return;
+      // }
+    };
 
-  //   subscribe([relayUrl], filter, onEvent, onEOSE);
-  // }
+    subscribe([relayUrl], filter, onEvent, onEOSE);
+  }
 
-  // useEffect(() => {
-  //   getEvents();
-  // }, [relayUrl, activeRelay])
+  useEffect(() => {
+    getEvents();
+  }, [relayUrl, activeRelay])
 
   
   return (
