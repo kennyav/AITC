@@ -11,20 +11,20 @@ const VerticalFeatures = () => (
   >
     <VerticalFeatureRow
       title="Transparent data"
-      description="Clean data that you can see. We use the latest technology to make sure your data is safe and secure."
+      description="Trust starts from knowing the source of the information. Clean data that you can see. We use the latest technology to make sure your data is safe and secure."
       image={Image1}
       imageAlt="First feature alt text"
     />
     <VerticalFeatureRow
       title="Polling"
-      description="The design of our application allows for easy polling. You can create a poll and share it with your friends.  "
+      description="The design of our application allows for easy polling. You can create a poll about pretty much anything and share it with your friends and family.  "
       image={Image2}
       imageAlt="Second feature alt text"
       reverse
     />
     <VerticalFeatureRow
-      title="Node Bundling"
-      description="The location of nodes indicate the location of the similar interest users. The nodes are bundled together to form a cluster to help represent the population of a specific point of view."
+      title="Unique Meta Perspective"
+      description="Visual analysis tools that cut through to the core of reality."
       image={Image3}
       imageAlt="Third feature alt text"
     />

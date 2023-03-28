@@ -9,8 +9,10 @@ export default function Footer() {
   return (
     <Background color="bg-gray-100">
       <Section>
-        <CenteredFooter logo={<Logo />} iconList={undefined} >
-        </CenteredFooter>
+        <div className='text-center'>
+          <h1>AITC</h1>
+          <h1>Together, we give trust at home.</h1>
+        </div>
       </Section>
     </Background>
   );

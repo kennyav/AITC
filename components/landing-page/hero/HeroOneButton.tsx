@@ -13,7 +13,11 @@ export default function HeroOneButton(props: IHeroOneButtonProps) {
          <h1 className="text-5xl text-gray-900 font-bold whitespace-pre-line leading-hero">
             {props.title}
          </h1>
-         <div className="text-2xl mt-4 mb-16">{props.description}</div>
+         <br></br>
+         <br></br>
+         <div className="text-2xl mt-4 mb-16">{props.description}
+         <h1 className="text-2xl mt-4 mb-16">{ "Private Cloud. Meta Tokens. Crypto. AI. Wallet and much more coming soon!"}</h1>
+         </div>
 
          {props.button}
       </header>

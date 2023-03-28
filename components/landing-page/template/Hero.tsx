@@ -18,10 +18,11 @@ export default function Hero() {
       <Section yPadding="pt-20 pb-32">
         <HeroOneButton
           title={<>
-            {'The modern analysis for\n'}
-            <span className="bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text">the Transparent Future</span>
+            {'The Artificial Intelligence\n'}
+            <span>Trust Council</span>
+            {/* <span className="bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text">Trust Council</span> */}
           </>}
-          description='The easiest way to organize your data where you have all the power. We introduce AITC, the first decentralized AI-powered data analysis tool that helps you to make better decisions.' button={undefined} />
+          description='Polling. Trust. Social. Transparency. Privacy.' button={undefined} />
       </Section>
     </div>
   );
