@@ -28,7 +28,8 @@ export default function Login() {
             <div className="w-full max-w-md space-y-8">
                <div className='bg-blue-600 py-12 rounded-md'>
                   <div className="text-center">
-                     <Logo xl />
+                     <h1>AITC</h1>
+                     <h1>The Artificial Intelligence Trust Council</h1>
                   </div>
                   <h2 className="mt-6 text-center text-3xl tracking-tight text-black">
                      Enter Passcode
