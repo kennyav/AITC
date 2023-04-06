@@ -12,7 +12,7 @@ export default function Hero() {
   return (
     <div className='bg-gray-100 py-12'>
       <div className="translate-x-3/4">
-        <Logo xl />
+        <h1 className='text-gray-900 inline-flex items-center font-semibold text-4xl'>AITC</h1>
       </div>
 
       <Section yPadding="pt-20 pb-32">
