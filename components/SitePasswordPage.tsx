@@ -1,21 +1,20 @@
 import { LockClosedIcon } from '@heroicons/react/solid'
-import { Logo } from './landing-page/template/Logo';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { toggleState } from '../globalRedux/features/loginSlice';
 
 export default function Login() {
-
    const [password, setPassword] = useState<string>('');
    const router = useRouter();
    const dispatch = useDispatch();
 
-   const handleSubmit = (e: any) => {
+
+   const handleSubmit = async (e: any) => {
       e.preventDefault();
 
       if (process.env.NEXT_PUBLIC_LOGIN_PASSWORD === password) {
-         router.push('/section/landingPage');
+         router.push('/section/login');
          dispatch(toggleState(true));
       } else {
          alert("Incorrect password");

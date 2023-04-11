@@ -6,7 +6,7 @@ import { RootState } from "../globalRedux/store";
 // components
 import Chart from "../components/MainPage";
 import UserSideMenu from "../components/UserSideMenu";
-import Login from "../components/Login";
+import Login from "./section/login";
 
 
 export default function Home() {

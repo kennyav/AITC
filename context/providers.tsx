@@ -1,10 +1,13 @@
 import RelayProvider from "./relay-provider";
+import KeysProvider from '../context/keys-provider';
 
 export default function Providers({ children }: { children: React.ReactNode }) {
 
    return (
       <RelayProvider>
-         {children}
+         <KeysProvider>
+            {children}
+         </KeysProvider>
       </RelayProvider>
    )
 }
