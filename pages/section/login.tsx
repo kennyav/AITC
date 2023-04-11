@@ -18,10 +18,12 @@ export default function Login() {
   const router = useRouter();
   const dispatch = useDispatch();
 
-  // set public key
+  // set public key and keys for context
   const handlePublicKey = (pkey: string) => {
     const publicKey = getPublicKey(pkey);
+    // might not need this setter
     setPublicKey(publicKey);
+    setKeys({ privateKey: pkey, publicKey: publicKey });
   }
 
   // generate private and public keys
@@ -29,15 +31,13 @@ export default function Login() {
     const privateKey = generatePrivateKey();
     setPrivateKey(privateKey);
     handlePublicKey(privateKey);
-    console.log("Private Key: ", privateKey)
-    console.log("Public Key: ", pubKey)
   }
 
   // handle setting the private key
   const handlePrivateKey = (e: any) => {
     e.preventDefault();
     setPrivateKey(e.target.value)
-    handlePublicKey(privKey);
+    handlePublicKey(e.target.value);
   }
 
   // handle aitc passcode
@@ -46,11 +46,10 @@ export default function Login() {
     setPassword(e.target.value)
   }
 
+  // handles logining in the user with their private key and 
   const handleLogin = (e: any) => {
 
     e.preventDefault();
-
-    setKeys({ privateKey: privKey, publicKey: pubKey });
 
     if (keys.privateKey !== null && keys.publicKey !== null) {
       dispatch(toggleState(true));
@@ -58,6 +57,7 @@ export default function Login() {
     }
   }
 
+  // handle function for allowing only those that have the site password to login
   const handleSubmit = async (e: any) => {
     e.preventDefault();
 

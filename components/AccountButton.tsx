@@ -21,6 +21,10 @@ export default function AccountButton({ pubkey }: AccountButtonProps) {
   // @ts-ignore
   const { user, setUser } = useContext(UserContext);
 
+  useEffect(() => {
+    console.log("User :", user);
+  }, [user]);
+
   const { relayUrl, activeRelay, subscribe } = useContext(RelayContext);
 
   // @ts-ignore

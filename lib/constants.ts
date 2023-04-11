@@ -20,7 +20,7 @@ export const RELAYS = [
   { value: "25000", label: "25k" },
 ];
 
-export const HOST = "https://blogstack.io";
+export const HOST = "https://aitc.vercel.app";
 
 export const DUMMY_PROFILE_API = (seed: string) => {
   const style:
