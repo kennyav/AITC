@@ -1,12 +1,17 @@
 import * as d3 from "d3";
-import { useEffect, useRef } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 import jsonGraph from "../data/data.json";
+import AccountButton from "./AccountButton";
+import { KeysContext } from "@/context/keys-provider";
+
 
 export default function Chart() {
 
    const height = 800;
    const width = 1400;
    const data = jsonGraph.nodes;
+   // @ts-ignore
+   const { keys } = useContext(KeysContext);
 
 
    let zoom: any = d3.zoom()
@@ -63,8 +68,9 @@ export default function Chart() {
 
    return (
       <div>
-         <button className='absolute bg-blue-500 hover:bg-blue-700 active:bg-grey-700 focus:outline-none focus:ring focus:ring-grey-300 rounded w-32 truncate top-4 right-4' onClick={() => random()}>Random</button>
-         <button className='absolute bg-blue-500 hover:bg-blue-700 active:bg-grey-700 focus:outline-none focus:ring focus:ring-grey-300 rounded w-32 truncate top-12 right-4' onClick={() => reset()}>Reset</button>
+         <AccountButton pubkey={keys?.publicKey} />
+         <button className='absolute bg-blue-500 hover:bg-blue-700 active:bg-grey-700 focus:outline-none focus:ring focus:ring-grey-300 rounded w-32 truncate top-16 right-4' onClick={() => random()}>Random</button>
+         <button className='absolute bg-blue-500 hover:bg-blue-700 active:bg-grey-700 focus:outline-none focus:ring focus:ring-grey-300 rounded w-32 truncate top-24 right-4' onClick={() => reset()}>Reset</button>
          <svg width={"100%"} height={"100vh"}>
             <g></g>
          </svg>

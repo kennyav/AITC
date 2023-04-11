@@ -7,7 +7,6 @@ import { Event, nip19 } from "nostr-tools";
 import { UserContext } from "../context/user-provider";
 import { RelayContext } from "../context/relay-provider";
 import { FollowingContext } from "../context/following-provider";
-import { ChevronDown } from "../icons";
 
 interface AccountButtonProps {
   pubkey: string;
@@ -109,23 +108,29 @@ export default function AccountButton({ pubkey }: AccountButtonProps) {
 
   return (
     <div className="relative">
-      <Button
-        color="transparent"
-        variant="ghost"
-        size="xs"
-        icon={<ChevronDown />}
-        iconAfter
-        className="flex items-center gap-2 text-gray hover:text-gray-hover p-0"
-        onClick={() => setShowMenu((currrent) => !currrent)}
-      >
-        <span className="rounded-full">
-          <img
-            className="rounded-full w-8 h-8 object-cover"
-            src={picture}
-            alt=""
-          />
-        </span>
-      </Button>
+      <div className="relative">
+        <div className="absolute top-4 right-4 flex items-center space-x-4">
+          <div className="font-medium dark:text-white text-right">
+            <div>Jese Leos</div>
+            <div className="text-sm text-gray-500 dark:text-gray-400">Joined in August 2014</div>
+          </div>
+          <Button
+            color="transparent"
+            variant="ghost"
+            size="xs"
+            className="flex items-center gap-2 text-gray hover:text-gray-hover p-0"
+            onClick={() => setShowMenu((currrent) => !currrent)}
+          >
+            <span className="rounded-full">
+              <img
+                className="rounded-full w-8 h-8 object-cover"
+                src={picture}
+                alt=""
+              />
+            </span>
+          </Button>
+        </div>
+      </div>
       {showMenu && <ProfileMenu toggleMenu={setShowMenu} pubkey={pubkey} />}
     </div>
   );

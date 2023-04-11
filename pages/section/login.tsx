@@ -13,7 +13,7 @@ export default function Login() {
   const { keys, setKeys } = useContext(KeysContext);
   const [privKey, setPrivateKey] = useState("");
   const [pubKey, setPublicKey] = useState("");
-  const [password, setPassword] = useState<string>('');
+  const [password, setPassword] = useState("");
   const [isLogin, setIsLogin] = useState(false);
   const router = useRouter();
   const dispatch = useDispatch();
@@ -40,6 +40,12 @@ export default function Login() {
     handlePublicKey(privKey);
   }
 
+  // handle aitc passcode
+  const handlePasscode = (e: any) => {
+    e.preventDefault();
+    setPassword(e.target.value)
+  }
+
   const handleLogin = (e: any) => {
 
     e.preventDefault();
@@ -55,7 +61,7 @@ export default function Login() {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
 
-    if (process.env.NEXT_PUBLIC_LOGIN_PASSWORD === password) {
+    if (password === process.env.NEXT_PUBLIC_LOGIN_PASSWORD) {
       setIsLogin(true);
     } else {
       alert("Incorrect password");
@@ -81,7 +87,7 @@ export default function Login() {
             </a>
             {isLogin ?
               <form onSubmit={(e) => handleLogin(e)} noValidate>
-                <input type="text" placeholder="private key" value={privKey} name="inputField" id="inputField" style={{ textOverflow: "ellipsis" }} onChange={(e) => handlePrivateKey(e)} />
+                <input type="text" placeholder="input private key ..." value={privKey} name="inputField" id="inputField" style={{ textOverflow: "ellipsis" }} onChange={(e) => handlePrivateKey(e)} />
                 <div className="flex flex-col items-center">
                   <Button variant="outline" type="button" className="justify-center text-white" onClick={() => handleGenerateKeys()} size="sm">
                     Generate Keys
@@ -95,18 +101,13 @@ export default function Login() {
               <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
                 <input type="hidden" name="remember" defaultValue="true" />
                 <div className="rounded-md shadow-sm">
-                  <label htmlFor="password" className="sr-only">
-                    Password
-                  </label>
                   <input
-                    id="password"
-                    name="password"
                     type="password"
-                    placeholder="Password"
+                    placeholder="input password ..."
                     value={password}
                     autoComplete="current-password"
                     required
-                    onChange={(e) => setPassword(e.target.value)}
+                    onChange={(e) => handlePasscode(e)}
                   />
                 </div>
                 <div className="flex flex-col items-center">
