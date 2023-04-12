@@ -54,4 +54,4 @@ export const VALIDATION = {
   required: "Required",
 };
 
-export const allowedRoutes = ['/', '/section/landingPage', 'section/login', 'section/createPoll'];
+export const allowedRoutes = ['/', '/section/landingPage', '/section/login', '/section/createPoll'];

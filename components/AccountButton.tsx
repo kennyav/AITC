@@ -7,6 +7,8 @@ import { Event, nip19 } from "nostr-tools";
 import { UserContext } from "../context/user-provider";
 import { RelayContext } from "../context/relay-provider";
 import { FollowingContext } from "../context/following-provider";
+import { useMetadata } from "../context/use-metadata";
+import { getProfileDataFromMetaData } from "../context/helperFunctions";
 
 interface AccountButtonProps {
   pubkey: string;
@@ -14,9 +16,12 @@ interface AccountButtonProps {
 
 export default function AccountButton({ pubkey }: AccountButtonProps) {
   const [showMenu, setShowMenu] = useState(false);
-  const [picture, setPicture] = useState(
-    DUMMY_PROFILE_API(nip19.npubEncode(pubkey))
-  );
+  // const [picture, setPicture] = useState(
+  //   DUMMY_PROFILE_API(nip19.npubEncode(pubkey))
+  // );
+
+  console.log("Pubkey :", pubkey)
+  const { metadata } = useMetadata({ pubkey });
 
   // @ts-ignore
   const { user, setUser } = useContext(UserContext);
@@ -41,9 +46,9 @@ export default function AccountButton({ pubkey }: AccountButtonProps) {
       const content = user[userKey].content;
       if (content) {
         const contentObj = JSON.parse(content);
-        if (contentObj.picture) {
-          setPicture(contentObj.picture);
-        }
+        // if (contentObj.picture) {
+        //   setPicture(contentObj.picture);
+        // }
       }
     }
 
@@ -78,9 +83,9 @@ export default function AccountButton({ pubkey }: AccountButtonProps) {
         const content = event.content;
         if (content) {
           const contentObj = JSON.parse(content);
-          if (contentObj.picture) {
-            setPicture(contentObj.picture);
-          }
+          // if (contentObj.picture) {
+          //   setPicture(contentObj.picture);
+          // }
         }
       }
     };
@@ -116,7 +121,7 @@ export default function AccountButton({ pubkey }: AccountButtonProps) {
         <div className="absolute top-4 right-4 flex items-center space-x-4">
           <div className="font-medium dark:text-white text-right">
             <div>Jese Leos</div>
-            <div className="text-sm text-gray-500 dark:text-gray-400">Joined in August 2014</div>
+            <div className="text-sm text-gray-500 dark:text-gray-400">Joined in April 2023</div>
           </div>
           <Button
             color="transparent"
@@ -126,9 +131,14 @@ export default function AccountButton({ pubkey }: AccountButtonProps) {
             onClick={() => setShowMenu((currrent) => !currrent)}
           >
             <span className="rounded-full">
-              <img
+              {/* <img
                 className="rounded-full w-8 h-8 object-cover"
                 src={picture}
+                alt=""
+              /> */}
+              <img
+                src={getProfileDataFromMetaData(metadata, pubkey).image}
+                className="rounded-full w-8 h-8 object-cover"
                 alt=""
               />
             </span>

@@ -21,7 +21,7 @@ export default function App({ Component, pageProps }: AppProps) {
     const isAuthenticated = store.getState().login.value;
     const isAllowedRoute = allowedRoutes.includes(router.pathname);
     if (!isAuthenticated && isAllowedRoute) {
-      router.replace('/section/login');
+      router.replace('/section/Login');
     }
   }, [router.pathname]);
 

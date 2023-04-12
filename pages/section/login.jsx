@@ -5,9 +5,8 @@ import { getPublicKey, generatePrivateKey } from "nostr-tools";
 import { KeysContext } from "../../context/keys-provider.jsx";
 import { useRouter } from 'next/navigation';
 import { useDispatch } from 'react-redux';
-import { toggleState } from '../../globalRedux/features/loginSlice';
+import { toggleState } from "../../globalRedux/features/loginSlice";
 import Button from "../../components/Button";
-
 
 
 export default function Login() {
@@ -21,7 +20,7 @@ export default function Login() {
   const dispatch = useDispatch();
 
   // set public key and keys for context
-  const handlePublicKey = (pkey: string) => {
+  const handlePublicKey = (pkey) => {
     const publicKey = getPublicKey(pkey);
     // might not need this setter
     setPublicKey(publicKey);
@@ -36,20 +35,20 @@ export default function Login() {
   }
 
   // handle setting the private key
-  const handlePrivateKey = (e: any) => {
+  const handlePrivateKey = (e) => {
     e.preventDefault();
     setPrivateKey(e.target.value)
     handlePublicKey(e.target.value);
   }
 
   // handle aitc passcode
-  const handlePasscode = (e: any) => {
+  const handlePasscode = (e) => {
     e.preventDefault();
     setPassword(e.target.value)
   }
 
   // handles logining in the user with their private key and 
-  const handleLogin = (e: any) => {
+  const handleLogin = (e) => {
 
     e.preventDefault();
 
@@ -60,7 +59,7 @@ export default function Login() {
   }
 
   // handle function for allowing only those that have the site password to login
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (password === process.env.NEXT_PUBLIC_LOGIN_PASSWORD) {

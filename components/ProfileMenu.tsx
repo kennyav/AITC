@@ -4,6 +4,7 @@ import { nip19 } from "nostr-tools";
 import { shortenHash } from "../lib/utils";
 import { UserContext } from "../context/user-provider";
 import { User, IconType, Bookmark } from "../icons";
+import { useRouter } from "next/router";
 
 
 interface ProfileMenuProps {
@@ -15,6 +16,7 @@ const ProfileMenu: React.FC<ProfileMenuProps> = ({ pubkey, toggleMenu }) => {
   const npub = nip19.npubEncode(pubkey);
   // @ts-ignore
   const { setUser } = useContext(UserContext);
+  const router = useRouter();
 
   const handleSignOut = () => {
     localStorage.removeItem("shouldReconnect");
@@ -22,12 +24,17 @@ const ProfileMenu: React.FC<ProfileMenuProps> = ({ pubkey, toggleMenu }) => {
     window.location.reload();
   };
 
+  const handleProfile = () => {
+    toggleMenu(false);
+    router.push('/section/profile');
+  }
+
   return (
     <Fragment>
       <div className="flex flex-col rounded-md bg-white shadow-profile-menu border border-light-gray absolute z-40 right-0 -bottom-4 translate-y-full text-sm min-w-max">
         <GroupMenu>
           <Item
-            onClick={() => toggleMenu(false)}
+            onClick={() => handleProfile()}
             label="Profile"
             href={`/u/` + npub}
             Icon={User}

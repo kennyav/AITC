@@ -1,12 +1,9 @@
 import { useContext, useEffect, useState } from "react";
 import { RelayContext } from "../context/relay-provider";
-import { useSelector } from "react-redux";
-import { RootState } from "../globalRedux/store";
 
 // components
 import Chart from "../components/MainPage";
 import UserSideMenu from "../components/UserSideMenu";
-import Login from "./section/login";
 
 
 export default function Home() {
@@ -32,10 +29,6 @@ export default function Home() {
 
     const onEOSE = () => {
       setEvents(newEvents);
-      // if (newEvents.length === 0) {
-      //   setEvents([]);
-      //   return;
-      // }
     };
 
     subscribe([relayUrl], filter, onEvent, onEOSE);
