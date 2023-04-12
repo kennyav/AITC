@@ -20,8 +20,8 @@ export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
     const isAuthenticated = store.getState().login.value;
     const isAllowedRoute = allowedRoutes.includes(router.pathname);
-    if (!isAuthenticated) {
-      router.replace('/');
+    if (!isAuthenticated && isAllowedRoute) {
+      router.replace('/section/login');
     }
   }, [router.pathname]);
 

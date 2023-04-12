@@ -16,7 +16,6 @@ export default function Home() {
   // it is done
   const { subscribe, relayUrl, activeRelay } = useContext(RelayContext);
   const [events, setEvents] = useState<any>([]);
-  const isAuthenticated = useSelector((state: RootState) => state.login.value);
 
   const getEvents = () => {
 
@@ -49,12 +48,10 @@ export default function Home() {
   
   return (
     <main>
-      {isAuthenticated ?
         <div>
           <Chart />
           <UserSideMenu open={true} />
         </div>
-        : <Login />}
 
       {/* <ul>
         {events.map((event: any) => {
