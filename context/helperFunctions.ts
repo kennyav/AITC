@@ -51,15 +51,16 @@ export function getProfileDataFromMetaData(
   pubkey: string
 ): NostrProfile {
   let meta = metadata[pubkey];
+  console.log(pubkey)
   if (!meta)
     return {
       pubkey,
-      name: nip19.npubEncode(pubkey),
+      name: nip19.npubEncode(pubkey || ""),
       about: null,
       image: `https://avatars.dicebear.com/api/identicon/${pubkey}.svg`,
       lightning_address: null,
       nip05: null,
-      link: "nostr:" + nip19.npubEncode(pubkey),
+      link: "nostr:" + nip19.npubEncode(pubkey || ""),
     };
 
   const name = getName(metadata, pubkey);

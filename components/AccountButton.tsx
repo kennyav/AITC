@@ -16,11 +16,6 @@ interface AccountButtonProps {
 
 export default function AccountButton({ pubkey }: AccountButtonProps) {
   const [showMenu, setShowMenu] = useState(false);
-  // const [picture, setPicture] = useState(
-  //   DUMMY_PROFILE_API(nip19.npubEncode(pubkey))
-  // );
-
-  console.log("Pubkey :", pubkey)
   const { metadata } = useMetadata({ pubkey });
 
   // @ts-ignore
