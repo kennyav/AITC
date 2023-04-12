@@ -1,18 +1,20 @@
 import { SimplePool } from "nostr-tools";
 import {
   createContext,
-  PropsWithChildren,
   useContext,
   useEffect,
   useState,
 } from "react";
 import { Relays } from "./relays";
 
-//const RelayPoolContext = createContext<State | null>(null);
-const RelayPoolContext = createContext(null)
+interface State {
+  relayPool: SimplePool | null;
+}
 
-export default function RelayPoolProvider({children}){
-  const [relayPool, setRelayPool] = useState(null);
+const RelayPoolContext = createContext<State | null>(null);
+
+export default function RelayPoolProvider({children} : any){
+  const [relayPool, setRelayPool] = useState<SimplePool | null>(null);
 
 
   useEffect(() => {
@@ -37,7 +39,6 @@ export default function RelayPoolProvider({children}){
 
 export const useRelayPool = () => {
   const result = useContext(RelayPoolContext);
-  console.log("useRelayPool", result)
 
   if (!result) throw new Error("No Relay Pool Provider was found");
 
