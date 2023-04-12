@@ -53,3 +53,5 @@ export const DUMMY_PROFILE_API = (seed: string) => {
 export const VALIDATION = {
   required: "Required",
 };
+
+export const allowedRoutes = ['/'];
