@@ -28,6 +28,7 @@ export default function AccountButton({ pubkey }: AccountButtonProps) {
 
   useEffect(() => {
     console.log("User :", user);
+    console.log("User data", getProfileDataFromMetaData(metadata, pubkey))
   }, [user]);
 
   const { relayUrl, activeRelay, subscribe } = useContext(RelayContext);
@@ -115,13 +116,16 @@ export default function AccountButton({ pubkey }: AccountButtonProps) {
     getEvents();
   }, [relayUrl, activeRelay]);
 
+  // get current date and time
+  const now = new Date();
+
   return (
     <div className="relative">
       <div className="relative">
         <div className="absolute top-4 right-4 flex items-center space-x-4">
           <div className="font-medium dark:text-white text-right">
-            <div>Jese Leos</div>
-            <div className="text-sm text-gray-500 dark:text-gray-400">Joined in April 2023</div>
+            <div>{getProfileDataFromMetaData(metadata, pubkey).name}</div>
+            <div className="text-sm text-gray-500 dark:text-gray-400">AITC {now.toISOString().slice(0, 10)} </div>
           </div>
           <Button
             color="transparent"
@@ -131,11 +135,6 @@ export default function AccountButton({ pubkey }: AccountButtonProps) {
             onClick={() => setShowMenu((currrent) => !currrent)}
           >
             <span className="rounded-full">
-              {/* <img
-                className="rounded-full w-8 h-8 object-cover"
-                src={picture}
-                alt=""
-              /> */}
               <img
                 src={getProfileDataFromMetaData(metadata, pubkey).image}
                 className="rounded-full w-8 h-8 object-cover"
