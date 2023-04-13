@@ -48,7 +48,7 @@ interface State {
 
 const NostrConnectionContext = createContext<State | null>(null);
 
-export const NostrConnectionProvider = (props: PropsWithChildren<{}>) => {
+export default function NostrConnectionProvider(props: PropsWithChildren<{}>) {
   const [connection, setConnection] =
     useStatePersist<NostrAccountConnection | null>("nostr-connection", null);
 
@@ -78,10 +78,6 @@ export const NostrConnectionProvider = (props: PropsWithChildren<{}>) => {
     async (event: UnsignedEvent) => {
       if (!connection) throw new Error("Nostr Connection not found");
 
-      // if (connection.type === "nostr-ext") {
-      //   return (await window.nostr.signEvent(event)).sig;
-      // } else 
-      
       if (
         connection.type === "generated-keys" ||
         connection.type === "inputted-keys"
@@ -99,13 +95,6 @@ export const NostrConnectionProvider = (props: PropsWithChildren<{}>) => {
   const encryptMessage = useCallback(
     async (msg: string, theirPublicKey: string) => {
       if (!connection) throw new Error("Nostr Connection not found");
-
-      // if (connection.type === "nostr-ext") {
-      //   if (!window.nostr.nip04)
-      //     throw new Error("Your Nostr extension doesn't support NIP04...");
-
-      //   return window.nostr.nip04.encrypt(theirPublicKey, msg);
-      // } else 
       
       if (
         connection.type === "generated-keys" ||
@@ -124,13 +113,6 @@ export const NostrConnectionProvider = (props: PropsWithChildren<{}>) => {
   const decryptMessage = useCallback(
     async (msg: string, theirPublicKey: string) => {
       if (!connection) throw new Error("Nostr Connection not found");
-
-      // if (connection.type === "nostr-ext") {
-      //   if (!window.nostr.nip04)
-      //     throw new Error("Your Nostr extension doesn't support NIP04...");
-
-      //   return window.nostr.nip04.decrypt(theirPublicKey, msg);
-      // } else 
       
       if (
         connection.type === "generated-keys" ||

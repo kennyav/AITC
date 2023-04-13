@@ -17,13 +17,13 @@ export const metadata = {
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
 
-  useEffect(() => {
-    const isAuthenticated = store.getState().login.value;
-    const isAllowedRoute = allowedRoutes.includes(router.pathname);
-    if (!isAuthenticated && isAllowedRoute) {
-      router.replace('/section/login');
-    }
-  }, [router.pathname]);
+  // useEffect(() => {
+  //   const isAuthenticated = store.getState().connect.value;
+  //   const isAllowedRoute = allowedRoutes.includes(router.pathname);
+  //   if (!isAuthenticated && isAllowedRoute) {
+  //     router.replace('/section/login');
+  //   }
+  // }, [router.pathname]);
 
 
   return (

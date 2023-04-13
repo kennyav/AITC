@@ -1,61 +1,18 @@
 "use client";
 
-import { useContext, useState } from "react";
-import { getPublicKey, generatePrivateKey } from "nostr-tools";
-import { KeysContext } from "../../context/keys-provider.jsx";
-import { useRouter } from 'next/navigation';
-import { useDispatch } from 'react-redux';
-import { toggleState } from "../../globalRedux/features/loginSlice";
+import { useState } from "react";
 import Button from "../../components/Button";
+import LoginPaths from "../../components/LoginPaths";
 
 
 export default function Login() {
-  // @ts-ignore
-  const { keys, setKeys } = useContext(KeysContext);
-  const [privKey, setPrivateKey] = useState("");
-  const [pubKey, setPublicKey] = useState("");
   const [password, setPassword] = useState("");
   const [isLogin, setIsLogin] = useState(false);
-  const router = useRouter();
-  const dispatch = useDispatch();
-
-  // set public key and keys for context
-  const handlePublicKey = (pkey) => {
-    const publicKey = getPublicKey(pkey);
-    // might not need this setter
-    setPublicKey(publicKey);
-    setKeys({ privateKey: pkey, publicKey: publicKey });
-  }
-
-  // generate private and public keys
-  const handleGenerateKeys = () => {
-    const privateKey = generatePrivateKey();
-    setPrivateKey(privateKey);
-    handlePublicKey(privateKey);
-  }
-
-  // handle setting the private key
-  const handlePrivateKey = (e) => {
-    e.preventDefault();
-    setPrivateKey(e.target.value)
-    handlePublicKey(e.target.value);
-  }
 
   // handle aitc passcode
   const handlePasscode = (e) => {
     e.preventDefault();
     setPassword(e.target.value)
-  }
-
-  // handles logining in the user with their private key and 
-  const handleLogin = (e) => {
-
-    e.preventDefault();
-
-    if (keys.privateKey !== null && keys.publicKey !== null) {
-      dispatch(toggleState(true));
-      router.push('/section/landingPage');
-    }
   }
 
   // handle function for allowing only those that have the site password to login
@@ -87,17 +44,7 @@ export default function Login() {
               </div>
             </a>
             {isLogin ?
-              <form onSubmit={(e) => handleLogin(e)} noValidate>
-                <input type="text" placeholder="input private key ..." value={privKey} name="inputField" id="inputField" style={{ textOverflow: "ellipsis" }} onChange={(e) => handlePrivateKey(e)} />
-                <div className="flex flex-col items-center">
-                  <Button variant="outline" type="button" className="justify-center text-white" onClick={() => handleGenerateKeys()} size="sm">
-                    Generate Keys
-                  </Button>
-                  <Button variant="outline" type="submit" className="justify-center text-white" size="sm">
-                    Login
-                  </Button>
-                </div>
-              </form>
+              <LoginPaths />
               :
               <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
                 <input type="hidden" name="remember" defaultValue="true" />

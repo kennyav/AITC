@@ -14,7 +14,8 @@ export const loginSlice = createSlice({
    initialState,
    reducers: {
       toggleState: (state, action) => { 
-         state.value = action.payload; },
+         state.value = action.payload;
+         console.log("Connected?", state.value) },
    },
 });
 
