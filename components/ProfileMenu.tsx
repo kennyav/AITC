@@ -1,10 +1,10 @@
 import Link, { LinkProps } from "next/link";
-import { DetailedHTMLProps, Fragment, HTMLAttributes, useContext } from "react";
+import { DetailedHTMLProps, Fragment, HTMLAttributes } from "react";
 import { nip19 } from "nostr-tools";
 import { shortenHash } from "../lib/utils";
-import { UserContext } from "../context/user-provider";
 import { User, IconType, Bookmark } from "../icons";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
+import { useNostrConnection } from "@/context/use-nostr-connection";
 
 
 interface ProfileMenuProps {
@@ -13,15 +13,18 @@ interface ProfileMenuProps {
 }
 
 const ProfileMenu: React.FC<ProfileMenuProps> = ({ pubkey, toggleMenu }) => {
+  const { setConnection } = useNostrConnection();
   const npub = nip19.npubEncode(pubkey);
-  // @ts-ignore
-  const { setUser } = useContext(UserContext);
   const router = useRouter();
 
   const handleSignOut = () => {
-    localStorage.removeItem("shouldReconnect");
-    setUser({});
-    window.location.reload();
+    router.push('/');
+    setConnection(null);
+    window.localStorage.removeItem('nostr-connection');
+    setTimeout(() => {
+      window.location.reload();
+    }, 1000);
+    
   };
 
   const handleProfile = () => {
@@ -93,7 +96,7 @@ const Item: React.FC<ItemProps> = ({
 );
 
 interface GroupMenuProps
-  extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {}
+  extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> { }
 
 const GroupMenu: React.FC<GroupMenuProps> = ({
   className = "",

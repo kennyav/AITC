@@ -33,25 +33,25 @@ export const useMetadata = (props: Props) => {
       (pubkey) => (metadataFetched.current[pubkey] = true)
     );
 
-    // const sub = pool.sub(Relays.getRelays(), [
-    //   {
-    //     kinds: [0],
-    //     authors: pubkeysToFetch,
-    //   },
-    // ]);
+    const sub = pool.sub(Relays.getRelays(), [
+      {
+        kinds: [0],
+        authors: pubkeysToFetch,
+      },
+    ]);
 
-    // sub.on("event", (event: Event) => {
-    //   const metadata = JSON.parse(event.content) as Metadata;
+    sub.on("event", (event: Event) => {
+      const metadata = JSON.parse(event.content) as Metadata;
 
-    //   setMetadata((cur) => ({
-    //     ...cur,
-    //     [event.pubkey]: metadata,
-    //   }));
-    // });
+      setMetadata((cur) => ({
+        ...cur,
+        [event.pubkey]: metadata,
+      }));
+    });
 
-    // sub.on("eose", () => {
-    //   sub.unsub();
-    // });
+    sub.on("eose", () => {
+      sub.unsub();
+    });
 
     return () => {};
   }, [pool, propsPubkeys, propPubkey]);

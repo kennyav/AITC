@@ -1,28 +1,21 @@
-import { useContext, useEffect, useState } from "react";
-import { RelayContext } from "../context/relay-provider";
+import { useNostrConnection } from "@/context/use-nostr-connection";
 
 // components
-import Chart from "./section/main-page";
 import UserSideMenu from "../components/UserSideMenu";
-import { useNostrConnection } from "@/context/use-nostr-connection";
 import Login from "./section/login";
 import LandingPage from "./section/landing-page";
-import { Lan } from "@mui/icons-material";
 
 
 export default function Home() {
 
   const { connection: nostrConnection } = useNostrConnection();
+  console.log("nostrConnection: ", nostrConnection)
 
-  if (nostrConnection === null) {
-    console.log("nostrConnection is null")
-    return (
-      <div>
-        <Login />
-      </div>
-    );
-  }
-
+  // if (nostrConnection === null) {
+  //   console.log("nostrConnection is null")
+  //   return (
+  //   <div>
+  //     <Login />
 
   return (
     <div>

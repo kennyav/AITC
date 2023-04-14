@@ -51,7 +51,6 @@ export function getProfileDataFromMetaData(
   pubkey: string
 ): NostrProfile {
   let meta = metadata[pubkey];
-  console.log(pubkey)
   if (!meta)
     return {
       pubkey,

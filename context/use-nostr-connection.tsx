@@ -18,10 +18,6 @@ import { DecryptionQueue } from "./decryptionQueue";
 
 export type NostrAccountConnection =
   | {
-      type: "nostr-ext";
-      pubkey: string;
-    }
-  | {
       type: "generated-keys";
       prvkey: string;
       pubkey: string;
@@ -46,11 +42,10 @@ interface State {
   decryptMessage: (msg: string, theirPublicKey: string) => Promise<string>;
 }
 
-const NostrConnectionContext = createContext<State | null>(null);
+export const NostrConnectionContext = createContext<State | null>(null);
 
 export default function NostrConnectionProvider(props: PropsWithChildren<{}>) {
-  const [connection, setConnection] =
-    useStatePersist<NostrAccountConnection | null>("nostr-connection", null);
+  const [connection, setConnection] = useStatePersist<NostrAccountConnection | null>("nostr-connection", null);
 
   const nostrConnectRef = useRef<Connect | null>(null);
 
@@ -149,8 +144,19 @@ export default function NostrConnectionProvider(props: PropsWithChildren<{}>) {
 
 export const useNostrConnection = () => {
   const result = useContext(NostrConnectionContext);
+  console.log("useNostrConnection", result)
 
   if (!result) throw new Error("No Nostr Connection Provider was found");
 
   return result;
 };
+
+// const isValidConnection = (connection: NostrAccountConnection | null): connection is NostrAccountConnection => {
+//   if (connection === null) return true;
+
+//   if (connection.type === "generated-keys" || connection.type === "inputted-keys") {
+//     return getPublicKey(connection.prvkey) === connection.pubkey;
+//   }
+
+//   return true;
+// }

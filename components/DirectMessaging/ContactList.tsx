@@ -64,11 +64,10 @@ export default function ContactsList({
             return (
               <li key={i} className="overflow-hidden">
                 <button
-                  className={`text-ellipsis overflow-hidden w-full p-16 flex gap-12 text-left ${
-                    currentOpenContact === contact.pubkey
+                  className={`text-ellipsis overflow-hidden w-full p-4 flex gap-4 text-left rounded-lg ${currentOpenContact === contact.pubkey
                       ? "bg-violet-400 bg-opacity-50"
                       : "hover:bg-gray-100 hover:bg-opacity-10 active:bg-opacity-20 active:scale-95"
-                  }`}
+                    }`}
                   onClick={() => onOpenContact?.(contact.pubkey)}
                 >
                   <img

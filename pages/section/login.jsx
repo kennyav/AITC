@@ -1,13 +1,23 @@
-"use client";
-
 import { useState } from "react";
 import Button from "../../components/Button";
 import LoginPaths from "../../components/LoginPaths";
+import { useNostrConnection } from "@/context/use-nostr-connection";
+import { useDispatch } from 'react-redux';
+import { useRouter } from 'next/router';
+import { toggleConnectState } from '@/globalRedux/features/connectSlice';
 
 
 export default function Login() {
   const [password, setPassword] = useState("");
   const [isLogin, setIsLogin] = useState(false);
+  const { connection: nostrConnection } = useNostrConnection();
+  const dispatch = useDispatch();
+  const router = useRouter();
+
+  if (nostrConnection !== null) {
+    dispatch(toggleConnectState(true));
+    router.push("/");
+  }
 
   // handle aitc passcode
   const handlePasscode = (e) => {
@@ -28,7 +38,6 @@ export default function Login() {
 
 
   return (
-
     <section className="bg-gray-50 dark:bg-gray-900">
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
         <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">

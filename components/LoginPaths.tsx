@@ -3,13 +3,23 @@ import Button from './Button'
 import { utils as secpUtils } from "@noble/secp256k1";
 import { generatePrivateKey, getPublicKey, nip19 } from "nostr-tools";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { useDispatch } from 'react-redux';
+import { toggleConnectState } from '@/globalRedux/features/connectSlice';
 import {
    NostrAccountConnection,
    useNostrConnection,
 } from "../context/use-nostr-connection";
 
 export default function LoginPaths() {
-   const { setConnection } = useNostrConnection();
+   const { connection, setConnection } = useNostrConnection();
+   const router = useRouter();
+   const dispatch = useDispatch();
+
+   if (connection !== null) {
+      dispatch(toggleConnectState(true));
+      router.push("/");
+    }
 
    const [generateKey, setGenerateKey] = useState(false);
    const [inputtedKey, setInputtedKey] = useState(false);
@@ -32,7 +42,6 @@ export default function LoginPaths() {
          alert("Something wrong happened");
       }
   }
-
 
    function isValidPrivateKey(
       prvKey: string | null | undefined

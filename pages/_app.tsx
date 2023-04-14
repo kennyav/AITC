@@ -7,7 +7,9 @@ import { ReduxProvider } from '../globalRedux/provider';
 import { store } from '../globalRedux/store';
 import { useEffect } from 'react';
 import { allowedRoutes } from '../lib/constants';
-import { useRouter } from 'next/router';
+import { useRouter as useRouterNextNavigation } from 'next/navigation';
+import { useRouter as useRouterNextRouter } from 'next/router';
+
 
 export const metadata = {
   title: 'Artificial Intelligence Trust Council',
@@ -15,16 +17,19 @@ export const metadata = {
 }
 
 export default function App({ Component, pageProps }: AppProps) {
-  const router = useRouter();
+  const page = useRouterNextRouter();
+  const router = useRouterNextNavigation();
 
-  // useEffect(() => {
-  //   const isAuthenticated = store.getState().connect.value;
-  //   const isAllowedRoute = allowedRoutes.includes(router.pathname);
-  //   if (!isAuthenticated && isAllowedRoute) {
-  //     router.replace('/section/login');
-  //   }
-  // }, [router.pathname]);
-
+  useEffect(() => {
+    console.log("Checking if user is authenticated...", store.getState().connect.value);
+    const isAuthenticated = store.getState().connect.value;
+    const isAllowedRoute = allowedRoutes.includes(page.pathname);
+    if (!isAuthenticated && isAllowedRoute) {
+      console.log("Still on allowed route, but not authenticated. Redirecting to login page.")
+      router.push('/section/login');
+    }
+  }, [page.pathname]);
+  
 
   return (
     <ReduxProvider>

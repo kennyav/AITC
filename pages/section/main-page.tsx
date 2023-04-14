@@ -1,9 +1,9 @@
 import * as d3 from "d3";
-import {useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import jsonGraph from "../../data/data.json";
 import AccountButton from "../../components/AccountButton";
-import { useNostrConnection } from "@/context/use-nostr-connection";
 import UserSideMenu from "@/components/UserSideMenu";
+import { NostrConnectionContext } from "@/context/use-nostr-connection";
 
 
 export default function Chart() {
@@ -11,13 +11,19 @@ export default function Chart() {
    const height = 800;
    const width = 1400;
    const data = jsonGraph.nodes;
+   const result = useContext(NostrConnectionContext);
+   let nostrPubKey = null;
 
-   const { connection } = useNostrConnection();
-   const pubkey = connection?.pubkey;
+   if (result?.connection?.pubkey !== null) {
+      nostrPubKey = result?.connection?.pubkey;
+   } else {
+      throw new Error("Nostr Connection not found");
+   }
+
 
 
    let zoom: any = d3.zoom()
-            .on('zoom', handleZoom);
+      .on('zoom', handleZoom);
 
    function handleZoom(e: any) {
       d3.select('svg g')
@@ -72,13 +78,13 @@ export default function Chart() {
 
    return (
       <div>
-         <AccountButton pubkey={pubkey!} />
+         <AccountButton pubkey={nostrPubKey!} />
          <button className='absolute bg-blue-500 hover:bg-blue-700 active:bg-grey-700 focus:outline-none focus:ring focus:ring-grey-300 rounded w-32 truncate top-16 right-4' onClick={() => random()}>Random</button>
          <button className='absolute bg-blue-500 hover:bg-blue-700 active:bg-grey-700 focus:outline-none focus:ring focus:ring-grey-300 rounded w-32 truncate top-24 right-4' onClick={() => reset()}>Reset</button>
          <svg width={"100%"} height={"100vh"}>
             <g></g>
          </svg>
-         <UserSideMenu open={false}/>
+         <UserSideMenu open={false} />
       </div>
    )
 
