@@ -18,21 +18,25 @@ import { DecryptionQueue } from "./decryptionQueue";
 
 export type NostrAccountConnection =
   | {
-      type: "generated-keys";
-      prvkey: string;
-      pubkey: string;
-    }
+    type: "nostr-ext";
+    pubkey: string;
+  }
   | {
-      type: "inputted-keys";
-      pubkey: string;
-      prvkey: string;
-    }
+    type: "generated-keys";
+    prvkey: string;
+    pubkey: string;
+  }
   | {
-      type: "nostr-connect";
-      pubkey: string;
-      secretKey: string;
-      relay: string;
-    };
+    type: "inputted-keys";
+    pubkey: string;
+    prvkey: string;
+  }
+  | {
+    type: "nostr-connect";
+    pubkey: string;
+    secretKey: string;
+    relay: string;
+  };
 
 interface State {
   connection: NostrAccountConnection | null;
@@ -73,7 +77,9 @@ export default function NostrConnectionProvider(props: PropsWithChildren<{}>) {
     async (event: UnsignedEvent) => {
       if (!connection) throw new Error("Nostr Connection not found");
 
-      if (
+      if (connection.type === "nostr-ext") {
+        return (await window.nostr.signEvent(event)).sig;
+      } else if (
         connection.type === "generated-keys" ||
         connection.type === "inputted-keys"
       ) {
@@ -90,8 +96,13 @@ export default function NostrConnectionProvider(props: PropsWithChildren<{}>) {
   const encryptMessage = useCallback(
     async (msg: string, theirPublicKey: string) => {
       if (!connection) throw new Error("Nostr Connection not found");
-      
-      if (
+
+      if (connection.type === "nostr-ext") {
+        if (!window.nostr.nip04)
+          throw new Error("Your Nostr extension doesn't support NIP04...");
+
+        return window.nostr.nip04.encrypt(theirPublicKey, msg);
+      } else if (
         connection.type === "generated-keys" ||
         connection.type === "inputted-keys"
       ) {
@@ -108,8 +119,13 @@ export default function NostrConnectionProvider(props: PropsWithChildren<{}>) {
   const decryptMessage = useCallback(
     async (msg: string, theirPublicKey: string) => {
       if (!connection) throw new Error("Nostr Connection not found");
-      
-      if (
+
+      if (connection.type === "nostr-ext") {
+        if (!window.nostr.nip04)
+          throw new Error("Your Nostr extension doesn't support NIP04...");
+
+        return window.nostr.nip04.decrypt(theirPublicKey, msg);
+      } else if (
         connection.type === "generated-keys" ||
         connection.type === "inputted-keys"
       ) {
@@ -150,13 +166,3 @@ export const useNostrConnection = () => {
 
   return result;
 };
-
-// const isValidConnection = (connection: NostrAccountConnection | null): connection is NostrAccountConnection => {
-//   if (connection === null) return true;
-
-//   if (connection.type === "generated-keys" || connection.type === "inputted-keys") {
-//     return getPublicKey(connection.prvkey) === connection.pubkey;
-//   }
-
-//   return true;
-// }

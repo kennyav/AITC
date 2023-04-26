@@ -34,14 +34,14 @@ const ProfileMenu: React.FC<ProfileMenuProps> = ({ pubkey, toggleMenu }) => {
 
   return (
     <Fragment>
-      <div className="flex flex-col rounded-md bg-white shadow-profile-menu border border-light-gray absolute z-40 right-0 -bottom-4 translate-y-full text-sm min-w-max">
+      <div className="flex flex-col rounded-md bg-blue-200 shadow-profile-menu border border-light-gray absolute z-40 right-0 -bottom-4 translate-y-full text-sm min-w-max">
         <GroupMenu>
-          <Item
+          {/* <Item
             onClick={() => handleProfile()}
             label="Profile"
             href={`/u/` + npub}
             Icon={User}
-          />
+          /> */}
           <Item
             onClick={() => toggleMenu(false)}
             label="Bookmark"

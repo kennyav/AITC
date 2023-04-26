@@ -26,16 +26,20 @@ export default function LoginPaths() {
    const [privKey, setPrivKey] = useState("");
 
    const clickConnect = async (
-      type: "generated-keys" | "inputted-keys"
+      type: "generated-keys" | "inputted-keys" | "nostr-ext"
    ) => {
       let connectionObject: NostrAccountConnection;
       try {
-         if (type === "generated-keys")
+         // checks if the user is using nostr extension
+         if (type === "nostr-ext")
+            connectionObject = await connectNostrExt();
+         else if (type === "generated-keys")
             connectionObject = connectGeneratedKeys();
          else if (type === "inputted-keys")
             connectionObject = connectInputtedKey();
          else throw new Error("Invalid tab");
 
+         // setting the connection based on what type of login we use
          setConnection(connectionObject);
       } catch (error) {
          console.log(error);
@@ -53,6 +57,19 @@ export default function LoginPaths() {
          secpUtils.isValidPrivateKey(nip19.decode(prvKey).data as string);
 
       return isValidHexKey || isValidBech32Key;
+   }
+
+   // handle if the user presses nostr extension
+   const connectNostrExt = async () => {
+      if (!window.nostr)
+         throw new Error("Nostr extension not found");
+
+      const pubkey = await window.nostr.getPublicKey();
+
+      return {
+         type: "nostr-ext",
+         pubkey: pubkey,
+      } as NostrAccountConnection;
    }
 
    // handle if the user presses generate key
@@ -88,7 +105,7 @@ export default function LoginPaths() {
 
 
    return (
-      <div className="flex flex-col items-center justify-center">
+      <div className="flex items-center justify-center">
          {!generateKey && !inputtedKey ?
             <div>
                <Button variant="outline" type="button" size="sm" className="justify-center text-white" onClick={() => {
@@ -103,6 +120,13 @@ export default function LoginPaths() {
                   setInputtedKey(true)
                }}>
                   Input Private Key
+               </Button>
+               <Button variant="outline" type="button" size="sm" className="justify-center text-white" onClick={() => {
+                  setGenerateKey(false)
+                  setInputtedKey(false)
+                  clickConnect("nostr-ext")
+               }}>
+                  Login through Nostr Extension
                </Button>
             </div>
             : (
