@@ -1,13 +1,14 @@
-import RelayProvider from "./relay-provider";
-import KeysProvider from '../context/keys-provider';
+import RelayPoolProvider from "./use-relays-pool";
+import NostrConnectionProvider from "./use-nostr-connection";
+
 
 export default function Providers({ children }: { children: React.ReactNode }) {
 
    return (
-      <RelayProvider>
-         <KeysProvider>
+      <RelayPoolProvider>
+         <NostrConnectionProvider>
             {children}
-         </KeysProvider>
-      </RelayProvider>
+         </NostrConnectionProvider>
+      </RelayPoolProvider>
    )
 }

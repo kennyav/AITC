@@ -4,6 +4,12 @@ import type { AppProps } from 'next/app'
 import '../styles/globals.css';
 import Providers from '../context/providers';
 import { ReduxProvider } from '../globalRedux/provider';
+import { store } from '../globalRedux/store';
+import { useEffect } from 'react';
+import { allowedRoutes } from '../lib/constants';
+import { useRouter as useRouterNextNavigation } from 'next/navigation';
+import { useRouter as useRouterNextRouter } from 'next/router';
+
 
 export const metadata = {
   title: 'Artificial Intelligence Trust Council',
@@ -11,6 +17,20 @@ export const metadata = {
 }
 
 export default function App({ Component, pageProps }: AppProps) {
+  const page = useRouterNextRouter();
+  const router = useRouterNextNavigation();
+
+  useEffect(() => {
+    console.log("Checking if user is authenticated...", store.getState().connect.value);
+    const isAuthenticated = store.getState().connect.value;
+    const isAllowedRoute = allowedRoutes.includes(page.pathname);
+    if (!isAuthenticated && isAllowedRoute) {
+      console.log("Still on allowed route, but not authenticated. Redirecting to login page.")
+      router.push('/section/login');
+    }
+  }, [page.pathname]);
+  
+
   return (
     <ReduxProvider>
       <Providers>

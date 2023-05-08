@@ -1,68 +1,65 @@
-import { useContext, useEffect, useState } from "react";
-import { RelayContext } from "../context/relay-provider";
-import { useSelector } from "react-redux";
-import { RootState } from "../globalRedux/store";
+import { useNostrConnection } from "@/context/use-nostr-connection";
 
 // components
-import Chart from "../components/MainPage";
 import UserSideMenu from "../components/UserSideMenu";
 import Login from "./section/login";
+import LandingPage from "./section/landing-page";
 
 
 export default function Home() {
-  // subscribe takes in a list of filters and relays and says 
-  // for these relays and these filters I will give you 
-  // back events and let you know when I am done or do something when
-  // it is done
-  const { subscribe, relayUrl, activeRelay } = useContext(RelayContext);
-  const [events, setEvents] = useState<any>([]);
 
-  const login = useSelector((state: RootState) => state.login.value);
+  const { connection: nostrConnection } = useNostrConnection();
+  console.log("nostrConnection: ", nostrConnection)
 
-  const getEvents = () => {
+  // if (nostrConnection === null) {
+  //   console.log("nostrConnection is null")
+  //   return (
+  //   <div>
+  //     <Login />
 
-    const filter = {
-      kinds: [30023],
-      limit: 10,
-    };
-
-    let newEvents: any[] = [];
-
-    const onEvent = (event: any) => {
-      newEvents.push(event);
-    };
-
-    const onEOSE = () => {
-      setEvents(newEvents);
-      // if (newEvents.length === 0) {
-      //   setEvents([]);
-      //   return;
-      // }
-    };
-
-    subscribe([relayUrl], filter, onEvent, onEOSE);
-  }
-
-  useEffect(() => {
-    getEvents();
-  }, [relayUrl, activeRelay])
-
-  
   return (
-    <main>
-      {login ?
-        <div>
-          <Chart />
-          <UserSideMenu open={true} />
-        </div>
-        : <Login />}
+    <div>
+      <UserSideMenu open={false} />
+      <LandingPage />
+    </div>
+  )
+}
 
-      {/* <ul>
+
+
+/* <ul>
         {events.map((event: any) => {
           return <Article event={event} />
         })}
-      </ul> */}
+      </ul> */
 
-    </main>
-  )
-}
+// subscribe takes in a list of filters and relays and says 
+  // // for these relays and these filters I will give you
+  // // back events and let you know when I am done or do something when
+  // // it is done
+  // const { subscribe, relayUrl, activeRelay } = useContext(RelayContext);
+  // const [events, setEvents] = useState<any>([]);
+
+  // const getEvents = () => {
+
+  //   const filter = {
+  //     kinds: [30023],
+  //     limit: 10,
+  //   };
+
+  //   let newEvents: any[] = [];
+
+  //   const onEvent = (event: any) => {
+  //     newEvents.push(event);
+  //   };
+
+  //   const onEOSE = () => {
+  //     setEvents(newEvents);
+  //   };
+
+  //   subscribe([relayUrl], filter, onEvent, onEOSE);
+  // }
+
+  // useEffect(() => {
+  //   getEvents();
+  // }, [relayUrl, activeRelay])
