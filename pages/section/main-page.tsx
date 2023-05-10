@@ -79,8 +79,8 @@ export default function Chart() {
    return (
       <div>
          <AccountButton pubkey={nostrPubKey!} />
-         <button className='absolute bg-blue-500 hover:bg-blue-700 active:bg-grey-700 focus:outline-none focus:ring focus:ring-grey-300 rounded w-32 truncate top-16 right-4' onClick={() => random()}>Random</button>
-         <button className='absolute bg-blue-500 hover:bg-blue-700 active:bg-grey-700 focus:outline-none focus:ring focus:ring-grey-300 rounded w-32 truncate top-24 right-4' onClick={() => reset()}>Reset</button>
+         <button className='absolute bg-blue-500 hover:bg-blue-700 active:bg-grey-700 focus:outline-none focus:ring focus:ring-grey-300 rounded w-32 truncate bottom-12 right-4' onClick={() => random()}>Random</button>
+         <button className='absolute bg-blue-500 hover:bg-blue-700 active:bg-grey-700 focus:outline-none focus:ring focus:ring-grey-300 rounded w-32 truncate bottom-4 right-4' onClick={() => reset()}>Reset</button>
          <svg width={"100%"} height={"100vh"}>
             <g></g>
          </svg>
