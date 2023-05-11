@@ -1,3 +1,5 @@
+"use client";
+
 import { Event, UnsignedEvent, getEventHash } from "nostr-tools";
 import React, { useContext, useEffect, useMemo, useState } from "react";
 import CopyToClipboard from "react-copy-to-clipboard";
@@ -19,27 +21,16 @@ export default function MessagesContainer({ currentOpenContact }: Props) {
   const { relayPool } = useRelayPool();
   const [msgInput, setMsgInput] = useState("");
   const [messages, setMessages] = useState<Event[]>([]);
-
-
+  const [name, setName] = useState<string>("Loading ...");
+  const [image, setImage] = useState<string>("Loading ...");
   const { connection:
-    //nostrConnection,
     decryptMessage,
     encryptMessage,
     signEvent
   } = useNostrConnection();
 
-  //const myPubkey = nostrConnection?.pubkey;
-
-  const result = useContext(NostrConnectionContext);
-  let myPubkey: string = "";
-
-  if (result?.connection?.pubkey !== null) {
-    myPubkey = result?.connection?.pubkey!;
-  } else {
-    throw new Error("Nostr Connection not found");
-  }
-
-
+  const { connection: nostrConnection } = useNostrConnection();
+  const [myPubkey, setNostrPubKey] = useState<string>("");
   const pubkeysToFetch = useMemo(
     () => [currentOpenContact],
     [currentOpenContact]
@@ -48,8 +39,17 @@ export default function MessagesContainer({ currentOpenContact }: Props) {
   const { metadata } = useMetadata({ pubkeys: pubkeysToFetch });
 
   useEffect(() => {
-    if (!relayPool) return;
+    if (!nostrConnection) return;
+    setNostrPubKey(nostrConnection.pubkey);
+  }, [nostrConnection]);
 
+  useEffect(() => {
+    setName(getProfileDataFromMetaData(metadata, myPubkey).name)
+    setImage(getProfileDataFromMetaData(metadata, myPubkey).image)
+  }, [myPubkey, metadata]);
+
+  useEffect(() => {
+    if (!relayPool) return;
     // Create Subscription
     const sub = relayPool.sub(Relays.getRelays(), [
       // to get all of the encrypted messages that we have sent to the current contact
@@ -136,14 +136,14 @@ export default function MessagesContainer({ currentOpenContact }: Props) {
           <div className="flex flex-row items-center space-x-6">
             <div className="h-20 w-20 rounded-full border overflow-hidden">
               <img
-                src={getProfileDataFromMetaData(metadata, currentOpenContact).image}
+                src={image}
                 alt=""
                 className="h-full w-full"
               />
             </div>
             <div className="text-white overflow-x-auto whitespace-nowrap">
               <p className="overflow-hidden text-overflow-ellipsis">
-                {getProfileDataFromMetaData(metadata, currentOpenContact).name}
+                {name}
               </p>
               <CopyToClipboard
                 text={currentOpenContact}

@@ -1,3 +1,4 @@
+"use client";
 import { Connect } from "@nostr-connect/connect";
 import {
   signEvent as nostrSignEvent,

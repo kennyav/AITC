@@ -31,10 +31,6 @@ const ProfileMenu: React.FC<ProfileMenuProps> = ({ pubkey, toggleMenu }) => {
     router.push('/');
     setConnection(null);
     window.localStorage.removeItem('nostr-connection');
-    // setTimeout(() => {
-    //   window.location.reload();
-    // }, 1000);
-    
   };
 
   const handleProfile = () => {

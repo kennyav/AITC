@@ -1,5 +1,6 @@
+"use client";
 import { nip19 } from "nostr-tools";
-import React, { useEffect, useMemo } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useStatePersist } from "use-state-persist";
 import { getProfileDataFromMetaData } from "../../context/helperFunctions";
 import { useMetadata } from "../../context/use-metadata";
@@ -12,24 +13,27 @@ interface Props {
   onOpenContact?: (pubkey: string) => void;
 }
 
-export default function ContactsList({
-  pubkey,
-  currentOpenContact,
-  onOpenContact,
-}: Props) {
+export default function ContactsList({ pubkey, currentOpenContact, onOpenContact }: Props) {
+  
   const [contacts, setContacts] = useStatePersist<Contact[]>(
     `contacts:${pubkey}`,
     []
   );
-
+  
   const pubkeysToFetch = useMemo(
     () => contacts.map((contact) => contact.pubkey),
     [contacts]
   );
 
   const { metadata } = useMetadata({ pubkeys: pubkeysToFetch });
-
   const [newContact, setNewContact] = React.useState("");
+  const [name, setName] = useState<string>("Loading ...");
+  const [image, setImage] = useState<string>("Loading ...");
+
+  useEffect(() => {
+    setName(getProfileDataFromMetaData(metadata, pubkey).name)
+    setImage(getProfileDataFromMetaData(metadata, pubkey).image)
+  }, [pubkey, metadata]);
 
   function onAddContact(e: React.FormEvent) {
     e.preventDefault();
@@ -61,18 +65,18 @@ export default function ContactsList({
       <div className="flex flex-col items-center bg-[#0f172a] border border-gray-200 mt-4 w-full py-6 px-4 rounded-lg">
         <div className="h-20 w-20 rounded-full border overflow-hidden">
           <img
-            src={getProfileDataFromMetaData(metadata, pubkey).image}
+            src={image}
             alt="Avatar"
             className="h-full w-full"
           />
         </div>
         <div className="w-3/4 overflow-hidden text-sm text-white font-semibold mt-2 text-left">
           <CopyToClipboard
-            text={getProfileDataFromMetaData(metadata, pubkey).name}
+            text={pubkey}
             onCopy={() => alert("Copied public key!")}
           >
             <button className="overflow-hidden w-full">
-              <p className="truncate">{getProfileDataFromMetaData(metadata, pubkey).name}</p>
+              <p className="truncate">{name}</p>
             </button>
           </CopyToClipboard>
         </div>
@@ -103,10 +107,7 @@ export default function ContactsList({
                   <li key={i}>
                     <div className="flex flex-col mt-4 -mx-2 h-20">
                       <button className="flex flex-row items-center hover:bg-gray-100 rounded-xl p-2" onClick={() => onOpenContact?.(contact.pubkey)}>
-                        {/* <div className="flex items-center justify-center h-8 w-8 bg-indigo-200 rounded-full"> */}
                         <img className="h-10 w-10 rounded-full border" src={profileData.image} alt="" />
-
-                        {/* </div> */}
                         <div className="flex flex-col text-left truncate">
                           <div className="ml-2 text-sm font-semibold">{profileData.name}</div>
                           <div className="ml-2 text-sm font-semibold truncate">{profileData.pubkey}</div>
