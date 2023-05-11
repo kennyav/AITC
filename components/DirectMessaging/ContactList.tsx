@@ -1,5 +1,5 @@
 import { nip19 } from "nostr-tools";
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo } from "react";
 import { useStatePersist } from "use-state-persist";
 import { getProfileDataFromMetaData } from "../../context/helperFunctions";
 import { useMetadata } from "../../context/use-metadata";
@@ -37,8 +37,10 @@ export default function ContactsList({
 
     let hexPubkey = newContact;
 
-    if (newContact.startsWith("npub"))
-      hexPubkey = nip19.decode(newContact).data as string;
+    useEffect(() => {
+      if (newContact.startsWith("npub"))
+        hexPubkey = nip19.decode(newContact).data as string;
+    }, []);
 
     setContacts((contacts) => {
       if (contacts.find((contact) => contact.pubkey === hexPubkey))
@@ -52,59 +54,6 @@ export default function ContactsList({
   }
 
   return (
-    // <div className="flex flex-col gap-24">
-    //   {contacts.length === 0 && (
-    //     <p className="text-body3 text-center">No contacts yet</p>
-    //   )}
-    //   {contacts.length > 0 && (
-    //     <ul>
-    //       {contacts.map((contact, i) => {
-    //         const profileData = getProfileDataFromMetaData(
-    //           metadata,
-    //           contact.pubkey
-    //         );
-    //         return (
-    //           <li key={i} className="overflow-hidden">
-    //             <button
-    //               className={`text-ellipsis overflow-hidden w-full p-4 flex gap-4 text-left rounded-lg ${currentOpenContact === contact.pubkey
-    //                   ? "bg-violet-400 bg-opacity-50"
-    //                   : "hover:bg-gray-100 hover:bg-opacity-10 active:bg-opacity-20 active:scale-95"
-    //                 }`}
-    //               onClick={() => onOpenContact?.(contact.pubkey)}
-    //             >
-    //               <img
-    //                 src={profileData.image}
-    //                 className="shrink-0 bg-gray-200 w-42 aspect-square rounded-full border border-gray-400"
-    //                 alt=""
-    //               />
-    //               <div className="overflow-hidden">
-    //                 <p className="text-body3 font-bold overflow-hidden text-ellipsis">
-    //                   {profileData.name}
-    //                 </p>
-    //                 <p className="text-body5 text-gray-400 overflow-hidden text-ellipsis">
-    //                   {profileData.pubkey}
-    //                 </p>
-    //               </div>
-    //             </button>
-    //           </li>
-    //         );
-    //       })}
-    //     </ul>
-    //   )}
-    //   <hr />
-    //   <form onSubmit={onAddContact}>
-    //     <input
-    //       type="text"
-    //       className="w-full mb-16 p-8"
-    //       placeholder="Enter a public HEX key"
-    //       value={newContact}
-    //       onChange={(e) => setNewContact(e.target.value)}
-    //     />
-    //     <button className="bg-violet-500 text-body3 px-16 py-4 rounded-8 font-bold hover:bg-violet-600 active:scale-90 w-full">
-    //       Add New Contact
-    //     </button>
-    //   </form>
-    // </div>
     <div className="flex flex-col py-8 pl-4 pr-3 w-full h-screen bg-white flex-shrink-0 rounded-lg">
       <div className="flex flex-row items-center h-12 w-full text-left">
         <div className={`${styles.testFont} text-xl`}>AITC CHAT</div>
@@ -143,30 +92,32 @@ export default function ContactsList({
             )}
         </div>
         {contacts.length > 0 && (
-          <ul>
-            {contacts.map((contact, i) => {
-              const profileData = getProfileDataFromMetaData(
-                metadata,
-                contact.pubkey
-              );
-              return (
-                <li key={i}>
-                  <div className="flex flex-col space-y-1 mt-4 -mx-2 h-48 overflow-y-scroll">
-                    <button className="flex flex-row items-center hover:bg-gray-100 rounded-xl p-2" onClick={() => onOpenContact?.(contact.pubkey)}>
-                      {/* <div className="flex items-center justify-center h-8 w-8 bg-indigo-200 rounded-full"> */}
-                      <img className="h-10 w-10 rounded-full border" src={profileData.image} alt="" />
+          <div className="overflow-y-scroll overflow-x-hidden h-60">
+            <ul>
+              {contacts.map((contact, i) => {
+                const profileData = getProfileDataFromMetaData(
+                  metadata,
+                  contact.pubkey
+                );
+                return (
+                  <li key={i}>
+                    <div className="flex flex-col mt-4 -mx-2 h-20">
+                      <button className="flex flex-row items-center hover:bg-gray-100 rounded-xl p-2" onClick={() => onOpenContact?.(contact.pubkey)}>
+                        {/* <div className="flex items-center justify-center h-8 w-8 bg-indigo-200 rounded-full"> */}
+                        <img className="h-10 w-10 rounded-full border" src={profileData.image} alt="" />
 
-                      {/* </div> */}
-                      <div className="flex flex-col text-left truncate">
-                        <div className="ml-2 text-sm font-semibold">{profileData.name}</div>
-                        <div className="ml-2 text-sm font-semibold truncate">{profileData.pubkey}</div>
-                      </div>
-                    </button>
-                  </div>
-                </li>
-              )
-            })}
-          </ul>
+                        {/* </div> */}
+                        <div className="flex flex-col text-left truncate">
+                          <div className="ml-2 text-sm font-semibold">{profileData.name}</div>
+                          <div className="ml-2 text-sm font-semibold truncate">{profileData.pubkey}</div>
+                        </div>
+                      </button>
+                    </div>
+                  </li>
+                )
+              })}
+            </ul>
+          </div>
         )
         }
         <hr />

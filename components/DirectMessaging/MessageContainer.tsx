@@ -133,7 +133,7 @@ export default function MessagesContainer({ currentOpenContact }: Props) {
     <>
       <div className="flex flex-col flex-auto h-full p-6">
         {currentOpenContact && (
-          <div className="flex flex-row items-center space-x-4">
+          <div className="flex flex-row items-center space-x-6">
             <div className="h-20 w-20 rounded-full border overflow-hidden">
               <img
                 src={getProfileDataFromMetaData(metadata, currentOpenContact).image}
@@ -141,8 +141,8 @@ export default function MessagesContainer({ currentOpenContact }: Props) {
                 className="h-full w-full"
               />
             </div>
-            <div className="text-white">
-              <p>
+            <div className="text-white overflow-x-auto whitespace-nowrap">
+              <p className="overflow-hidden text-overflow-ellipsis">
                 {getProfileDataFromMetaData(metadata, currentOpenContact).name}
               </p>
               <CopyToClipboard
@@ -156,7 +156,7 @@ export default function MessagesContainer({ currentOpenContact }: Props) {
             </div>
           </div>
         )}
-        <div className="h-screen h-80 bg-gray-800 overflow-y-scroll rounded-md">
+        <div className="h-screen h-80 bg-gray-200 overflow-y-scroll rounded-md">
           <div className="flex flex-col-reverse bg-gray-200 grow gap-8 py-16">
             {messages.map((message) => (
               <div

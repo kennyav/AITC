@@ -1,5 +1,7 @@
+"use client";
+
 import Link, { LinkProps } from "next/link";
-import { DetailedHTMLProps, Fragment, HTMLAttributes } from "react";
+import { DetailedHTMLProps, Fragment, HTMLAttributes, use, useEffect, useState } from "react";
 import { nip19 } from "nostr-tools";
 import { shortenHash } from "../lib/utils";
 import { User, IconType, Bookmark } from "../icons";
@@ -14,16 +16,24 @@ interface ProfileMenuProps {
 
 const ProfileMenu: React.FC<ProfileMenuProps> = ({ pubkey, toggleMenu }) => {
   const { setConnection } = useNostrConnection();
-  const npub = nip19.npubEncode(pubkey);
+  const [npub, setNpub] = useState<string>();
+
+  useEffect(() => {
+    setNpub(nip19.npubEncode(pubkey));
+  }, []);
+
+
   const router = useRouter();
+  let name = npub ? npub : "Loading ...";
+
 
   const handleSignOut = () => {
     router.push('/');
     setConnection(null);
     window.localStorage.removeItem('nostr-connection');
-    setTimeout(() => {
-      window.location.reload();
-    }, 1000);
+    // setTimeout(() => {
+    //   window.location.reload();
+    // }, 1000);
     
   };
 
@@ -45,7 +55,7 @@ const ProfileMenu: React.FC<ProfileMenuProps> = ({ pubkey, toggleMenu }) => {
           <Item
             onClick={() => toggleMenu(false)}
             label="Bookmark"
-            href={`/u/` + npub}
+            href={`/u/` + name}
             Icon={Bookmark}
           />
         </GroupMenu>
@@ -62,7 +72,7 @@ const ProfileMenu: React.FC<ProfileMenuProps> = ({ pubkey, toggleMenu }) => {
             onClick={handleSignOut}
           >
             <span className="group-hover:text-gray-hover">Sign out</span>
-            <span>{shortenHash(npub, 12)}</span>
+            <span>{shortenHash(name, 12)}</span>
           </button>
         </GroupMenu>
       </div>

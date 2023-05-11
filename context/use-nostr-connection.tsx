@@ -160,7 +160,6 @@ export default function NostrConnectionProvider(props: PropsWithChildren<{}>) {
 
 export const useNostrConnection = () => {
   const result = useContext(NostrConnectionContext);
-  console.log("useNostrConnection", result)
 
   if (!result) throw new Error("No Nostr Connection Provider was found");
 

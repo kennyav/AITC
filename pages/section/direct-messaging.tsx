@@ -1,3 +1,5 @@
+"use client";
+
 import { useContext, useState } from "react";
 import { useNostrConnection } from "../../context/use-nostr-connection";
 import ContactsList from "../../components/DirectMessaging/ContactList";
@@ -25,7 +27,7 @@ export default function DirectMessaging() {
       <AccountButton pubkey={nostrPubKey}/>
       <div className="min-w-screen min-h-screen">
         <div className="grid gap-6 grid-cols-3">
-          <div className="col-span-1 w-full h-full">
+          <div className="col-span-1 w-full h-screen">
             <ContactsList
               pubkey={nostrPubKey!}
               currentOpenContact={currentOpenContact}

@@ -1,5 +1,5 @@
 import * as d3 from "d3";
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import jsonGraph from "../../data/data.json";
 import AccountButton from "../../components/AccountButton";
 import UserSideMenu from "@/components/UserSideMenu";
@@ -12,14 +12,7 @@ export default function Chart() {
    const width = 1400;
    const data = jsonGraph.nodes;
    const result = useContext(NostrConnectionContext);
-   let nostrPubKey = null;
-
-   if (result?.connection?.pubkey !== null) {
-      nostrPubKey = result?.connection?.pubkey;
-   } else {
-      throw new Error("Nostr Connection not found");
-   }
-
+   const [nostrPubKey, setNostrPubKey] = useState<string>();
 
 
    let zoom: any = d3.zoom()
@@ -31,6 +24,12 @@ export default function Chart() {
    }
 
    useEffect(() => {
+      if (result?.connection?.pubkey !== null) {
+         setNostrPubKey(result?.connection?.pubkey);
+      } else {
+         throw new Error("Nostr Connection not found");
+      }
+
       const svg = d3.select('svg');
       if (!svg.empty()) {
          svg.call(zoom);
