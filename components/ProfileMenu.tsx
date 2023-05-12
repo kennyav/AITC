@@ -1,5 +1,3 @@
-"use client";
-
 import Link, { LinkProps } from "next/link";
 import { DetailedHTMLProps, Fragment, HTMLAttributes, use, useEffect, useState } from "react";
 import { nip19 } from "nostr-tools";

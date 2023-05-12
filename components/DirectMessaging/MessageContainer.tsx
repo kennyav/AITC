@@ -1,5 +1,3 @@
-"use client";
-
 import { Event, UnsignedEvent, getEventHash } from "nostr-tools";
 import React, { useContext, useEffect, useMemo, useState } from "react";
 import CopyToClipboard from "react-copy-to-clipboard";
@@ -11,6 +9,7 @@ import { useRelayPool } from "../../context/use-relays-pool";
 import { insertEventIntoDescendingList } from "../../context/helperFunctions";
 import { DecryptionQueue } from "@/context/decryptionQueue";
 import { NostrConnectionContext } from "@/context/use-nostr-connection";
+import { set } from "superstruct";
 
 
 interface Props {
@@ -18,6 +17,16 @@ interface Props {
 }
 
 export default function MessagesContainer({ currentOpenContact }: Props) {
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      // Code that runs on the client-side
+      console.log('MC Running on the client-side');
+    } else {
+      // Code that runs on the server-side
+      console.log('MC Running on the server-side');
+    }
+  }, []);
+
   const { relayPool } = useRelayPool();
   const [msgInput, setMsgInput] = useState("");
   const [messages, setMessages] = useState<Event[]>([]);
@@ -30,6 +39,7 @@ export default function MessagesContainer({ currentOpenContact }: Props) {
   } = useNostrConnection();
 
   const { connection: nostrConnection } = useNostrConnection();
+  //const result = useContext(NostrConnectionContext);
   const [myPubkey, setNostrPubKey] = useState<string>("");
   const pubkeysToFetch = useMemo(
     () => [currentOpenContact],
@@ -41,6 +51,9 @@ export default function MessagesContainer({ currentOpenContact }: Props) {
   useEffect(() => {
     if (!nostrConnection) return;
     setNostrPubKey(nostrConnection.pubkey);
+    // if (result?.connection?.pubkey !== null) {
+    //   setNostrPubKey(result?.connection?.pubkey!);
+    // }
   }, [nostrConnection]);
 
   useEffect(() => {

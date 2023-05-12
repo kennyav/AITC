@@ -1,8 +1,7 @@
-"use client";
 import { nip19 } from "nostr-tools";
 import React, { useEffect, useMemo, useState } from "react";
 import { useStatePersist } from "use-state-persist";
-import { getProfileDataFromMetaData } from "../../context/helperFunctions";
+import { getProfileDataFromMetaData, usePersistState } from "../../context/helperFunctions";
 import { useMetadata } from "../../context/use-metadata";
 import styles from '../../styles/Home.module.css'
 import CopyToClipboard from "react-copy-to-clipboard";
@@ -14,12 +13,26 @@ interface Props {
 }
 
 export default function ContactsList({ pubkey, currentOpenContact, onOpenContact }: Props) {
-  
-  const [contacts, setContacts] = useStatePersist<Contact[]>(
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      // Code that runs on the client-side
+      console.log('CL Running on the client-side');
+    } else {
+      // Code that runs on the server-side
+      console.log('CL Running on the server-side');
+    }
+  }, []);
+
+  // const [contacts, setContacts] = useStatePersist<Contact[]>(
+  //   `contacts:${pubkey}`,
+  //   [],
+  // );
+
+  const [contacts, setContacts] = usePersistState<Contact[]>(
     `contacts:${pubkey}`,
-    []
+    [],
   );
-  
+
   const pubkeysToFetch = useMemo(
     () => contacts.map((contact) => contact.pubkey),
     [contacts]
@@ -35,16 +48,17 @@ export default function ContactsList({ pubkey, currentOpenContact, onOpenContact
     setImage(getProfileDataFromMetaData(metadata, pubkey).image)
   }, [pubkey, metadata]);
 
+  let hexPubkey = newContact;
+
+  useEffect(() => {
+    if (newContact.startsWith("npub"))
+      hexPubkey = nip19.decode(newContact).data as string;
+  }, []);
+
+
   function onAddContact(e: React.FormEvent) {
     e.preventDefault();
     if (!newContact) return;
-
-    let hexPubkey = newContact;
-
-    useEffect(() => {
-      if (newContact.startsWith("npub"))
-        hexPubkey = nip19.decode(newContact).data as string;
-    }, []);
 
     setContacts((contacts) => {
       if (contacts.find((contact) => contact.pubkey === hexPubkey))
