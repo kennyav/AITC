@@ -13,22 +13,7 @@ interface Props {
 }
 
 export default function ContactsList({ pubkey, currentOpenContact, onOpenContact }: Props) {
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      // Code that runs on the client-side
-      console.log('CL Running on the client-side');
-    } else {
-      // Code that runs on the server-side
-      console.log('CL Running on the server-side');
-    }
-  }, []);
-
-  // const [contacts, setContacts] = useStatePersist<Contact[]>(
-  //   `contacts:${pubkey}`,
-  //   [],
-  // );
-
-  const [contacts, setContacts] = usePersistState<Contact[]>(
+  const [contacts, setContacts] = useStatePersist<Contact[]>(
     `contacts:${pubkey}`,
     [],
   );

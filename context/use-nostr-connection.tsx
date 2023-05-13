@@ -12,6 +12,7 @@ import {
   useContext,
   useEffect,
   useRef,
+  useState,
 } from "react";
 //import { useStatePersist } from "use-state-persist";
 import { usePersistState } from "./helperFunctions";
@@ -51,9 +52,10 @@ interface State {
 export const NostrConnectionContext = createContext<State | null>(null);
 
 export default function NostrConnectionProvider(props: PropsWithChildren<{}>) {
-  const storage = typeof localStorage !== "undefined" ? localStorage : null;
-  const [connection, setConnection] = usePersistState<NostrAccountConnection | null>("nostr-connection", null);
+  const [connection, setConnection] = useStatePersist<NostrAccountConnection | null>("nostr-connection", null);
   const nostrConnectRef = useRef<Connect | null>(null);
+
+
 
   useEffect(() => {
     if (!connection) nostrConnectRef.current = null;

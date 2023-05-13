@@ -1,6 +1,6 @@
 import { Event, nip19 } from "nostr-tools";
 import { Metadata, NostrProfile } from "../types/nostr";
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { Dispatch, SetStateAction, use, useEffect, useState } from "react";
 import { NostrAccountConnection } from "./use-nostr-connection";
 
 export function insertEventIntoDescendingList<T extends Event>(
@@ -99,25 +99,52 @@ export function getName(metadata: Record<string, any>, pubkey: string): string {
 }
 
 
-export function usePersistState<T>(
-  key: string,
-  initialValue: T | (() => T)
-): [T, Dispatch<SetStateAction<T>>] {
-  const [state, setState] = useState<T>(
-    typeof initialValue === 'function' ? initialValue as () => T : initialValue
-  );
+// export function usePersistState<T>(key: string, initialValue: T | (() => T)): [T, Dispatch<SetStateAction<T>>] {
+//   const [state, setState] = useState<T>(
+//     typeof initialValue === 'function' ? (initialValue as () => T)() : initialValue
+//   );
+
+//   useEffect(() => {
+//     const storedValue = localStorage.getItem(key);
+//     console.log("Stored value", storedValue)
+//     if (storedValue) {
+//       try {
+//         const parsedValue = JSON.parse(storedValue);
+//         console.log("Parsed value", parsedValue)
+//         setState(parsedValue);
+//       } catch (error) {
+//         console.error('Error parsing stored value:', error);
+//       }
+//     }
+//   }, [key]);
+
+//   console.log("State", state)
+//   useEffect(() => {
+//     localStorage.setItem(key, JSON.stringify(state));
+//     console.log("State", state)
+//   }, [key, state]);
+
+//   return [state, setState];
+// }
+
+
+export function usePersistState<T>(key: string, initialValue: T | (() => T)): [T, Dispatch<SetStateAction<T>>] {
+  const [storedValue, setStoredValue] = useState<string | null>(null);
 
   useEffect(() => {
-    const storedValue = localStorage.getItem(key);
+    setStoredValue(localStorage.getItem(key));
+  }, [key]);
+
+  const [state, setState] = useState<T>(() => {
     if (storedValue) {
       try {
-        const parsedValue = JSON.parse(storedValue);
-        setState(parsedValue);
+        return JSON.parse(storedValue);
       } catch (error) {
         console.error('Error parsing stored value:', error);
       }
     }
-  }, [key]);
+    return typeof initialValue === 'function' ? (initialValue as () => T)() : initialValue;
+  });
 
   useEffect(() => {
     localStorage.setItem(key, JSON.stringify(state));
@@ -125,4 +152,6 @@ export function usePersistState<T>(
 
   return [state, setState];
 }
+
+
 

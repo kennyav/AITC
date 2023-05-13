@@ -5,6 +5,8 @@ import { shortenHash } from "../lib/utils";
 import { User, IconType, Bookmark } from "../icons";
 import { useRouter } from "next/navigation";
 import { useNostrConnection } from "@/context/use-nostr-connection";
+import { useDispatch } from "react-redux";
+import { toggleConnectState } from '@/globalRedux/features/connectSlice';
 
 
 interface ProfileMenuProps {
@@ -15,6 +17,7 @@ interface ProfileMenuProps {
 const ProfileMenu: React.FC<ProfileMenuProps> = ({ pubkey, toggleMenu }) => {
   const { setConnection } = useNostrConnection();
   const [npub, setNpub] = useState<string>();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     setNpub(nip19.npubEncode(pubkey));
@@ -26,7 +29,8 @@ const ProfileMenu: React.FC<ProfileMenuProps> = ({ pubkey, toggleMenu }) => {
 
 
   const handleSignOut = () => {
-    router.push('/');
+    dispatch(toggleConnectState(true));
+    router.push('/section/login');
     setConnection(null);
     window.localStorage.removeItem('nostr-connection');
   };

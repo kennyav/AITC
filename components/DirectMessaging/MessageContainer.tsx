@@ -8,8 +8,6 @@ import { useNostrConnection } from "../../context/use-nostr-connection";
 import { useRelayPool } from "../../context/use-relays-pool";
 import { insertEventIntoDescendingList } from "../../context/helperFunctions";
 import { DecryptionQueue } from "@/context/decryptionQueue";
-import { NostrConnectionContext } from "@/context/use-nostr-connection";
-import { set } from "superstruct";
 
 
 interface Props {
