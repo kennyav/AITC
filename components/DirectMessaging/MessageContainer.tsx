@@ -15,16 +15,6 @@ interface Props {
 }
 
 export default function MessagesContainer({ currentOpenContact }: Props) {
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      // Code that runs on the client-side
-      console.log('MC Running on the client-side');
-    } else {
-      // Code that runs on the server-side
-      console.log('MC Running on the server-side');
-    }
-  }, []);
-
   const { relayPool } = useRelayPool();
   const [msgInput, setMsgInput] = useState("");
   const [messages, setMessages] = useState<Event[]>([]);
@@ -37,7 +27,6 @@ export default function MessagesContainer({ currentOpenContact }: Props) {
   } = useNostrConnection();
 
   const { connection: nostrConnection } = useNostrConnection();
-  //const result = useContext(NostrConnectionContext);
   const [myPubkey, setNostrPubKey] = useState<string>("");
   const pubkeysToFetch = useMemo(
     () => [currentOpenContact],

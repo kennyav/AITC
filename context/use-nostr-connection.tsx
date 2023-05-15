@@ -55,8 +55,6 @@ export default function NostrConnectionProvider(props: PropsWithChildren<{}>) {
   const [connection, setConnection] = useStatePersist<NostrAccountConnection | null>("nostr-connection", null);
   const nostrConnectRef = useRef<Connect | null>(null);
 
-
-
   useEffect(() => {
     if (!connection) nostrConnectRef.current = null;
 
