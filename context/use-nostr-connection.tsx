@@ -12,9 +12,12 @@ import {
   useContext,
   useEffect,
   useRef,
+  useState,
 } from "react";
-import { useStatePersist } from "use-state-persist";
+//import { useStatePersist } from "use-state-persist";
+import { usePersistState } from "./helperFunctions";
 import { DecryptionQueue } from "./decryptionQueue";
+import { useStatePersist } from "use-state-persist";
 
 export type NostrAccountConnection =
   | {
@@ -50,7 +53,6 @@ export const NostrConnectionContext = createContext<State | null>(null);
 
 export default function NostrConnectionProvider(props: PropsWithChildren<{}>) {
   const [connection, setConnection] = useStatePersist<NostrAccountConnection | null>("nostr-connection", null);
-
   const nostrConnectRef = useRef<Connect | null>(null);
 
   useEffect(() => {
@@ -160,7 +162,6 @@ export default function NostrConnectionProvider(props: PropsWithChildren<{}>) {
 
 export const useNostrConnection = () => {
   const result = useContext(NostrConnectionContext);
-  console.log("useNostrConnection", result)
 
   if (!result) throw new Error("No Nostr Connection Provider was found");
 

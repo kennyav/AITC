@@ -1,24 +1,95 @@
 import * as d3 from "d3";
-import { useContext, useEffect } from 'react';
-import jsonGraph from "../../data/data.json";
+import { useContext, useEffect, useRef, useState } from 'react';
+import jsonGraph from "../../data/newData.json";
 import AccountButton from "../../components/AccountButton";
 import UserSideMenu from "@/components/UserSideMenu";
 import { NostrConnectionContext } from "@/context/use-nostr-connection";
 
+// nostr imports
+import { Event } from "nostr-tools";
+import { Metadata } from "@/utils/parseData";
+import { useRelayPool } from "@/context/use-relays-pool";
+import { Relays } from "@/context/relays";
+import { updateData } from "@/data/parseData";
+
 
 export default function Chart() {
+   // const { relayPool } = useRelayPool();
+   // const [events, setEvents] = useState<Event[]>([]);
+   // const [metadata, setMetaData] = useState<Record<string, Metadata>>({});
+   // const metadataFetched = useRef<Record<string, boolean>>({});
+   // const [graphData, setGraphData] = useState("");
 
+
+   // useEffect(() => {
+   //    if (!relayPool) return;
+   //    // Create Subscription
+   //    const sub = relayPool.sub(Relays.getRelays(), [
+   //       // to get all of the encrypted messages that we have sent to the current contact
+   //       {
+   //          kinds: [1],
+   //          limit: 500,
+   //       }
+   //    ])
+
+   //    // on subscribtion get event and log it
+   //    sub.on('event', (event: Event) => {
+   //       setEvents([...events, event]);
+   //    });
+
+   //    return () => {
+   //       // close the subscription when we unmount the component
+   //       sub.unsub();
+   //    }
+   // }, [relayPool]);
+
+   // useEffect(() => {
+   //    // get the meta data from a user
+   //    if (!relayPool) return;
+
+   //    // we want to exclude the keys that we already have in the subscription
+   //    const pubkeysToFetch = events
+   //       .filter((event) => !metadataFetched.current[event.pubkey])
+   //       .map((event) => event.pubkey);
+
+   //    // mark the pubkeys as fetched
+   //    pubkeysToFetch.forEach((pubkey) => {
+   //       metadataFetched.current[pubkey] = true;
+   //    })
+
+   //    // get metadata from a user
+   //    const sub = relayPool.sub(Relays.getRelays(), [{
+   //       kinds: [0],
+   //       authors: pubkeysToFetch,
+   //    }])
+
+   //    // on subscribtion get event and log it
+   //    sub.on('event', (event: Event) => {
+
+   //       // meta data is stored as json so we have to parse it
+   //       const metadata = JSON.parse(event.content) as Metadata;
+
+   //       setMetaData((cur) => ({
+   //          ...cur,
+   //          [event.pubkey]: metadata
+   //       }))
+   //    });
+
+   //    // end of stored event then unsubscribe
+   //    sub.on('eose', () => {
+   //       sub.unsub();
+   //    })
+   // }, [events, relayPool]);
+
+   // useEffect(() => {
+   //    setGraphData(updateData({ metadata }));
+   // }, [metadata])
+
+   const [nostrPubKey, setNostrPubKey] = useState<string>();
    const height = 800;
    const width = 1400;
    const data = jsonGraph.nodes;
    const result = useContext(NostrConnectionContext);
-   let nostrPubKey = null;
-
-   if (result?.connection?.pubkey !== null) {
-      nostrPubKey = result?.connection?.pubkey;
-   } else {
-      throw new Error("Nostr Connection not found");
-   }
 
    let zoom: any = d3.zoom()
       .on('zoom', handleZoom);
@@ -29,6 +100,12 @@ export default function Chart() {
    }
 
    useEffect(() => {
+      if (result?.connection?.pubkey !== null) {
+         setNostrPubKey(result?.connection?.pubkey);
+      } else {
+         throw new Error("Nostr Connection not found");
+      }
+
       const svg = d3.select('svg');
       if (!svg.empty()) {
          svg.call(zoom);
@@ -65,6 +142,7 @@ export default function Chart() {
          
       }
    }, [data]);
+
 
    function random() {
       const randomIndex = Math.floor(Math.random() * data.length);
