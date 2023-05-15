@@ -20,8 +20,6 @@ export default function Chart() {
       throw new Error("Nostr Connection not found");
    }
 
-
-
    let zoom: any = d3.zoom()
       .on('zoom', handleZoom);
 
@@ -39,25 +37,32 @@ export default function Chart() {
          const colorValue = (value: number) => {
             return Math.abs((value - 0) / 10);
          }
-
-         svg.select('g')
+         
+         const points = svg.select('g')
             .selectAll('circle')
             .data(data)
-            .join('circle')
+            .enter()
+            .append("g");
+         
+         points.append("circle")
             .attr('cx', function (d, i: number) { return data[i].attributes.x; })
             .attr('cy', function (d, i: number) { return data[i].attributes.y; })
             .attr('r', 4)
-            .attr("fill", (d: any, i: number) => d3.interpolateRainbow(colorValue(data[i].attributes.x - data[i].attributes.y)))
-         // .on('click', function (i: number) { setI(i), clicked(event)})
+            .attr("fill", (d: any, i: number) => d3.interpolateRainbow(colorValue(data[i].attributes.x - data[i].attributes.y)));
 
+         points
+            .on("click", function (event, d) {
+               var index = data.findIndex(function(obj) {
+                  return obj.key == d.key
+               })
+               event.stopPropagation();
+               d3.select('svg').transition().duration(750).call(
+                  zoom.transform,
+                  d3.zoomIdentity.translate(width / 2, height / 2).scale(40).translate(-data[index].attributes.x, -data[index].attributes.y)
+               )
+            });
 
-         // function clicked(event: any) {
-         //    event.stopPropagation();
-         //    d3.select('svg').transition().duration(750).call(
-         //       zoom.transform,
-         //       d3.zoomIdentity.translate(width / 2, height / 2).scale(40).translate(-data[i].attributes.x, -data[i].attributes.y)
-         //    );
-         // }
+         
       }
    }, [data]);
 
