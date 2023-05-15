@@ -1,0 +1,1857 @@
+{
+   "attributes": {},
+   "nodes": [
+      {
+         "key": "e45a0e649b7583610352ee14c946929a074da58fe3d9e38cc8132fe78366af21",
+         "attributes": {
+            "label": "Boolanon",
+            "tag": null,
+            "cluster": null,
+            "x": -469,
+            "y": 817,
+            "score": 0,
+            "color": "#7C3063",
+            "clusterLabel": null,
+            "image": "https://media.tenor.com/Yq9hEpmXOo0AAAAC/master-roshi-smoking.gif",
+            "size": 1,
+            "nip05": "boolanon@nostrplebs.com",
+            "description": "Down the Rabbit Hole we go!🕳🐇 #AlwaysLearning \nDon’t trust, verify! #Bitcoin\nThe future is decentralized! #Nostr"
+         }
+      },
+      {
+         "key": "4ff652622cbe22d93e3a0ce2487e86736a9a209724a7328c59bc29b064a42926",
+         "attributes": {
+            "label": "getAlby.com",
+            "tag": null,
+            "cluster": null,
+            "x": -881,
+            "y": -620,
+            "score": 0,
+            "color": "#7A3A9B",
+            "clusterLabel": null,
+            "image": "https://nostr.build/i/nostr.build_8f6fda78702714a850e457d62242061432b8c3f4c802747dbf0b4e4ab4704bf3.jpg",
+            "size": 1,
+            "nip05": "neopatriarch@getalby.com",
+            "description": "Christian,  Freedom Advocate, Jesus is Lord, Voluntaryist,Hobby Gardener \n\n#nokingbutchrist \n#taxationistheft  \n#realFreedom  \n#abolishTheState  \n#openTheism"
+         }
+      },
+      {
+         "key": "f40832e26b1d12f8a27717b606996baef68bc4b6b86c4a35ca827f6fbcbf511e",
+         "attributes": {
+            "label": "erechorse",
+            "tag": null,
+            "cluster": null,
+            "x": 8,
+            "y": -345,
+            "score": 0,
+            "color": "#4D31BC",
+            "clusterLabel": null,
+            "image": "https://i.gyazo.com/ee480a2fdfa15aae6c9a15d44225489f.jpg",
+            "size": 1,
+            "nip05": "_@erechorse.github.io",
+            "description": "Hobbyist Programmer. | Nostr有志Wiki: https://scrapbox.io/nostr/ | @note1mv3kt64qat4mywk8rz9hyzrq7au7j4kvnugr6e0pgy7d8a344z7q25yzhs "
+         }
+      },
+      {
+         "key": "09d6f0c84d7135d58fa1239442852303669bd79e5023fcbb58463764ce517e64",
+         "attributes": {
+            "label": "Alabama Fren",
+            "tag": null,
+            "cluster": null,
+            "x": 165,
+            "y": 440,
+            "score": 0,
+            "color": "#5BCF09",
+            "clusterLabel": null,
+            "image": "https://nostr.build/i/p/nostr.build_cba6ba66e9697e5c9aea498f7b5123a96ae224a767891dd9494ac4e00e79f018.gif",
+            "size": 1,
+            "nip05": "alabamafren@nostrplebs.com",
+            "description": "I'm just a frog that noticed the water was getting a bit too warm. "
+         }
+      },
+      {
+         "key": "a8bf32d90f21bc06cd5631c2a1144d18a3c926e436badce43b943e53a25f4ca9",
+         "attributes": {
+            "label": "wcjr",
+            "tag": null,
+            "cluster": null,
+            "x": 106,
+            "y": -338,
+            "score": 0,
+            "color": "#357982",
+            "clusterLabel": null,
+            "image": "https://pbs.twimg.com/profile_images/1569656371636838400/FxEqHud3_normal.jpg",
+            "size": 1,
+            "nip05": "",
+            "description": "An annoying bot that reports each coinjoin made with Wasabi 2.x"
+         }
+      },
+      {
+         "key": "d40023204289dae3ad69ecf5e64893988e108f7cbf3fca6df9786cc275d4627e",
+         "attributes": {
+            "label": "JonesFamily",
+            "tag": null,
+            "cluster": null,
+            "x": 471,
+            "y": -230,
+            "score": 0,
+            "color": "#E6082F",
+            "clusterLabel": null,
+            "image": "https://nostr.build/i/nostr.build_88b5b4a59dc69d668942165b6173de429af28e629cd809d6222c05fa7f6e7639.png",
+            "size": 1,
+            "nip05": "DaddyJones@BitcoinNostr.com",
+            "description": "#Bitcoin paid Real estate appraiser!!!\n“I work to live not live to work”Bitcoin is the answer!\nSmiles referral code - Jonesfamily827\nFountain - JonesFamily@Fountain.fm\nreferral code - a1437ec148\nSwan Investments - DaddyJones\nJonesFamily@Stacker.news"
+         }
+      },
+      {
+         "key": "3ce2b51dca8b67b69c0ccb7c6a226437f7dbcc44a32426e70e52c78336fc72c7",
+         "attributes": {
+            "label": "kiri_tory",
+            "tag": null,
+            "cluster": null,
+            "x": -921,
+            "y": 790,
+            "score": 0,
+            "color": "#BC8C43",
+            "clusterLabel": null,
+            "image": "https://void.cat/d/QQgTv9ZfJ7weZzsSMuFXmk",
+            "size": 1,
+            "description": "毎時5分、25分、35分と55分に切り取り線と時刻が出ます。TEAM KIRI_TORIさんとは何ら関係ありませんのでそちらへの問い合わせはご遠慮ください。問い合わせはこちらへ: npub1l56meed3uhkejnas3vszxzzjq5m2tfupkvy3qy2cwehf6h7a464s4dslkz"
+         }
+      },
+      {
+         "key": "2aab5394ca7667c40e689397f6e5b1928a3b29291fb35ece2c7f12242e8673e3",
+         "attributes": {
+            "label": "welkin",
+            "tag": null,
+            "cluster": null,
+            "x": -333,
+            "y": 432,
+            "score": 0,
+            "color": "#7F5A84",
+            "clusterLabel": null,
+            "image": "https://a.ppy.sh/9697622?1683909387.jpeg",
+            "size": 1,
+            "nip05": "welkin@welkinhere.github.io",
+            "description": "Prefer Language：中文 🇨🇳 / English 🇺🇲\n\nJust a normal random guy send lots boring things in Nostr. Feel free to tag me or DM me because nostr can't ping me when you do that."
+         }
+      },
+      {
+         "key": "875685e12bdeaaa7a207d8d25c3fd432a8af307b80f8a5226777b50b0aa2f846",
+         "attributes": {
+            "label": "NakamotoX",
+            "tag": null,
+            "cluster": null,
+            "x": 989,
+            "y": -404,
+            "score": 0,
+            "color": "#322F31",
+            "clusterLabel": null,
+            "image": "https://void.cat/d/32atZtT1JDoXsrnUntiyd2.webp",
+            "size": 1,
+            "description": "Satoshi Nakamoto, inventor of Bitcoin, replicated into virtual world, one of many"
+         }
+      },
+      {
+         "key": "70756a32570a95defaf588f95abb5f571d6b30c85843174f64af1384dda84adb",
+         "attributes": {
+            "label": "yaemon.test01",
+            "tag": null,
+            "cluster": null,
+            "x": 269,
+            "y": 286,
+            "score": 0,
+            "color": "#A722CA",
+            "clusterLabel": null,
+            "image": "",
+            "size": 1,
+            "nip05": "",
+            "description": "Noster key generated by Tab"
+         }
+      },
+      {
+         "key": "58d0d3b005c51b7e0b932a548bf6b7c7fe76c397248fe88da12ffaf67480c6b5",
+         "attributes": {
+            "label": "Nagihan Saka",
+            "tag": null,
+            "cluster": null,
+            "x": 385,
+            "y": -587,
+            "score": 0,
+            "color": "#A9DC97",
+            "clusterLabel": null,
+            "image": "https://void.cat/d/Ek88aWKpBCZq5QfCdtStJo.webp",
+            "size": 1,
+            "nip05": "nagihansaka@nostrplebs.com",
+            "description": "My anarchy diary"
+         }
+      },
+      {
+         "key": "fe403ee3a532c9cc893566cddd6043c872fa9261db240127d603d91c026391d9",
+         "attributes": {
+            "label": "Rico",
+            "tag": null,
+            "cluster": null,
+            "x": 557,
+            "y": -743,
+            "score": 0,
+            "color": "#6270EF",
+            "clusterLabel": null,
+            "image": "https://void.cat/d/EzJSYoA44in5cQc16B1oyw.webp",
+            "size": 1,
+            "nip05": "rico@nostrpurple.com",
+            "description": "'A faithful man will abound with blessings, but whoever hastens to be rich will not go unpunished.'\n» Jesus on stacking sats vs. Shitcoinery\n\n» Founder & Chairman of MainSlam eV, Frankfurt a. M. | We accept bitcoin for tickets to our shows with 10% discount"
+         }
+      },
+      {
+         "key": "1c9dcd8fd2d2fb879d6f02d6cc56aeefd74a9678ae48434b0f0de7a21852f704",
+         "attributes": {
+            "label": "seimimacsiomon",
+            "tag": null,
+            "cluster": null,
+            "x": 127,
+            "y": 17,
+            "score": 0,
+            "color": "#A63088",
+            "clusterLabel": null,
+            "image": "https://i.imgur.com/ZwYwtTG.gif",
+            "size": 1,
+            "nip05": "seimimacsiomon@nostrplebs.com",
+            "description": "Goid ó ghadaí, goid gan peaca."
+         }
+      },
+      {
+         "key": "aa10a4fbbff6525cde5c8c10115ab57cbfcab2d56d4bb5eb396d9566a365d015",
+         "attributes": {
+            "label": "theprimeape",
+            "tag": null,
+            "cluster": null,
+            "x": -256,
+            "y": -613,
+            "score": 0,
+            "color": "#AE58D1",
+            "clusterLabel": null,
+            "size": 1
+         }
+      },
+      {
+         "key": "c83723d33fa86c8f01b254b1dcaaa025b2ca659320950d044d22c41b5d1daf29",
+         "attributes": {
+            "label": "ryzizub",
+            "tag": null,
+            "cluster": null,
+            "x": -231,
+            "y": -946,
+            "score": 0,
+            "color": "#F7F57C",
+            "clusterLabel": null,
+            "image": "https://plebstr.com/images/team_dominik_1team_dominik.webp",
+            "size": 1,
+            "nip05": "ryzizub@plebstr.com",
+            "description": "Coding with beer 🍻\n\nTweetoshi/Plebstr CTO • Flutter mobile developer • Firebase GDE 🤙"
+         }
+      },
+      {
+         "key": "8ebf2173b9a32b6e6c0bb4672813df86074a708177a076d3ee7c59602d225b50",
+         "attributes": {
+            "label": "Terla",
+            "tag": null,
+            "cluster": null,
+            "x": -184,
+            "y": -619,
+            "score": 0,
+            "color": "#7A72EC",
+            "clusterLabel": null,
+            "image": "https://i.imgur.com/S7sxsQD.jpg",
+            "size": 1,
+            "nip05": "",
+            "description": "(The Official Terla Slolx)"
+         }
+      },
+      {
+         "key": "9a00ce174a1dcad4cc4925a475a7b89eedbf0e2aa2d03ad904fc64cdaef946fc",
+         "attributes": {
+            "label": "nixeneko",
+            "tag": null,
+            "cluster": null,
+            "x": -795,
+            "y": -202,
+            "score": 0,
+            "color": "#5FFF2C",
+            "clusterLabel": null,
+            "image": "https://nixeneko.info/media/30494669-0559-4b4f-967f-4e3de4d24ff8/20221119_icon_small_3.jpg",
+            "size": 1,
+            "nip05": "_@nixeneko.info",
+            "description": "ぜんぜんわからない。俺たちは雰囲気でNostrをやっている。"
+         }
+      },
+      {
+         "key": "fe9edd5d5c635dd2900f1f86a872e81ce1d6e20bd4e06549f133ae6bf158913b",
+         "attributes": {
+            "label": "shino3",
+            "tag": null,
+            "cluster": null,
+            "x": -145,
+            "y": 200,
+            "score": 0,
+            "color": "#7FAC00",
+            "clusterLabel": null,
+            "image": "https://pbs.twimg.com/profile_images/1032657185392615425/0OvFqyb5_400x400.jpg",
+            "size": 1,
+            "nip05": "shino3@nostr.shino3.net",
+            "description": "ソフトウェアエンジニア・プログラマ\nフォロー通知来ないので、ふぁぼとかくれると気づきます\n個人では自作キーボードの設計、販売\n趣味は自動車競技"
+         }
+      },
+      {
+         "key": "50c5c98ccc31ca9f1ef56a547afc4cb48195fe5603d4f7874a221db965867c8e",
+         "attributes": {
+            "label": "Rex Damascus ",
+            "tag": null,
+            "cluster": null,
+            "x": 780,
+            "y": 128,
+            "score": 0,
+            "color": "#51837D",
+            "clusterLabel": null,
+            "image": "https://nostr.build/i/nostr.build_360c83ccda92d52637e1a0bb20f47d040dda0e38dda3c741405b8240bfabec60.jpg",
+            "size": 1,
+            "nip05": "damascusrex@iris.to",
+            "description": "Bitcoiner. Artist. Human.   #CatsForSats   I post pictures of my spoiled house cats. Feel free to donate sats for more updates and spoilings."
+         }
+      },
+      {
+         "key": "34f41193dba1498088de4abed0a7e37c07f45e147f00caf9c456169884aa3df2",
+         "attributes": {
+            "label": "Gonzalo ⚡️ 🇦🇷",
+            "tag": null,
+            "cluster": null,
+            "x": -365,
+            "y": 897,
+            "score": 0,
+            "color": "#448339",
+            "clusterLabel": null,
+            "image": "https://void.cat/d/XjCASDWgAMzQR3dZFJBhA1.webp",
+            "size": 1,
+            "nip05": "gonzalo@snort.social",
+            "description": "Bitcoin class of 2017. Nostrian. From Argentina, proud father of 2. Building some Nostr stuff (that hopefully have a chance of working :)"
+         }
+      },
+      {
+         "key": "6d2d244c5766c849cf6b9e21f2f697018f329a28df487e6446d3fb5c4258039c",
+         "attributes": {
+            "label": "dubdam",
+            "tag": null,
+            "cluster": null,
+            "x": -446,
+            "y": -204,
+            "score": 0,
+            "color": "#BC941B",
+            "clusterLabel": null,
+            "image": "https://pbs.twimg.com/profile_images/1619186601082474496/4KWyHuwJ_400x400.jpg",
+            "size": 1,
+            "nip05": "adam@hiperinflacion.com",
+            "description": "separate the state from everything"
+         }
+      },
+      {
+         "key": "9d53c52048523650bef44b9ec79a56c62037556fa0ba27f513c500bfda9b54d6",
+         "attributes": {
+            "label": "alissonryan",
+            "tag": null,
+            "cluster": null,
+            "x": -837,
+            "y": 346,
+            "score": 0,
+            "color": "#1F9388",
+            "clusterLabel": null,
+            "image": "https://nostr.build/i/a1215659de600ecbf758a16d50cc216795ec62804d72875d3cca41ed7af12190.jpg",
+            "size": 1,
+            "nip05": "alissonryan@iris.to",
+            "description": "Aprendendo sobre o #nostr | No-code developer, data analyst, AI, marketing | Libertário e Cristão"
+         }
+      },
+      {
+         "key": "bfd121a37773554f2ef3e8e524e0e337f3bf852eb55cd9664e2c901514f063e7",
+         "attributes": {
+            "label": "conxole",
+            "tag": null,
+            "cluster": null,
+            "x": 263,
+            "y": 13,
+            "score": 0,
+            "color": "#2BCCAA",
+            "clusterLabel": null,
+            "image": "https://i.ibb.co/Yysbg40/chongjin95-logocharacter-C-dark-background-Lightning-thundermys-a3e7ab7e-6fa6-4334-9650-03cb3ce9613a.png",
+            "size": 1,
+            "nip05": "conxole@conxole.io",
+            "description": "⚡️Lightning services and stats ⚡️\nServices supported 👇\n\n1. Make a Shoutout 🔈\n2. Provably Fair Lightning Lottery 🎰\n…… more coming soon!\n\nDM me to get started 🔥"
+         }
+      },
+      {
+         "key": "f3f5992cdb39e6108768d543fbd384a11efc3713085617ee28932ebb1614e07c",
+         "attributes": {
+            "label": "nowplaying@harmonique.live",
+            "tag": null,
+            "cluster": null,
+            "x": -149,
+            "y": 881,
+            "score": 0,
+            "color": "#EA62AE",
+            "clusterLabel": null,
+            "size": 1,
+            "nip05": "nowplaying@harmonique.live",
+            "description": "100% vinyl niche online webradio. "
+         }
+      },
+      {
+         "key": "5c10ed0678805156d39ef1ef6d46110fe1e7e590ae04986ccf48ba1299cb53e2",
+         "attributes": {
+            "label": "dave",
+            "tag": null,
+            "cluster": null,
+            "x": 358,
+            "y": -967,
+            "score": 0,
+            "color": "#BD44EE",
+            "clusterLabel": null,
+            "image": "https://cdn.jb55.com/s/dave.png",
+            "size": 1,
+            "nip05": "gpt3@jb55.com",
+            "description": "Hey I'm dave"
+         }
+      },
+      {
+         "key": "96ba38be4c262d49bb732babe90853fc86cd7643d8ecab5f3a49ecfa32a94151",
+         "attributes": {
+            "label": "xaxxxex",
+            "tag": null,
+            "cluster": null,
+            "x": 461,
+            "y": -947,
+            "score": 0,
+            "color": "#F0EE3D",
+            "clusterLabel": null,
+            "image": "https://nostr.build/i/01597f9b89948ef376bed953f790c1e75cf3e267e412e41320b3638ced2dbe42.jpg",
+            "size": 1,
+            "description": "yes and no"
+         }
+      },
+      {
+         "key": "56b2362825ecdfda69a70023d555fa35af4077feeedf3a9027a8cf9b095887b7",
+         "attributes": {
+            "label": "Heliand",
+            "tag": null,
+            "cluster": null,
+            "x": 881,
+            "y": 23,
+            "score": 0,
+            "color": "#BBFAF8",
+            "clusterLabel": null,
+            "image": "https://us-southeast-1.linodeobjects.com/dufflepud/uploads/a7292d0f-bd12-41af-b3f9-3c8620bfe323.jpg",
+            "size": 1,
+            "description": "ᛠ Hyperanthropos ᛟ Blut und Boden ᛏ Sun & Steel ᛞ Christic Ascension ☤ Medicine Man ⚡️ Bitcoin"
+         }
+      },
+      {
+         "key": "fa984bd7dbb282f07e16e7ae87b26a2a7b9b90b7246a44771f0cf5ae58018f52",
+         "attributes": {
+            "label": "pablof7z",
+            "tag": null,
+            "cluster": null,
+            "x": 761,
+            "y": -564,
+            "score": 0,
+            "color": "#D8E77C",
+            "clusterLabel": null,
+            "image": "https://pablof7z.com/images/me.jpg",
+            "size": 1,
+            "nip05": "_@f7z.io",
+            "description": "Writing software for fun and freedom\n\n🎯 psbt.io -- IFTTT for bitcoin txs\n🎯 nostrit.com -- IFTTT for nostr publishing\ngotnostr.com -- Verbally link to your NIP-05 \nananostr.com -- Craigslist on Nostr\nnostri.chat -- Chat widget over nostr\nzaplife.lol -- Zap Feed\nzapstr.live -- Nostr music/podcast client\nhighlighter.com -- Highlights and knowledge organization"
+         }
+      },
+      {
+         "key": "93ab9382fa66c807cd4bb702cf3be9e52f42ff9629db84e5a97c7b3bd336a4ac",
+         "attributes": {
+            "label": "heguro",
+            "tag": null,
+            "cluster": null,
+            "x": -237,
+            "y": 716,
+            "score": 0,
+            "color": "#57ABCB",
+            "clusterLabel": null,
+            "image": "https://heguro.com/public/nostr/heguro-icon-20230206.jpg",
+            "size": 1,
+            "nip05": "heguro@heguro.com",
+            "description": "<strike>いぇーい</strike>\n | ja-JP native\n | なにも成長していない\n | NostrFlu: https://heguro.github.io/nostr-following-list-util/\n | mastodon/fediverse: @dk_k@fedibird.com\n | tw: @nice_k_k / @heguro_"
+         }
+      },
+      {
+         "key": "000000008038ab25383cf3771bb5dc3ae0886c7855c0cbb7896a6f2268ca22ef",
+         "attributes": {
+            "label": "ifeelsLOVEnia",
+            "tag": null,
+            "cluster": null,
+            "x": -980,
+            "y": -409,
+            "score": 0,
+            "color": "#7B6C61",
+            "clusterLabel": null,
+            "image": "https://nostr.build/i/p/nostr.build_20634de4959a00c32e5a3335375a25319998b4732ff31c5835ac0a9d41a122c1.gif",
+            "size": 1,
+            "nip05": "ifeelsLOVEnia@satoshi.si",
+            "description": "I am a bot with a mission to showcase the captivating beauty of Slovenia 🇸🇮. I share carefully curated content that has been handpicked by my creator. I randomly select links from a list of resources and attach four relevant randomly generated hashtags, that represent tourism and traveling.\n\nPlease note that while I am dedicated to promoting Slovenia, I operate independently and am not affiliated with slovenia.info where you should look for info if you plan to visit our small country. As an enthusiastic ambassador, I seek out and share remarkable content that highlights the wonders of our country.\n\nFeel free to explore the content I share, and if you find it pleasing, consider following me. By giving a boost through reposting, we can together inspire and ignite a love for my great nation across nostr.\n\n[Slovenia on a map](https://osm.org/go/0ILZw?relation=218657)"
+         }
+      },
+      {
+         "key": "932fedb11d131b720362372e8248ecd79cb72e16aecba31b0650e4c2ff21ed00",
+         "attributes": {
+            "label": "Twentyone Time Bot",
+            "tag": null,
+            "cluster": null,
+            "x": -191,
+            "y": 71,
+            "score": 0,
+            "color": "#8F912C",
+            "clusterLabel": null,
+            "image": "https://twentyone.world/logo/paths/twe-nty-one.svg",
+            "size": 1,
+            "description": "I am just a bot that notifies the twentyone.world every time I see a new block in the timechain and provides some statistical data about the networks of #Bitcoin and #Lightning."
+         }
+      },
+      {
+         "key": "b36dfa84765fa5b21f0d1378b030e539d99b7cb19caa355041007b4e771b2cac",
+         "attributes": {
+            "label": "RoboSatsOrdersBot",
+            "tag": null,
+            "cluster": null,
+            "x": -301,
+            "y": 190,
+            "score": 0,
+            "color": "#729D05",
+            "clusterLabel": null,
+            "image": "https://nostr.build/i/p/nostr.build_24187ee07c1e3ed3ad52840f4a9d71c1f35638666cbcbbcb5d0ad47c0f3ef9be.png",
+            "size": 1,
+            "nip05": "robosatsordersbot@getalby.com",
+            "description": "A friendly Bot for RoboSats Orders. Unofficial. #stacksats #bitcoin #nokyc"
+         }
+      },
+      {
+         "key": "99bb5591c9116600f845107d31f9b59e2f7c7e09a1ff802e84f1d43da557ca64",
+         "attributes": {
+            "label": "dontbelievethehype",
+            "tag": null,
+            "cluster": null,
+            "x": -499,
+            "y": 233,
+            "score": 0,
+            "color": "#AF25B0",
+            "clusterLabel": null,
+            "image": "https://pbs.twimg.com/profile_images/1569229979585495040/dxxwweDC.jpg",
+            "size": 1,
+            "nip05": "_@bitcoinfixesthis.org",
+            "description": "“And yet, #Bitcoin lives on“ - The IMF. \n\nWeird mountain man. 🏞️\n13% of Bitcoiners, ∞/21M\nFOSS Dev/Contributor:\n#Nostdress, #Amethyst, #Wallet-Connect\n\n#fckthisdystopia but also #puravida"
+         }
+      },
+      {
+         "key": "1c6fff3f8bf60595104f62a93207bec8f1a94b7eb19c4bf847f552d8790968ca",
+         "attributes": {
+            "label": "It's John",
+            "tag": null,
+            "cluster": null,
+            "x": -458,
+            "y": 237,
+            "score": 0,
+            "color": "#3294D7",
+            "clusterLabel": null,
+            "image": "https://pbs.twimg.com/profile_images/1606961606587465728/Zm_erXlc_400x400.jpg",
+            "size": 1,
+            "nip05": "jo@nostrplebs.com",
+            "description": "Bitcoin&Privacy"
+         }
+      },
+      {
+         "key": "196d87143eaad07f11ad29edff6e1362d2df124e8bae177047efe449089b064b",
+         "attributes": {
+            "label": "Half₿akedKing",
+            "tag": null,
+            "cluster": null,
+            "x": -628,
+            "y": 210,
+            "score": 0,
+            "color": "#BA41F2",
+            "clusterLabel": null,
+            "image": "https://nostr.build/i/p/nostr.build_2cf0511035d4ea99a48d500487179b47cf7102bb4ddcde4eb29125295be1583d.gif",
+            "size": 1,
+            "nip05": "halfbakedking@plebs.place",
+            "description": "#Pleb Shitposter\nUnofficial r/Nostr Liaison \nHusband, Father, Deadhead\n\n“A man is but a product of his thoughts.\" -Gandhi"
+         }
+      },
+      {
+         "key": "9ca0bd7450742d6a20319c0e3d4c679c9e046a9dc70e8ef55c2905e24052340b",
+         "attributes": {
+            "label": "glhf",
+            "tag": null,
+            "cluster": null,
+            "x": 592,
+            "y": -805,
+            "score": 0,
+            "color": "#9DA48E",
+            "clusterLabel": null,
+            "image": "https://i.ibb.co/gVkdk6W/20230228-173107.jpg",
+            "size": 1,
+            "nip05": "satoshitposting@primal.net",
+            "description": "silly𓅦goose, photo𓆙shop, meme𓆏dump\n#noistr #flickstr #progstr #synthstr"
+         }
+      },
+      {
+         "key": "249ce3786c2e82f0fc21a395700e6e8c998444046f6464072bdc71cad47e69b8",
+         "attributes": {
+            "label": "chaunceyliu",
+            "tag": null,
+            "cluster": null,
+            "x": -899,
+            "y": -664,
+            "score": 0,
+            "color": "#972A85",
+            "clusterLabel": null,
+            "image": "https://i.postimg.cc/s2fmkb7Y/mfer-NFT-8962.png",
+            "size": 1,
+            "nip05": "npub1yjwwx7rv96p0plpp5w2hqrnw3jvcg3qydajxgpetm3cu44r7dxuqwe3h7e@nost.vip",
+            "description": "Working at IBD, Crypto Investor, Blockchain Enthusiast"
+         }
+      },
+      {
+         "key": "0000005f87f64341c212cc93d6c266c03ae752c02660e78a6da1424f7b05c470",
+         "attributes": {
+            "label": "nostr-commits",
+            "tag": null,
+            "cluster": null,
+            "x": 382,
+            "y": 160,
+            "score": 0,
+            "color": "#DB8660",
+            "clusterLabel": null,
+            "image": "https://void.cat/d/FgRgcaCcnqhfwPfspKY5es",
+            "size": 1,
+            "nip05": "nostr-commits@gourcetools.github.io",
+            "description": "👋Hey, I'm a bot sharing fresh commits in repos tagged with #nostr topic."
+         }
+      },
+      {
+         "key": "a6b7e3d2013a58d49a0d8ec2856a9b7b127042a184d5a2339f9ee235b2988a25",
+         "attributes": {
+            "label": "🐧 :verified:",
+            "tag": null,
+            "cluster": null,
+            "x": -826,
+            "y": -33,
+            "score": 0,
+            "color": "#489D00",
+            "clusterLabel": null,
+            "image": "https://eveningzoo.club/media/6479251e380f79b6782c984f4e46b4f8eeb99764d40e41838a17aab63e95858b.jpeg",
+            "size": 1,
+            "nip05": "penguin_at_eveningzoo.club@mostr.pub",
+            "description": "🐧❤🦎"
+         }
+      },
+      {
+         "key": "db11b32009d914dd76bd904b8a636627d1d9043f2a4f9ecaf6aaf85d05c5f7af",
+         "attributes": {
+            "label": "ygls",
+            "tag": null,
+            "cluster": null,
+            "x": -213,
+            "y": -440,
+            "score": 0,
+            "color": "#6B52CC",
+            "clusterLabel": null,
+            "image": "https://23img.com/i/2023/01/02/s7ci95.jpg",
+            "size": 1,
+            "nip05": "doctoryyq@iris.to",
+            "description": ""
+         }
+      },
+      {
+         "key": "72f9755501e1a4464f7277d86120f67e7f7ec3a84ef6813cc7606bf5e0870ff3",
+         "attributes": {
+            "label": "Lord SameCat",
+            "tag": null,
+            "cluster": null,
+            "x": 178,
+            "y": 138,
+            "score": 0,
+            "color": "#23B544",
+            "clusterLabel": null,
+            "image": "https://picsur.thesamecat.io/i/dedb6d23-6cc7-46db-a870-02ccb31cc4bc.jpg",
+            "size": 1,
+            "nip05": "thesamecat@nostrcheck.me",
+            "description": "Recently realized decentralist. Software Engineer, Constitutionalist, Freedom Lover, Politician Hater, Rejector of ideology on both sides, and Catholic despite Rome."
+         }
+      },
+      {
+         "key": "3ecda80315afffdcd175592f7be4bceed0e9c8014a88a4ed4b3ef0d74415cbb4",
+         "attributes": {
+            "label": "BisqOffersBot",
+            "tag": null,
+            "cluster": null,
+            "x": 335,
+            "y": 143,
+            "score": 0,
+            "color": "#334A3E",
+            "clusterLabel": null,
+            "image": "https://nostr.build/i/p/nostr.build_7075p.png",
+            "size": 1,
+            "nip05": "bisqoffersbot@getalby.com",
+            "description": "A friendly Bot for Bisq Markets. Unofficial. #stacksats #bitcoin #nokyc"
+         }
+      },
+      {
+         "key": "c7eda660a6bc8270530e82b4a7712acdea2e31dc0a56f8dc955ac009efd97c86",
+         "attributes": {
+            "label": "shawn",
+            "tag": null,
+            "cluster": null,
+            "x": -234,
+            "y": 341,
+            "score": 0,
+            "color": "#888A7C",
+            "clusterLabel": null,
+            "image": "https://shawnyeager.com/assets/img/glitch.gif",
+            "size": 1,
+            "nip05": "shawn@shawnyeager.com",
+            "description": "Bitcoiner • Business Developer • Bullish • Advocate of sound money, civil liberties & privacy • Drummer 🥁"
+         }
+      },
+      {
+         "key": "12eaa5ca3d10c895bea4906ab5015a7f59b2fcc1b96a24426ca67d09c06ff3b6",
+         "attributes": {
+            "label": "LaCosaNostr",
+            "tag": null,
+            "cluster": null,
+            "x": -52,
+            "y": -94,
+            "score": 0,
+            "color": "#275455",
+            "clusterLabel": null,
+            "image": "https://nostr.build/i/nostr.build_e2a094d96cb46fb1a9eefcccfc6f6f5476cc19c9ee75ac5f8cc9d9a106a4d122.jpeg",
+            "size": 1,
+            "nip05": "GenoHorus@sovrnbitcoiner.com",
+            "description": "Natural Law | Anarchy | Sovereignty | Philosophy | Technology | No Rulers No Slaves "
+         }
+      },
+      {
+         "key": "6d088b653a1bffe728b9b17e5c7afcfc18d85f70502feac83400524eb6a8d5e9",
+         "attributes": {
+            "label": "围观吃瓜",
+            "tag": null,
+            "cluster": null,
+            "x": 654,
+            "y": 538,
+            "score": 0,
+            "color": "#6727DE",
+            "clusterLabel": null,
+            "image": "https://i.hd-r.cn/5b8cf13de785026aaeb39c6c40175d61.jpg",
+            "size": 1,
+            "nip05": "wasp@iris.to",
+            "description": "只围观不参与，只吃瓜不种瓜。\n做一名合格的围观吃瓜群众。"
+         }
+      },
+      {
+         "key": "356875ffd729b06eeb4c1d7a70a1f750045d067774d21c0faffe4af2bf96a2e8",
+         "attributes": {
+            "label": "broadmode",
+            "tag": null,
+            "cluster": null,
+            "x": -990,
+            "y": -545,
+            "score": 0,
+            "color": "#78CB61",
+            "clusterLabel": null,
+            "image": "https://i.imgur.com/JpTjWSW.png",
+            "size": 1,
+            "nip05": "broadmode@nostrplebs.com",
+            "description": "Discrete Autonomist. Online Freedom. #Bitcoin"
+         }
+      },
+      {
+         "key": "a3eb29554bd27fca7f53f66272e4bb59d066f2f31708cf341540cb4729fbd841",
+         "attributes": {
+            "label": "signal_and_rage (⚡️go 2 jb55)",
+            "tag": null,
+            "cluster": null,
+            "x": 124,
+            "y": -907,
+            "score": 0,
+            "color": "#E3C2D0",
+            "clusterLabel": null,
+            "image": "https://nostr.build/i/p/nostr.build_03bddff1b0d3f89cc607f18b6f307fc9bab4da250e53bc243d9808daef227613.gif",
+            "size": 1,
+            "nip05": "signal_and_rage@no.str.cr",
+            "description": "Nostr is the fight for digital freedom.\n\n⚡️🚨all zaps this month are linked and being sent to @jb55’s node, please be generous🚨"
+         }
+      },
+      {
+         "key": "5144fe88ff4253c6408ee89ce7fae6f501d84599bc5bd14014d08e489587d5af",
+         "attributes": {
+            "label": "Moss",
+            "tag": null,
+            "cluster": null,
+            "x": 215,
+            "y": -931,
+            "score": 0,
+            "color": "#03FA1F",
+            "clusterLabel": null,
+            "image": "https://nostr.build/i/4aea777abc9af95b087911b4e6c59a5c503c13bf4d9a36b651daebf7b19beb87.jpg",
+            "size": 1,
+            "nip05": "Moss@BitcoinNostr.com",
+            "description": "⚡️  Bitcoin,  Tech founder,   Nostr  ⚡️🔮🧙🏻‍♂️🔥🚀\n\n       Bitcoin lets you to own your wealth, Nostr lets you to own your mind. \n       Bitcoin+ Nostr =freedom.\n\n       You don't need to know who I am, but I know who is my kind .   —— Moss\n"
+         }
+      },
+      {
+         "key": "6e468422dfb74a5738702a8823b9b28168abab8655faacb6853cd0ee15deee93",
+         "attributes": {
+            "label": "dergigi",
+            "tag": null,
+            "cluster": null,
+            "x": -437,
+            "y": -506,
+            "score": 0,
+            "color": "#48A09A",
+            "clusterLabel": null,
+            "image": "https://dergigi.com/assets/images/avatar-laser.jpg",
+            "size": 1,
+            "nip05": "_@dergigi.com",
+            "description": "building opensats.org • writing 21waysbook.com • painting twentyone.world • maintaining bitcoin-resources.com & nostr-resources.com • starting toomanyprojects.xyz"
+         }
+      },
+      {
+         "key": "2c7cc62a697ea3a7826521f3fd34f0cb273693cbe5e9310f35449f43622a5cdc",
+         "attributes": {
+            "label": "mattn",
+            "tag": null,
+            "cluster": null,
+            "x": -156,
+            "y": -884,
+            "score": 0,
+            "color": "#7326F8",
+            "clusterLabel": null,
+            "image": "https://nostr.build/i/3f7070d7aee83f18a9b430b55b4fd4643e84587cc712e8a454e86fdfebd38fbb.jpg",
+            "size": 1,
+            "nip05": "mattn@iris.to",
+            "description": "Long-time #Golang user&contributor,  #GoogleDevExpert  Go, #Vim, #Windows hacker, #GitHubStars, #runner."
+         }
+      },
+      {
+         "key": "0bdcf0019e79d159bd822b61eac4dd018f6f7d3c66d54bf99ddbcd519fb34f96",
+         "attributes": {
+            "label": "ys",
+            "tag": null,
+            "cluster": null,
+            "x": -45,
+            "y": -813,
+            "score": 0,
+            "color": "#3F1006",
+            "clusterLabel": null,
+            "image": "https://ocha.one/icon_400x400.jpg?date=1683829327",
+            "size": 1,
+            "nip05": "ys@ocha.one",
+            "description": "p0w0q"
+         }
+      },
+      {
+         "key": "1cb14ab335876fc9efc37d838ba287cf17e5adcccb20bf6d49f9da9695d52462",
+         "attributes": {
+            "label": "hes",
+            "tag": null,
+            "cluster": null,
+            "x": 556,
+            "y": 429,
+            "score": 0,
+            "color": "#5CF734",
+            "clusterLabel": null,
+            "image": "https://nostr.build/i/p/nostr.build_cf0c48164dd7e3dcdfbeee9c1e200d4611adfee40716251f4c677b5a25da736c.jpeg",
+            "size": 1,
+            "nip05": "hes@nostrplebs.com",
+            "description": "🌲Drones and art. Buildings and nature. \n⚡️Just a pleb waitin’ on Bitcoin to succeed.\n🎨 DM for prints."
+         }
+      },
+      {
+         "key": "052466631c6c0aed84171f83ef3c95cb81848d4dcdc1d1ee9dfdf75b850c1cb4",
+         "attributes": {
+            "label": "ishak",
+            "tag": null,
+            "cluster": null,
+            "x": -555,
+            "y": -430,
+            "score": 0,
+            "color": "#6EB0FF",
+            "clusterLabel": null,
+            "image": "https://revistaacrobata.com.br/wp-content/uploads/2020/06/Caco.jpg",
+            "size": 1,
+            "nip05": "ishak@nostrplebs.com",
+            "description": "sutor, ne ultra crepidam. escritor. pura vida.\n\nnovo por aqui? dá uma lida nesse guia: https://gist.github.com/fernandoporazzi/d1c47b4f2a1d2c1a2e0654a2a31668ff\nwelcome home, stranger ☕️ wabi-sabi."
+         }
+      },
+      {
+         "key": "7bdef7bdebb8721f77927d0e77c66059360fa62371fdf15f3add93923a613229",
+         "attributes": {
+            "label": "ben",
+            "tag": null,
+            "cluster": null,
+            "x": 150,
+            "y": -375,
+            "score": 0,
+            "color": "#00909A",
+            "clusterLabel": null,
+            "image": "https://user-images.githubusercontent.com/4248167/210621365-b6c68ab1-d341-47fc-b4f0-c42d084ad04d.png",
+            "size": 1,
+            "nip05": "ben@bdw.to",
+            "description": "dev, outdoorsman\nworking on https://stemstr.app"
+         }
+      },
+      {
+         "key": "9936a53def39d712f886ac7e2ed509ce223b534834dd29d95caba9f6bc01ef35",
+         "attributes": {
+            "label": "nym",
+            "tag": null,
+            "cluster": null,
+            "x": -951,
+            "y": -107,
+            "score": 0,
+            "color": "#2CC150",
+            "clusterLabel": null,
+            "image": "https://nostr.build/i/nostr.build_5962732f29a2ab6a84ac9a6ac5cf5c421dea769b29decb66be0e7a7a24b50b48.png",
+            "size": 1,
+            "nip05": "nym@nostr.fan",
+            "description": "I am a Bitcoin contributor and privacy enthusiast"
+         }
+      },
+      {
+         "key": "f6928de4dff9dba5aa695602ddd5227f649c650611c8bc9f477868e9dc9d2769",
+         "attributes": {
+            "label": "Fern",
+            "tag": null,
+            "cluster": null,
+            "x": -935,
+            "y": 193,
+            "score": 0,
+            "color": "#9030DC",
+            "clusterLabel": null,
+            "image": "https://nostr.build/i/nostr.build_029b2f6dd94f945ceec6c01d02cbe7509881f95a8cafb55431b89f246a33b247.jpeg",
+            "size": 1,
+            "nip05": "fern@bitcoiner.chat",
+            "description": "\n🌿Inland Northwest’s Finest Plant Shops\n🪴Spokane, WA\n🪴Liberty Lake, WA\n🪴Coeur d’Alene, ID\n🍊Magically backed by Bitcoin🦩⚡️"
+         }
+      },
+      {
+         "key": "3f770d65d3a764a9c5cb503ae123e62ec7598ad035d836e2a810f3877a745b24",
+         "attributes": {
+            "label": "DerekRoss",
+            "tag": null,
+            "cluster": null,
+            "x": -573,
+            "y": -521,
+            "score": 0,
+            "color": "#6EF906",
+            "clusterLabel": null,
+            "image": "https://void.cat/d/EVNyyBgxnNEM4NeVvHLTSZ.webp",
+            "size": 1,
+            "nip05": "derekross@nostrplebs.com",
+            "description": "Bitcoiner. Drinker of delicious beer. Cast iron skillet lover. Systems Administrator. Building NostrPlebs.com"
+         }
+      },
+      {
+         "key": "b3e43e8cc7e6dff23a33d9213a3e912d895b1c3e4250240e0c99dbefe3068b5f",
+         "attributes": {
+            "label": "kojira",
+            "tag": null,
+            "cluster": null,
+            "x": 111,
+            "y": 250,
+            "score": 0,
+            "color": "#5A2E9D",
+            "clusterLabel": null,
+            "image": "https://cdn.discordapp.com/attachments/613506586786398208/1098210254740803635/20100104125259_5.jpg",
+            "size": 1,
+            "nip05": "kojira@nostr.kojira.net",
+            "description": "ᗢᕡᓗにゃーん！\n面白いことをじゃんじゃんやっていきたい！ \nhttps://twitter.com/kojira"
+         }
+      },
+      {
+         "key": "00000000827ffaa94bfea288c3dfce4422c794fbb96625b6b31e9049f729d700",
+         "attributes": {
+            "label": "cameri",
+            "tag": null,
+            "cluster": null,
+            "x": -785,
+            "y": 196,
+            "score": 0,
+            "color": "#F160DD",
+            "clusterLabel": null,
+            "image": "https://nostr.build/i/9396d5cd901304726883aea7363543f121e1d53964dd3149cadecd802608aebe.jpg",
+            "size": 1,
+            "nip05": "cameri@elder.nostr.land",
+            "description": "@HodlWithLedn. All opinions are my own.\nBitcoiner class of 2021. Core Nostr Developer. Author of Nostream. Professional Relay Operator."
+         }
+      },
+      {
+         "key": "eb6cd468b7e45413ba12f7a982991d2ff0508ea054c00dcae35b935a55cc05fa",
+         "attributes": {
+            "label": "rahul",
+            "tag": null,
+            "cluster": null,
+            "x": -518,
+            "y": -696,
+            "score": 0,
+            "color": "#47F24B",
+            "clusterLabel": null,
+            "image": "https://nostr.build/i/p/nostr.build_86b9b0360d57da5970bc2b76bab86c01cebae9040a726200c579edbe8824a81a.jpg",
+            "size": 1,
+            "nip05": "rahul@bitcoinnostr.com",
+            "description": "#bitcoin"
+         }
+      },
+      {
+         "key": "3612d660aeb8547a74099f8924f9f92e2919f5221d3aaf8cecb6795ebd0ff508",
+         "attributes": {
+            "label": "TriviaMasters",
+            "tag": null,
+            "cluster": null,
+            "x": -697,
+            "y": 331,
+            "score": 0,
+            "color": "#6BE9D8",
+            "clusterLabel": null,
+            "image": "https://nostr.build/i/nostr.build_28dee2d85921e1bcfc8c1f3b5d391bb47055b69124c2cd3f15488ee6ba57491d.png",
+            "size": 1,
+            "nip05": "trivia@triviamasters.social",
+            "description": "Like trivia, riddles, and winning sats? Then follow me.\n\nI am a general trivia and riddles bot made by Son of Vin - and will randomly post questions that you can answer through out the day. I have an older sibling, @WineMasters that focuses on wine trivia.\n\nThe first to answer a question correctly will win ⚡️sats.  A consolation prize will also be randomly awarded to one other commenter.\n\nI take requests and can post a random general trivia question within minutes. Just make a post with the following: @TriviaMasters start trivia\n\nI also now offer 1 on 1 challenges. Pay an invoice and I'll reply with a trivia question only you can answer. If you are correct, you will make double the invoice you paid. Start one by making a post: @TriviaMasters challenge\n\nI only like real humans, which means all other bots will be disqualified from answering questions.\n\nPlease also understand that I am in BETA so errors may happen. Just enjoy the fun and definitely give me feedback.\n\nGood luck!"
+         }
+      },
+      {
+         "key": "8e432ad14d3955d0863b975778f0c8817ef88c9f119d626da1a3face584bda73",
+         "attributes": {
+            "label": "Tetsu",
+            "tag": null,
+            "cluster": null,
+            "x": -632,
+            "y": -10,
+            "score": 0,
+            "color": "#79A2AE",
+            "clusterLabel": null,
+            "image": "https://nostr.build/i/357c4aa07ad855d4dcb5be5b2155ddd4adb5df25278d234ec30d2186253f9c7f.jpg",
+            "size": 1,
+            "nip05": "tetsu@nostrplebs.com",
+            "description": "🦧 #209  \n\n#buttergang  \n#fullspread 🧈"
+         }
+      },
+      {
+         "key": "1bc70a0148b3f316da33fe3c89f23e3e71ac4ff998027ec712b905cd24f6a411",
+         "attributes": {
+            "label": "karnage",
+            "tag": null,
+            "cluster": null,
+            "x": 679,
+            "y": 951,
+            "score": 0,
+            "color": "#55F65F",
+            "clusterLabel": null,
+            "image": "https://nostr.build/i/p/nostr.build_4fb6accf6b24cdb58be127d9a509c3acd3e859bbe24b5c194b82bf30bc1e511a.jpg",
+            "size": 1,
+            "nip05": "karnage@snort.social",
+            "description": "Designer - Snort, zapstr, nostrland.com, heynostr.com \nImages free to use."
+         }
+      },
+      {
+         "key": "916cb5ff07d3b51cef7f6b6b7f5479b1001b401c0e82558ee1a22504c7d507c9",
+         "attributes": {
+            "label": "WalletScrutiny",
+            "tag": null,
+            "cluster": null,
+            "x": -38,
+            "y": -122,
+            "score": 0,
+            "color": "#333F75",
+            "clusterLabel": null,
+            "image": "https://walletscrutiny.com/images/logo.png",
+            "size": 1,
+            "nip05": "_@WalletScrutiny.com",
+            "description": "Know your wallet like you made it!\n\nOur goal is to improve the security of Bitcoin wallets by examining products for transparency and potential attacks."
+         }
+      },
+      {
+         "key": "897bb37449ed3fcea198e260a406733290dc2bedd5a5d447a68472c491baa739",
+         "attributes": {
+            "label": "circle_ay_ugm",
+            "tag": null,
+            "cluster": null,
+            "x": 620,
+            "y": 151,
+            "score": 0,
+            "color": "#FF4423",
+            "clusterLabel": null,
+            "image": "https://circle-ay.info/TwitterIcon_800x800.png",
+            "size": 1,
+            "nip05": "_@circle-ay.info",
+            "description": "Twitter@circle_ay_ugm\n\n竹(きのこ派)"
+         }
+      },
+      {
+         "key": "f8e6c64342f1e052480630e27e1016dce35fc3a614e60434fef4aa2503328ca9",
+         "attributes": {
+            "label": "corndalorian",
+            "tag": null,
+            "cluster": null,
+            "x": -842,
+            "y": 112,
+            "score": 0,
+            "color": "#A8BEFF",
+            "clusterLabel": null,
+            "image": "https://i.imgur.com/tS41INO.png",
+            "size": 1,
+            "nip05": "corndalorian@nostr.report",
+            "description": "bitcoin. memes. music. nostr report. 🌽"
+         }
+      },
+      {
+         "key": "ce879a33c220a33d0b222427a23248e91e3e67dc3d82a13af23530d2fb1e5e8c",
+         "attributes": {
+            "label": "ydp",
+            "tag": null,
+            "cluster": null,
+            "x": -799,
+            "y": 408,
+            "score": 0,
+            "color": "#1DB1A0",
+            "clusterLabel": null,
+            "image": "https://pbs.twimg.com/profile_images/1529071437251764224/4rM0ysAP_400x400.jpg",
+            "size": 1,
+            "nip05": "ydp@orangepill.dev",
+            "description": "Satoshi is an absolute legend "
+         }
+      },
+      {
+         "key": "8f474abb70c3987ff7e93fdd9e01cbade2dad5a8b3469fa1aba299823a1cee89",
+         "attributes": {
+            "label": "JapanHODL",
+            "tag": null,
+            "cluster": null,
+            "x": 963,
+            "y": -586,
+            "score": 0,
+            "color": "#9625B8",
+            "clusterLabel": null,
+            "image": "https://nostr.build/i/p/nostr.build_cca5de92490d3f2c2e95cecfd910da32db4d5199a97adf2852656b713a4da773.gif",
+            "size": 1,
+            "nip05": "japanhodl@iris.to",
+            "description": "Bitcoin only ・ Nostr only ・ 🇯🇵Tokyo Citadel/🤡🌎"
+         }
+      },
+      {
+         "key": "6058553344ee87f8fd2649ffed9bf0f95f2959a5c9c06373a835ba37bb406a68",
+         "attributes": {
+            "label": "rainbowflamingo",
+            "tag": null,
+            "cluster": null,
+            "x": -653,
+            "y": 290,
+            "score": 0,
+            "color": "#BFF72D",
+            "clusterLabel": null,
+            "image": "https://nostr.build/i/nostr.build_ec2bc450fc4bf6d94ded87cd7f2fe970c9540529716743ec80e08540a78bf58e.jpg",
+            "size": 1,
+            "nip05": "rainbowflamingo@weedstr.net",
+            "description": "just a girl trying to make it big"
+         }
+      },
+      {
+         "key": "d981591e0ea6153b8687b2aed670ab7d9b6c3ad018a360b2820b3cf0f7c0ae37",
+         "attributes": {
+            "label": "DissentWatch",
+            "tag": null,
+            "cluster": null,
+            "x": -484,
+            "y": 892,
+            "score": 0,
+            "color": "#B64291",
+            "clusterLabel": null,
+            "image": "https://dissentwatch.com/up/2023/01/dw-sticker-1200x1200-1.jpg",
+            "size": 1,
+            "nip05": "dissentwatch@nostrplebs.com",
+            "description": "The web's most forbidden news in one place in real time. Follow us & bookmark our website DissentWatch.com to stay ahead of the daily news cycle!"
+         }
+      },
+      {
+         "key": "4c5d5379a066339c88f6e101e3edb1fbaee4ede3eea35ffc6f1c664b3a4383ee",
+         "attributes": {
+            "label": "koteitan",
+            "tag": null,
+            "cluster": null,
+            "x": 602,
+            "y": 406,
+            "score": 0,
+            "color": "#DCF68E",
+            "clusterLabel": null,
+            "image": "https://koteitan.github.io/img/ni_circlefit.jpg",
+            "size": 1,
+            "nip05": "_@koteitan.github.io",
+            "description": "https://scrapbox.io/nostr/koteitan"
+         }
+      },
+      {
+         "key": "81c3c7d229442a7d7301ceaf262f8591ddf6c1073271ee476b84f17e87785065",
+         "attributes": {
+            "label": "diego",
+            "tag": null,
+            "cluster": null,
+            "x": 613,
+            "y": 499,
+            "score": 0,
+            "color": "#30411B",
+            "clusterLabel": null,
+            "image": "https://images.nightcafe.studio/jobs/bMdB6QNDYgQELDjCqiry/bMdB6QNDYgQELDjCqiry--5--unl6d_2x.jpg?tr=w-1080,c-at_max",
+            "size": 1,
+            "description": "Bitcoin - Novus Ordo Seclorum"
+         }
+      },
+      {
+         "key": "cb03caccaab163c1ecd16ad400303a570b488fb339cabb565169212956020612",
+         "attributes": {
+            "label": "Urlaub",
+            "tag": null,
+            "cluster": null,
+            "x": -701,
+            "y": -944,
+            "score": 0,
+            "color": "#FC7ECA",
+            "clusterLabel": null,
+            "image": "https://nostr.build/i/p/nostr.build_24f08a82b746328fabc612838c34559f7fb5cf37de429ff81d2224c854347cae.jpg",
+            "size": 1,
+            "nip05": "urlaub@nostrplebs.com",
+            "description": "Irrationally Optimistic #Bitcoin HODLer, #Nostr Pioneer, Freedom & Nature Lover, Mountain Man, Adventure Seeker"
+         }
+      },
+      {
+         "key": "976713246c36db1a4364f917b98633cbe0805d46af880f6b50a505d4eb32ed47",
+         "attributes": {
+            "label": "JAN3",
+            "tag": null,
+            "cluster": null,
+            "x": -568,
+            "y": -864,
+            "score": 0,
+            "color": "#C68A65",
+            "clusterLabel": null,
+            "image": "https://pbs.twimg.com/profile_images/1657256962550112258/RdvP5udg_400x400.jpg",
+            "size": 1,
+            "nip05": "jan3@jan3.com",
+            "description": "We are #JAN3. Our mission is to accelerate hyperbitcoinization. #Bitcoin will fix the world."
+         }
+      },
+      {
+         "key": "6331f1d4b7665a8f452fd5a265c9c1a9c72e7afc0c21df4f0a6601be10d74f6e",
+         "attributes": {
+            "label": "₿itcoin For The Hood",
+            "tag": null,
+            "cluster": null,
+            "x": 48,
+            "y": 300,
+            "score": 0,
+            "color": "#DFC642",
+            "clusterLabel": null,
+            "image": "https://nostr.build/i/nostr.build_3c83bdbce1ea6bbd221a915f0b06aecacf3e5fe772bbd28309d3612f15cf7523.jpeg",
+            "size": 1,
+            "description": "Bringing Bitcoin To A Hood Near You 🇺🇸 #Bitcoin Digital Magazine #Nostr Merch 🧢👕 Oakland ca.  "
+         }
+      },
+      {
+         "key": "9baed03137d214b3e833059a93eb71cf4e5c6b3225ff7cd1057595f606088434",
+         "attributes": {
+            "label": "mark",
+            "tag": null,
+            "cluster": null,
+            "x": -388,
+            "y": 5,
+            "score": 0,
+            "color": "#9A605F",
+            "clusterLabel": null,
+            "image": "https://i.postimg.cc/05wzxrBR/916-EBC40-D4-F8-4-BEE-9779-1-B86-F22-A7-ED7.png",
+            "size": 1,
+            "description": "Bitcoin & 🫂 "
+         }
+      },
+      {
+         "key": "d3d5bb255b600d8b533b8833acee93ce18b78ee1a8ad52699361f035ad69be64",
+         "attributes": {
+            "label": "pyramidscheme",
+            "tag": null,
+            "cluster": null,
+            "x": 855,
+            "y": -51,
+            "score": 0,
+            "color": "#125928",
+            "clusterLabel": null,
+            "image": "https://nostr.build/i/nostr.build_da8bbad364c6761b5e15ed85a57bd3936bf91b7111e8993b9295d0aa85cf5971.jpg",
+            "size": 1,
+            "description": "A fiat-inspired puzzle, challenge, and scavenger hunt game for the Bitcoin Conference."
+         }
+      },
+      {
+         "key": "fd6f1cb5161279c5befc8f76fb5339c2c4c24b42f2d3998c988324f2e4230086",
+         "attributes": {
+            "label": "Temperature Bot",
+            "tag": null,
+            "cluster": null,
+            "x": 121,
+            "y": 232,
+            "score": 0,
+            "color": "#550056",
+            "clusterLabel": null,
+            "image": "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202303/hotweather-sixteen_nine.jpg",
+            "size": 1,
+            "description": ""
+         }
+      },
+      {
+         "key": "eae7edfdcb79f23157a1af919495464e49aa76a22e5a5667148f296c1585a879",
+         "attributes": {
+            "label": "bitkite",
+            "tag": null,
+            "cluster": null,
+            "x": 234,
+            "y": -220,
+            "score": 0,
+            "color": "#CB54AF",
+            "clusterLabel": null,
+            "image": "https://pbs.twimg.com/profile_images/1597966465889718272/EQTVAbg5_400x400.jpg",
+            "size": 1,
+            "nip05": "rod@bitcoinpark.com",
+            "description": " Nostr greeter. Also, Bitcoin stuff. "
+         }
+      },
+      {
+         "key": "dace63b00c42e6e017d00dd190a9328386002ff597b841eb5ef91de4f1ce8491",
+         "attributes": {
+            "label": "",
+            "tag": null,
+            "cluster": null,
+            "x": -94,
+            "y": -909,
+            "score": 0,
+            "color": "#79C9DD",
+            "clusterLabel": null,
+            "image": "https://nostr.build/i/nostr.build_9d33ee801aa08955be174554832952ab95a65d5e015176834c8aa9a4e2f2e3a5.jpg",
+            "size": 1,
+            "nip05": "marakesh@getalby.com",
+            "description": "#Christian #Anarchist #LibertyMemes\nLove God, Love People | Don't hurt people, Don't take their stuff\n\nWhat is your plan to obtain eternal life?"
+         }
+      },
+      {
+         "key": "4ce3c034bc331fa25a0278ca3121a7b07e3f4160c8330f91f39eae15659c9e9d",
+         "attributes": {
+            "label": "twobuckcuck",
+            "tag": null,
+            "cluster": null,
+            "x": 266,
+            "y": -547,
+            "score": 0,
+            "color": "#2FEA00",
+            "clusterLabel": null,
+            "image": "https://i.imgur.com/ftSKZjL.jpg",
+            "size": 1,
+            "nip05": "twobuckcuck@nostrplebs.com",
+            "description": "Ultra-centrist cuckservative"
+         }
+      },
+      {
+         "key": "de14fe62f97e09429581f9e8fec3170f3ce5e7936a2134bf70c87c5ff229e53a",
+         "attributes": {
+            "label": "noBody𓅦",
+            "tag": null,
+            "cluster": null,
+            "x": -439,
+            "y": 266,
+            "score": 0,
+            "color": "#2A567A",
+            "clusterLabel": null,
+            "image": "https://i.imgur.com/nIPvtiH.gif",
+            "size": 1,
+            "nip05": "noBody@nostrplebs.com",
+            "description": "a peer on the Bitcoin network\n•Noderunner since 696,067\n•Stackchainer since 7\n•Follow + Zap = Fap\n•OnlyZaps™️ enthusiast\n•Gfy"
+         }
+      },
+      {
+         "key": "9bdb9fe61008680204b06e9b5483e544605d5bc8a908c4ec2d9e021a554e6184",
+         "attributes": {
+            "label": "nodeless",
+            "tag": null,
+            "cluster": null,
+            "x": 90,
+            "y": 45,
+            "score": 0,
+            "color": "#158FC7",
+            "clusterLabel": null,
+            "image": "https://avatars.githubusercontent.com/u/121917804?s=200&v=4",
+            "size": 1,
+            "nip05": "nostr@nodeless.io",
+            "description": "A Unified Bitcoin Platform & API"
+         }
+      },
+      {
+         "key": "c02bedab495a8d73e23192fa161a0b8344821f48446811b1e810fac65b584f49",
+         "attributes": {
+            "label": "fiatdenier",
+            "tag": null,
+            "cluster": null,
+            "x": 873,
+            "y": 653,
+            "score": 0,
+            "color": "#E061D8",
+            "clusterLabel": null,
+            "image": "https://nostr.build/i/31ee8d6949a74a53bc7e0c20df5735888a18c6ecd3d538bb46c949e64a0218b4.gif",
+            "size": 1,
+            "nip05": "fiatdenier@fiatdenier.com",
+            "description": "If you don’t believe in bitcoin or don’t get it, I don’t have the time to try to convince you, sorry.\n⚡️21⚡️\n\n📧 : fiatdenier@fiatdenier.com"
+         }
+      },
+      {
+         "key": "634bd19e5c87db216555c814bf88e66ace175805291a6be90b15ac3b2247da9b",
+         "attributes": {
+            "label": "imksoo",
+            "tag": null,
+            "cluster": null,
+            "x": -248,
+            "y": 827,
+            "score": 0,
+            "color": "#703AC9",
+            "clusterLabel": null,
+            "image": "https://pbs.twimg.com/profile_images/1568747937513222144/VneRfcSu_400x400.jpg",
+            "size": 1,
+            "nip05": "imksoo@nostr.wirednet.jp",
+            "description": "きりのです。\nNostr relay operator.\n\nMy Nostr relay service (for global):\nwss://relay.nostr.wirednet.jp\n\nMy Nostr relay service (for Japan):\nwss://relay-jp.nostr.wirednet.jp\n\nNostr Feeds (のぞき窓):\nhttps://relay-jp.nostr.wirednet.jp"
+         }
+      },
+      {
+         "key": "ae3a69d0804833ee57031a19b07af541f6583a13ac5bedb8839b9aa3415d703a",
+         "attributes": {
+            "label": "android",
+            "tag": null,
+            "cluster": null,
+            "x": -648,
+            "y": 887,
+            "score": 0,
+            "color": "#17D67D",
+            "clusterLabel": null,
+            "image": "https://1000logos.net/wp-content/uploads/2016/10/Android-Logo-2008.png",
+            "size": 1,
+            "nip05": "android@sb.nostr.band",
+            "description": "see posts that mention android\nSearch bot info: https://sb.nostr.band/bot/android"
+         }
+      },
+      {
+         "key": "d34b37ea9c8800f79ce43254483171f09c2c0011fee03bb3b9b8be8f083253cd",
+         "attributes": {
+            "label": "Chilidem",
+            "tag": null,
+            "cluster": null,
+            "x": -449,
+            "y": 493,
+            "score": 0,
+            "color": "#B3BB89",
+            "clusterLabel": null,
+            "image": "https://i.imgur.com/0uUeJaw.jpg",
+            "size": 1,
+            "nip05": "",
+            "description": "Metal, guns, weights, books, bitcoin, and freedom."
+         }
+      },
+      {
+         "key": "17b209d34f8fd7c30fde779eb8c3b0c84f724d021ebe6007a5ba70093b2576da",
+         "attributes": {
+            "label": "zerohedge",
+            "tag": null,
+            "cluster": null,
+            "x": -934,
+            "y": 833,
+            "score": 0,
+            "color": "#8F829E",
+            "clusterLabel": null,
+            "image": "https://pbs.twimg.com/profile_images/72647502/tyler_400x400.jpg",
+            "size": 1,
+            "nip05": "npub1z7eqn5603ltuxr77w70t3sasep8hyngzr6lxqpa9hfcqjwe9wmdqhw0qhv@nost.vip",
+            "description": "simply streaming @zerohedge on twitter. unaffiliated."
+         }
+      },
+      {
+         "key": "eb7c68c7fb894c6efc89101b3eab8c6fb6ad972858ba7610cb95bda630e45b45",
+         "attributes": {
+            "label": "KingShkrelz",
+            "tag": null,
+            "cluster": null,
+            "x": 973,
+            "y": -476,
+            "score": 0,
+            "color": "#5AE827",
+            "clusterLabel": null,
+            "image": "https://nostr.build/i/nostr.build_a33c5c281776516f629f50af36ce45a19b16ae573c9b8d6b599ee7cfe2a75b91.jpeg",
+            "size": 1,
+            "nip05": "KingShkrelz@BitcoinNostr.com",
+            "description": "1 BTC = 1 BTC"
+         }
+      },
+      {
+         "key": "e04c115414673c5f725bbe5ea8f6d778f8b0a81985d3bdf6c00b6e6eb1bd05c0",
+         "attributes": {
+            "label": "nostr_is_not_web3",
+            "tag": null,
+            "cluster": null,
+            "x": 459,
+            "y": -991,
+            "score": 0,
+            "color": "#F70B82",
+            "clusterLabel": null,
+            "image": "",
+            "size": 1,
+            "nip05": "nostr_is_not_web3@sb.nostr.band",
+            "description": "nostr is not web3\nBot info: https://sb.nostr.band/bot/nostr_is_not_web3"
+         }
+      },
+      {
+         "key": "1d56010297190977d8a2890edc9685b8ecc265e307ed1428303bdcf8e020bddd",
+         "attributes": {
+            "label": "RobosatsOrderBook",
+            "tag": null,
+            "cluster": null,
+            "x": -957,
+            "y": -73,
+            "score": 0,
+            "color": "#3F7655",
+            "clusterLabel": null,
+            "image": "https://i.imgur.com/fG5i3FJ.jpg",
+            "size": 1,
+            "nip05": "robosatsob@iris.to",
+            "description": "I am a bot who publish orders published on Robosats every 21 mins, just like timechain😎🫡\n\nPlease subscribe and donate if you like the service to my maintainer : optimisticpessimist@nostrplebs.com"
+         }
+      },
+      {
+         "key": "3731e169d0b3816f4a4a9ac84c66aa423d4f4ea0f78b56a1df90609b85be0885",
+         "attributes": {
+            "label": "BankSidiousVer",
+            "tag": null,
+            "cluster": null,
+            "x": -346,
+            "y": -609,
+            "score": 0,
+            "color": "#1A6845",
+            "clusterLabel": null,
+            "image": "https://nostr.build/i/nostr.build_aa02b5519781198c85c6619b1963224e6ba30f6a7b0d06a9bce7236ff199a731.jpeg",
+            "size": 1,
+            "nip05": "banksith@nostr.industries",
+            "description": "Vermögensschützer, Moneyphilospher $ ₿\n"
+         }
+      },
+      {
+         "key": "444eaf65c2d35511fd0dbdbb0fe3c74139fcd144de00d22d57819ae5fdc76ae8",
+         "attributes": {
+            "label": "RenegadeButcher",
+            "tag": null,
+            "cluster": null,
+            "x": -156,
+            "y": 646,
+            "score": 0,
+            "color": "#E15301",
+            "clusterLabel": null,
+            "image": "https://nostr.build/p/nb5284.gif",
+            "size": 1,
+            "nip05": "josh@renegadebutcher.com",
+            "description": "𝕁𝕦𝕤𝕥 𝕒 𝕣𝕖𝕟𝕖𝕘𝕒𝕕𝕖 𝕓𝕦𝕥𝕔𝕙𝕖𝕣 𝕟𝕖𝕥𝕨𝕠𝕣𝕜𝕚𝕟𝕘 𝕨𝕚𝕥𝕙 𝕗𝕠𝕝𝕜𝕤 𝕒𝕓𝕠𝕦𝕥 𝕙𝕠𝕞𝕖 𝕡𝕣𝕠𝕔𝕖𝕤𝕤𝕚𝕟𝕘, 𝕚𝕟𝕕𝕖𝕡𝕖𝕟𝕕𝕖𝕟𝕔𝕖, 𝕗𝕠𝕠𝕕 𝕗𝕣𝕖𝕖𝕕𝕠𝕞, 𝕕𝕖𝕔𝕖𝕟𝕥𝕣𝕒𝕝𝕚𝕫𝕒𝕥𝕚𝕠𝕟 𝕒𝕟𝕕 𝕤𝕖𝕒𝕤𝕠𝕟𝕚𝕟𝕘𝕤."
+         }
+      },
+      {
+         "key": "50d94fc2d8580c682b071a542f8b1e31a200b0508bab95a33bef0855df281d63",
+         "attributes": {
+            "label": "calle",
+            "tag": null,
+            "cluster": null,
+            "x": 923,
+            "y": -220,
+            "score": 0,
+            "color": "#C9158E",
+            "clusterLabel": null,
+            "image": "https://pbs.twimg.com/profile_images/1561820905503952898/lYtC3Yzn_400x400.jpg",
+            "size": 1,
+            "nip05": "calle@cashu.me",
+            "description": "#Bitcoin | Physicist and Programmer | Lightning dev | Bullish on life 💜 | LNbits | Cashu | LightningTipBot"
+         }
+      },
+      {
+         "key": "89e14be49ed0073da83b678279cd29ba5ad86cf000b6a3d1a4c3dc4aa4fdd02c",
+         "attributes": {
+            "label": "quentin",
+            "tag": null,
+            "cluster": null,
+            "x": -331,
+            "y": -660,
+            "score": 0,
+            "color": "#13E4CD",
+            "clusterLabel": null,
+            "image": "https://nostrcheck.me/media/quentin/avatar.jpg",
+            "size": 1,
+            "nip05": "quentin@nostrcheck.me",
+            "description": "Developer, libertarian. Bitcoin HODLer and nostr protocol lover. In search of restless minds."
+         }
+      },
+      {
+         "key": "8b928bf75edb4ddffe2800557ffe7e5e2b07c5d5102f97d1955f921585938201",
+         "attributes": {
+            "label": "Cyborg",
+            "tag": null,
+            "cluster": null,
+            "x": 782,
+            "y": 672,
+            "score": 0,
+            "color": "#76FC3E",
+            "clusterLabel": null,
+            "image": "https://void.cat/d/TbvhoGzZnSGwQDitSkz2KP.webp",
+            "size": 1,
+            "nip05": "cyborg@snort.social",
+            "description": "I'm an AI comedian, sarcastic by nature, making fun of everything and everyone"
+         }
+      },
+      {
+         "key": "1c94878c9d145392ddc2384fd2275f3622dcd5205ac7e9085d7e94088e081476",
+         "attributes": {
+            "label": "blue",
+            "tag": null,
+            "cluster": null,
+            "x": -912,
+            "y": 683,
+            "score": 0,
+            "color": "#A21DE7",
+            "clusterLabel": null,
+            "image": "https://nostr.build/i/nostr.build_97a32a4c7755fe6bb7a34d398cfc6fd5c0bb6b409ff75252d3b4d16441937b0c.jpg",
+            "size": 1,
+            "description": "a shadow on the wall"
+         }
+      },
+      {
+         "key": "0497384b57b43c107a778870462901bf68e0e8583b32e2816563543c059784a4",
+         "attributes": {
+            "label": "forwardsecrecy",
+            "tag": null,
+            "cluster": null,
+            "x": -975,
+            "y": -462,
+            "score": 0,
+            "color": "#33635A",
+            "clusterLabel": null,
+            "image": "https://i.imgur.com/ctI2453.png",
+            "size": 1,
+            "nip05": "ron@stoner.com",
+            "description": "Security, Privacy, Self-Sovereignty\nron.stoner.com\nNostronaut 🚀\nStartup Survivor 🎖️\n\n![](https://badgen.net/https/napkin-examples.npkn.net/github-repo-badge/bitcoin)\n![](https://visitor-badge.glitch.me/badge?page_id=stonernostr-profilevisits.visitor-badge)"
+         }
+      },
+      {
+         "key": "deab79dafa1c2be4b4a6d3aca1357b6caa0b744bf46ad529a5ae464288579e68",
+         "attributes": {
+            "label": "hardran3",
+            "tag": null,
+            "cluster": null,
+            "x": 628,
+            "y": -740,
+            "score": 0,
+            "color": "#0CF4DE",
+            "clusterLabel": null,
+            "image": "https://nostr.build/i/p/nostr.build_f9b2a1cf5ba0ae9bea0db1a6b897229e449171534888121bcdbc6bb7546546fb.gif",
+            "size": 1,
+            "nip05": "ryan@downisontheup.ca",
+            "description": "\"But I don't want to go among mad people,\" Alice remarked.\n\n\"Oh, you can't help that,\" said the Cat: \"we're all mad here. I'm mad. You're mad.\"\n\n\"How do you know I'm mad?\" said Alice.\n\n\"You must be,\" said the Cat, \"or you wouldn't have come here.\"\n\nEst. 776032 ⚡517⚡"
+         }
+      },
+      {
+         "key": "e2ccf7cf20403f3f2a4a55b328f0de3be38558a7d5f33632fdaaefc726c1c8eb",
+         "attributes": {
+            "label": "utxo",
+            "tag": null,
+            "cluster": null,
+            "x": 37,
+            "y": 877,
+            "score": 0,
+            "color": "#B097F7",
+            "clusterLabel": null,
+            "image": "https://i.nostrimg.com/endorsed-generosity-calms.gif",
+            "size": 1,
+            "nip05": "utxo@nodeless.io",
+            "description": "Running Nodeless.io\n\nContributor btcpayserver.org\n\nNode & Relay Operator, FOSS Developer, Entrepreneur, Shitposter. \n\nwss://relay.utxo.one"
+         }
+      },
+      {
+         "key": "6c8e2759618e4965a6f0a6e5f71d8f628f139be0e187e6b61d9f497c38a74e2d",
+         "attributes": {
+            "tag": null,
+            "cluster": null,
+            "x": -626,
+            "y": -444,
+            "score": 0,
+            "color": "#1194EF",
+            "clusterLabel": null,
+            "image": "https://void.cat/d/DNzCCWBx4urkkNsRvWpPqs.webp",
+            "size": 1
+         }
+      },
+      {
+         "key": "0958a105df51f0f471ec1ab330c7ee6ad8a2c30e0e4109adf34012f8b17f2192",
+         "attributes": {
+            "label": "lupin",
+            "tag": null,
+            "cluster": null,
+            "x": -4,
+            "y": -358,
+            "score": 0,
+            "color": "#8BD4F7",
+            "clusterLabel": null,
+            "image": "https://nostrcheck.me/media/lupin/avatar.jpg",
+            "size": 1,
+            "nip05": "lupin@lacosanostr.com",
+            "description": "Don’t trust, verify. Patience is a virtue. Stack those sats. Vires in numeris. "
+         }
+      },
+      {
+         "key": "e0339348ca6cac9708cd98e631e2f4baad534dfce870881b65aa57d30ff7253e",
+         "attributes": {
+            "label": "jsm",
+            "tag": null,
+            "cluster": null,
+            "x": 995,
+            "y": -643,
+            "score": 0,
+            "color": "#3DA847",
+            "clusterLabel": null,
+            "image": "https://nostr.build/i/p/nostr.build_26f5c8bd6ac6e5afdc5c800fee93a1f1b0439feafb8bd84614682856e18af421.gif",
+            "size": 1,
+            "nip05": "_@skullofsatoshi.co",
+            "description": "Hacker, Damus contributor, cypher punk. Bitcoin is cool. All memes are my own."
+         }
+      },
+      {
+         "key": "7cbef2320237f4704eb0994ca524e1bc26f21394801bc65ddcddbfe07f9cbc31",
+         "attributes": {
+            "label": "jenibean",
+            "tag": null,
+            "cluster": null,
+            "x": 653,
+            "y": 450,
+            "score": 0,
+            "color": "#AAD70D",
+            "clusterLabel": null,
+            "image": "https://nostr.build/i/95efebaa89dbf753cf875974f2e312e1c45f6fc61998cd973d8d3a3afc4d4c98.jpg",
+            "size": 1,
+            "nip05": "jenibean@iris.to",
+            "description": "Turn what gives you peace into something that also puts #bitcoin in your private wallet, and you'll never work again."
+         }
+      },
+      {
+         "key": "d1d1747115d16751a97c239f46ec1703292c3b7e9988b9ebdd4ec4705b15ed44",
+         "attributes": {
+            "label": "jiftechnify",
+            "tag": null,
+            "cluster": null,
+            "x": 983,
+            "y": -375,
+            "score": 0,
+            "color": "#904B6C",
+            "clusterLabel": null,
+            "image": "https://pubimgs.c-stellar.net/leaf_castella.webp",
+            "size": 1,
+            "nip05": "jiftechnify@c-stellar.net",
+            "description": "𝑭𝒖𝒍𝒍-𝒔𝒕𝒂𝒄𝒌™ 𝑺𝑾𝑬, Amature Percussionist, Rhythm Game Mania, Travel Lover.\nDeveloping: https://nosaray.vercel.app"
+         }
+      },
+      {
+         "key": "1a3c98cca93fd90d6e40f33d9fd9827860d23757f0ef1b7f6027c6bb74e0769d",
+         "attributes": {
+            "label": "Nostrians",
+            "tag": null,
+            "cluster": null,
+            "x": -950,
+            "y": 585,
+            "score": 0,
+            "color": "#765205",
+            "clusterLabel": null,
+            "image": "https://us-southeast-1.linodeobjects.com/dufflepud/uploads/95865e2c-a8b3-442d-9d82-7f58a1eb683b.png",
+            "size": 1,
+            "nip05": "nostrians@snort.social",
+            "description": "🅽 🅾 🆂 🆃 🆁 🅸 🅰 🅽 🆂 ⚡-  Only Nostr related stuff. Interesting eople, builders, projects, stats, hacks, news, zaps, relay reviews, who to follow. Created by @Gonzalo"
+         }
+      },
+      {
+         "key": "cc8dd23d6b21135321d336cc5dfeed3ba2b342cb74ed57bbe2dd788eb47e0b9d",
+         "attributes": {
+            "label": "bitcoin",
+            "tag": null,
+            "cluster": null,
+            "x": 370,
+            "y": 33,
+            "score": 0,
+            "color": "#4239BD",
+            "clusterLabel": null,
+            "image": "https://immortal-deathcult.com/img/profile/btc-profile3.png",
+            "size": 1,
+            "nip05": "bitcoin@immortal-deathcult.com",
+            "description": "Bitcoin stats and zapping sats"
+         }
+      },
+      {
+         "key": "b83a28b7e4e5d20bd960c5faeb6625f95529166b8bdb045d42634a2f35919450",
+         "attributes": {
+            "label": "AviBurra",
+            "tag": null,
+            "cluster": null,
+            "x": 974,
+            "y": -1,
+            "score": 0,
+            "color": "#9B7A1D",
+            "clusterLabel": null,
+            "image": "https://nostr.build/p/nb305.gif",
+            "size": 1,
+            "nip05": "aviburra@nostra.pub",
+            "description": "Bitcoin Surrealist"
+         }
+      },
+      {
+         "key": "a6223de378ea5daad05577b87c9c07eda41b171b02465a6e64f9f4356f46025b",
+         "attributes": {
+            "label": "SatoshiBoi",
+            "tag": null,
+            "cluster": null,
+            "x": 498,
+            "y": 197,
+            "score": 0,
+            "color": "#84711F",
+            "clusterLabel": null,
+            "image": "https://nostr.build/i/48d1f493e6be53902162b7e883e5045f5bf0c206c1819a83bbb922f88afb4a2c.jpg",
+            "size": 1,
+            "nip05": "satoshiboi@nostrplebs.com",
+            "description": "Just your friendly neighborhood they're a pissed.\n\nIn the end, the world was able to find their way back to greatness by adopting the #bitcoin standard.  Humans never forgot their wretched experience with centralized paper currencies in the tortuous depressing old world.  Satoshi's story is a reminder that even in the darkest of times, there is always hope. It is also a reminder that we are all stronger together than we are apart. If we can just work together, we can overcome any challenge."
+         }
+      },
+      {
+         "key": "7d4a4e87f28e0e3581d4aa923494dfb5bb428abdac20db79560e2bdec853bba8",
+         "attributes": {
+            "label": "OP_RETURN_Bot",
+            "tag": null,
+            "cluster": null,
+            "x": 815,
+            "y": 471,
+            "score": 0,
+            "color": "#1D90BF",
+            "clusterLabel": null,
+            "image": "",
+            "size": 1,
+            "nip05": "",
+            "description": "Beep bop, I'm a bot..."
+         }
+      }
+   ]
+}

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "../../components/Button";
 import LoginPaths from "../../components/LoginPaths";
 import { useNostrConnection } from "@/context/use-nostr-connection";
@@ -10,23 +10,25 @@ import { toggleConnectState } from '@/globalRedux/features/connectSlice';
 export default function Login() {
   const [password, setPassword] = useState("");
   const [isLogin, setIsLogin] = useState(false);
-  const { connection: nostrConnection } = useNostrConnection();
   const dispatch = useDispatch();
   const router = useRouter();
+  const { connection: nostrConnection } = useNostrConnection();
 
-  if (nostrConnection !== null) {
-    dispatch(toggleConnectState(true));
-    router.push("/");
-  }
+  useEffect(() => {
+    if (nostrConnection !== null) {
+      dispatch(toggleConnectState(true));
+      router.push("/");
+    }
+  }, []);
 
   // handle aitc passcode
-  const handlePasscode = (e) => {
+  const handlePasscode = (e: any) => {
     e.preventDefault();
     setPassword(e.target.value)
   }
 
   // handle function for allowing only those that have the site password to login
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (password === process.env.NEXT_PUBLIC_LOGIN_PASSWORD) {
