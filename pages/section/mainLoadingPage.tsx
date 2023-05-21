@@ -7,7 +7,7 @@ import { Relays } from "@/context/relays";
 import { updateData } from "@/data/parseData";
 import Chart from '@/pages/section/main-page';
 
-export default function mainLoadingPage() {
+export default function MainLoadingPage() {
    const { relayPool } = useRelayPool();
    const [metadata, setMetaData] = useState<Record<string, Metadata>>({});
    const [graphData, setGraphData] = useState("");

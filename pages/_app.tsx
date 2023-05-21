@@ -28,7 +28,7 @@ export default function App({ Component, pageProps }: AppProps) {
       console.log("Still on allowed route, but not authenticated. Redirecting to login page.")
       router.push('/section/login');
     }
-  }, [page.pathname]);
+  }, [page.pathname, router]);
   
 
   return (
