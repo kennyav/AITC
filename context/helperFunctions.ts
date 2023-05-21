@@ -1,6 +1,6 @@
 import { Event, nip19 } from "nostr-tools";
 import { Metadata, NostrProfile } from "../types/nostr";
-import { Dispatch, SetStateAction, use, useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { NostrAccountConnection } from "./use-nostr-connection";
 
 export function insertEventIntoDescendingList<T extends Event>(
