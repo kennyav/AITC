@@ -28,13 +28,13 @@ export default function App({ Component, pageProps }: AppProps) {
       console.log("Still on allowed route, but not authenticated. Redirecting to login page.")
       router.push('/section/login');
     }
-  }, [page.pathname, router]);
-  
+  }, [page.pathname]);
+
 
   return (
     <ReduxProvider>
       <Providers>
-          <Component {...pageProps} />
+        <Component {...pageProps} />
       </Providers>
     </ReduxProvider>
   )
