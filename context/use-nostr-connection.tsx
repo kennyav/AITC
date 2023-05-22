@@ -8,7 +8,6 @@ import {
 import {
   createContext,
   PropsWithChildren,
-  use,
   useCallback,
   useContext,
   useEffect,
@@ -16,7 +15,6 @@ import {
   useState,
 } from "react";
 import { DecryptionQueue } from "./decryptionQueue";
-import { useStatePersist } from "use-state-persist";
 
 export type NostrAccountConnection =
   | {
