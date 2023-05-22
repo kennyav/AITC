@@ -9,13 +9,19 @@ interface Props {
    graphData: string;
 }
 
-
-
 export default function Chart({ graphData }: Props) {
    const [nostrPubKey, setNostrPubKey] = useState<string>();
    const height = 800;
    const width = 1400;
-   const data = JSON.parse(graphData).nodes;
+   //const data = JSON.parse(graphData).nodes;
+   let data: any = [];
+   if (graphData) {
+      try {
+         data = JSON.parse(graphData).nodes;
+      } catch (error) {
+         console.error('Error parsing graphData:', error);
+      }
+   }
    const result = useContext(NostrConnectionContext);
 
 

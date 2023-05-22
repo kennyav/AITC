@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 // nostr imports
 import { Event } from "nostr-tools";
-import { Metadata } from "@/utils/parseData";
+import { Metadata } from "@/data/parseData";
 import { useRelayPool } from "@/context/use-relays-pool";
 import { Relays } from "@/context/relays";
 import { updateData } from "@/data/parseData";

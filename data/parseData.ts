@@ -1,17 +1,13 @@
-import { Metadata } from "@/utils/parseData";
-
 interface Props {
    metadata: Record<string, Metadata>;
 }
 
-// function generateRandomHexColor(): string {
-//    const hexChars = '0123456789ABCDEF';
-//    let color = '#';
-//    for (let i = 0; i < 6; i++) {
-//       color += hexChars[Math.floor(Math.random() * hexChars.length)];
-//    }
-//    return color;
-// }
+export interface Metadata {
+   name?: string;
+   about?: string;
+   picture?: string;
+   nip05?: string;
+}
 
 // Function to generate random numbers within a circle
 function generateRandomPointInCircle(centerX: number, centerY: number, radius: number) {
@@ -42,18 +38,18 @@ export function updateData(data: Props) {
       return {
          "key": pubkey,
          "attributes": {
-            "label": metadata.name,
-            "tag": null,
-            "cluster": null,
+            "label": metadata.name || null,
+            // "tag": null,
+            // "cluster": null,
             "x": generateRandomPointInCircle(centerX, centerY, radius).x,
             "y": generateRandomPointInCircle(centerX, centerY, radius).y,
-            "score": 0,
-            "color": null,
-            "clusterLabel": null,
-            "image": metadata.picture,
+            // "score": 0,
+            // "color": null,
+            // "clusterLabel": null,
+            "image": metadata.picture || null,
             "size": 1,
-            "nip05": metadata.nip05,
-            "description": metadata.about,
+            "nip05": metadata.nip05 || null,
+            "description": metadata.about || null,
          },
       };
    });
