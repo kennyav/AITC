@@ -1,8 +1,7 @@
-import Link, { LinkProps } from "next/link";
-import { DetailedHTMLProps, Fragment, HTMLAttributes, use, useEffect, useState } from "react";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 import { nip19 } from "nostr-tools";
 import { shortenHash } from "../lib/utils";
-import { User, IconType, Bookmark } from "../icons";
 import { useRouter } from "next/navigation";
 import { useNostrConnection } from "@/context/use-nostr-connection";
 import { useDispatch } from "react-redux";
@@ -39,12 +38,16 @@ const ProfileMenu: React.FC<ProfileMenuProps> = ({ pubkey, toggleMenu }) => {
     toggleMenu(false);
   }
 
+  const handleClose = () => {
+    toggleMenu(false);
+  }
+
   return (
     <div className="flex flex-col absolute right-4 -bottom-16 translate-y-full">
       <div className="h-full rounded-md px-2 py-2 overflow-y-auto bg-gray-50 dark:bg-gray-800">
         <ul className="space-y-2">
           <li>
-            <Link href={'/section/profile'} className="flex w-full items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+            <Link href={'#'} className="flex w-full items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
               <svg aria-hidden="true" className="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <path clipRule="evenodd" fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-5.5-2.5a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zM10 12a5.99 5.99 0 00-4.793 2.39A6.483 6.483 0 0010 16.5a6.483 6.483 0 004.793-2.11A5.99 5.99 0 0010 12z" />
               </svg>
@@ -52,8 +55,8 @@ const ProfileMenu: React.FC<ProfileMenuProps> = ({ pubkey, toggleMenu }) => {
             </Link>
           </li>
           <li>
-            <Link 
-              href="/settings" 
+            <Link
+              href="#"
               className="flex w-full items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
             >
               <svg aria-hidden="true" className="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -71,12 +74,12 @@ const ProfileMenu: React.FC<ProfileMenuProps> = ({ pubkey, toggleMenu }) => {
               <svg aria-hidden="true" className="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <path clipRule="evenodd" fillRule="evenodd" d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z" />
               </svg>
-              <span className="ml-3">Sign out</span>
-              {/* <span>{shortenHash(npub, 12)}</span> */}
+              <div className="flex flex-col ml-3 text-left">
+                <span>{shortenHash(name, 4)}</span>
+                <span>Sign out</span>
+              </div>
             </button>
           </li>
-        </ul>
-        <ul className="pt-1 mt-2 space-y-1 border-t border-gray-200 dark:border-gray-700">
           <li>
             <button
               className="flex w-full items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
@@ -93,42 +96,5 @@ const ProfileMenu: React.FC<ProfileMenuProps> = ({ pubkey, toggleMenu }) => {
     </div>
   );
 };
-
-interface ItemProps extends LinkProps {
-  label: string;
-  href: string;
-  className?: string;
-  Icon?: IconType;
-}
-
-const Item: React.FC<ItemProps> = ({
-  label,
-  href,
-  Icon,
-  className = "",
-  ...props
-}) => (
-  <Link
-    href={href}
-    className={`flex items-center px-6 py-2 gap-4 cursor-pointer text-gray hover:text-gray-hover ${className}`}
-    {...props}
-  >
-    {Icon ? <Icon size="20" /> : null}
-    <span>{label}</span>
-  </Link>
-);
-
-interface GroupMenuProps
-  extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> { }
-
-const GroupMenu: React.FC<GroupMenuProps> = ({
-  className = "",
-  children,
-  ...props
-}) => (
-  <div className={`py-4 border-b border-b-light-gray ${className}`} {...props}>
-    {children}
-  </div>
-);
 
 export default ProfileMenu;

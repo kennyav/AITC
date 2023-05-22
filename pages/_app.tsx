@@ -29,12 +29,12 @@ export default function App({ Component, pageProps }: AppProps) {
       router.push('/section/login');
     }
   }, [page.pathname]);
-  
+
 
   return (
     <ReduxProvider>
       <Providers>
-          <Component {...pageProps} />
+        <Component {...pageProps} />
       </Providers>
     </ReduxProvider>
   )

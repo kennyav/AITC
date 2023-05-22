@@ -23,11 +23,26 @@ export default function AccountButton({ pubkey }: AccountButtonProps) {
   // get current date and time
   const now = new Date();
 
+  // // Get a reference to your menu element
+  // const menu = document.getElementById('profile-menu');
+  // const profileButton = document.getElementById('profile-button');
+
+  // // Function to handle the click event
+  // function handleClickOutside(event: MouseEvent) {
+  //   if (event.target !== menu && event.target !== profileButton && !menu?.contains(event.target as Node)) {
+  //     // Clicked outside the menu, so close it
+  //     setShowMenu(false);
+  //   }
+  // }
+
+  // // Attach a click event listener to the document
+  // document.addEventListener('click', handleClickOutside);
+
   return (
     <div className="relative">
       <div className="relative">
         <div className="absolute top-4 right-4 flex items-center space-x-4">
-          <div className="font-medium dark:text-white text-right">
+          <div id="profile-button" className="font-medium dark:text-white text-right">
             <div>{name}</div>
             <div className="text-sm text-gray-500 dark:text-gray-400">AITC {now.toISOString().slice(0, 10)} </div>
           </div>
@@ -48,7 +63,9 @@ export default function AccountButton({ pubkey }: AccountButtonProps) {
           </Button>
         </div>
       </div>
-      {showMenu && <ProfileMenu toggleMenu={setShowMenu} pubkey={pubkey} />}
+      <div id="profile-menu">
+        {showMenu && <ProfileMenu toggleMenu={setShowMenu} pubkey={pubkey} />}
+      </div>
     </div>
   );
 }
