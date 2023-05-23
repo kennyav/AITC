@@ -1,22 +1,36 @@
-import { Metadata } from "@/utils/parseData";
-
 interface Props {
    metadata: Record<string, Metadata>;
 }
 
-function generateRandomHexColor(): string {
-   const hexChars = '0123456789ABCDEF';
-   let color = '#';
-   for (let i = 0; i < 6; i++) {
-      color += hexChars[Math.floor(Math.random() * hexChars.length)];
-   }
-   return color;
+export interface Metadata {
+   name?: string;
+   about?: string;
+   picture?: string;
+   nip05?: string;
+}
+
+// Function to generate random numbers within a circle
+function generateRandomPointInCircle(centerX: number, centerY: number, radius: number) {
+   // Generate random points within a square that encloses the circle
+   let x, y;
+   do {
+      // Generate random x and y coordinates within the square
+      x = Math.random() * (radius * 2) - radius;
+      y = Math.random() * (radius * 2) - radius;
+   } while (x * x + y * y > radius * radius); // Check if the point lies outside the circle
+
+   // Calculate the final coordinates within the circle
+   const finalX = centerX + x;
+   const finalY = centerY + y;
+
+   return { x: finalX, y: finalY };
 }
 
 
 export function updateData(data: Props) {
-   const min = -1000;
-   const max = 1000;
+   const centerX = 0; // X-coordinate of the center of the circle
+   const centerY = 0; // Y-coordinate of the center of the circle
+   const radius = 1000; // Radius of the circle
 
    // it is an list of objects with the key being the pubkey and the data as the value
    // we need to convert this into json data that matches our schema
@@ -24,18 +38,18 @@ export function updateData(data: Props) {
       return {
          "key": pubkey,
          "attributes": {
-            "label": metadata.name,
-            "tag": null,
-            "cluster": null,
-            "x": Math.floor(Math.random() * (max - min + 1)) + min,
-            "y": Math.floor(Math.random() * (max - min + 1)) + min,
-            "score": 0,
-            "color": generateRandomHexColor(),
-            "clusterLabel": null,
-            "image": metadata.picture,
+            "label": metadata.name || null,
+            // "tag": null,
+            // "cluster": null,
+            "x": generateRandomPointInCircle(centerX, centerY, radius).x,
+            "y": generateRandomPointInCircle(centerX, centerY, radius).y,
+            // "score": 0,
+            // "color": null,
+            // "clusterLabel": null,
+            "image": metadata.picture || null,
             "size": 1,
-            "nip05": metadata.nip05,
-            "description": metadata.about,
+            "nip05": metadata.nip05 || null,
+            "description": metadata.about || null,
          },
       };
    });
@@ -45,17 +59,6 @@ export function updateData(data: Props) {
       "nodes": newData,
    });
 
-   console.log(dataString)
    return dataString;
 
 }
-/*
-libertarian. Chaotic good. Bitcoin. Monero. Encrypt everything."
-banner: "https://nostr.build/i/nostr.build_107aeafd9eca3452b4e1dc351e7392cd4e4b266c042d63a32a340d4aa1695ac5.jpg"
-lud16: "lprimordium@getalby.com"
-name: "Libertas Primordium"
-nip05: "lprimordium@iris.to"
-nip05valid: true
-picture: "https://nostr.build/i/nostr.build_f8806459055dc6a7e72c881ceac9a2a7dda7ea703afdf12c570be57a06498309.jpg"
-website: "https://github.com/libertas-primordium"
-*/

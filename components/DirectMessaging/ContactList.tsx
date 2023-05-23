@@ -1,7 +1,6 @@
 import { nip19 } from "nostr-tools";
-import React, { useEffect, useMemo, useState } from "react";
-import { useStatePersist } from "use-state-persist";
-import { getProfileDataFromMetaData, usePersistState } from "../../context/helperFunctions";
+import React, { use, useEffect, useMemo, useState } from "react";
+import { getProfileDataFromMetaData } from "../../context/helperFunctions";
 import { useMetadata } from "../../context/use-metadata";
 import styles from '../../styles/Home.module.css'
 import CopyToClipboard from "react-copy-to-clipboard";
@@ -13,10 +12,29 @@ interface Props {
 }
 
 export default function ContactsList({ pubkey, currentOpenContact, onOpenContact }: Props) {
-  const [contacts, setContacts] = useStatePersist<Contact[]>(
-    `contacts:${pubkey}`,
-    [],
-  );
+  // const [contacts, setContacts] = useStatePersist<Contact[]>(
+  //   `contacts:${pubkey}`,
+  //   [],
+  // );
+  const [contacts, setContacts] = useState<Contact[]>([]);
+  const [newContact, setNewContact] = useState("");
+  const [name, setName] = useState<string>("Loading ...");
+  const [image, setImage] = useState<string>("Loading ...");
+
+  useEffect(() => {
+    const storedContacts = localStorage.getItem(`contacts:${pubkey}`);
+    if (storedContacts) {
+      setContacts(JSON.parse(storedContacts));
+    }
+  }, []);
+
+  useEffect(() => {
+    if (contacts) {
+      localStorage.setItem(`contacts:${pubkey}`, JSON.stringify(contacts));
+    }
+  }, [contacts]);
+
+
 
   const pubkeysToFetch = useMemo(
     () => contacts.map((contact) => contact.pubkey),
@@ -24,26 +42,20 @@ export default function ContactsList({ pubkey, currentOpenContact, onOpenContact
   );
 
   const { metadata } = useMetadata({ pubkeys: pubkeysToFetch });
-  const [newContact, setNewContact] = React.useState("");
-  const [name, setName] = useState<string>("Loading ...");
-  const [image, setImage] = useState<string>("Loading ...");
 
   useEffect(() => {
     setName(getProfileDataFromMetaData(metadata, pubkey).name)
     setImage(getProfileDataFromMetaData(metadata, pubkey).image)
   }, [pubkey, metadata]);
 
-  let hexPubkey = newContact;
-
-  useEffect(() => {
-    if (newContact.startsWith("npub"))
-      hexPubkey = nip19.decode(newContact).data as string;
-  }, []);
-
 
   function onAddContact(e: React.FormEvent) {
     e.preventDefault();
     if (!newContact) return;
+
+    let hexPubkey = newContact;
+    if (newContact.startsWith("npub"))
+      hexPubkey = nip19.decode(newContact).data as string;
 
     setContacts((contacts) => {
       if (contacts.find((contact) => contact.pubkey === hexPubkey))

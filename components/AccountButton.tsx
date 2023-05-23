@@ -3,7 +3,6 @@ import Button from "./Button";
 import ProfileMenu from "./ProfileMenu";
 import { useMetadata } from "../context/use-metadata";
 import { getProfileDataFromMetaData } from "../context/helperFunctions";
-import { nip19 } from "nostr-tools";
 
 interface AccountButtonProps {
   pubkey: string;
@@ -27,7 +26,7 @@ export default function AccountButton({ pubkey }: AccountButtonProps) {
     <div className="relative">
       <div className="relative">
         <div className="absolute top-4 right-4 flex items-center space-x-4">
-          <div className="font-medium dark:text-white text-right">
+          <div id="profile-button" className="font-medium dark:text-white text-right">
             <div>{name}</div>
             <div className="text-sm text-gray-500 dark:text-gray-400">AITC {now.toISOString().slice(0, 10)} </div>
           </div>
@@ -48,7 +47,9 @@ export default function AccountButton({ pubkey }: AccountButtonProps) {
           </Button>
         </div>
       </div>
-      {showMenu && <ProfileMenu toggleMenu={setShowMenu} pubkey={pubkey} />}
+      <div id="profile-menu">
+        {showMenu && <ProfileMenu toggleMenu={setShowMenu} pubkey={pubkey} />}
+      </div>
     </div>
   );
 }
