@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Button from './Button'
 import { utils as secpUtils } from "@noble/secp256k1";
 import { generatePrivateKey, getPublicKey, nip19 } from "nostr-tools";
@@ -12,14 +12,18 @@ import {
 } from "../context/use-nostr-connection";
 
 export default function LoginPaths() {
-   const { connection, setConnection } = useNostrConnection();
+   const { connection: nostrConnection, setConnection } = useNostrConnection();
    const router = useRouter();
    const dispatch = useDispatch();
 
-   if (connection !== null) {
-      dispatch(toggleConnectState(true));
-      router.push("/");
-    }
+   useEffect(() => {
+      if (window.localStorage !== undefined) {
+         if (nostrConnection) {
+            dispatch(toggleConnectState(true));
+            router.push("/");
+         }
+      }
+   }, [nostrConnection]);
 
    const [generateKey, setGenerateKey] = useState(false);
    const [inputtedKey, setInputtedKey] = useState(false);
@@ -45,7 +49,7 @@ export default function LoginPaths() {
          console.log(error);
          alert("Something wrong happened");
       }
-  }
+   }
 
    function isValidPrivateKey(
       prvKey: string | null | undefined

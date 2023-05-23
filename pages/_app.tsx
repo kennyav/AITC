@@ -5,7 +5,7 @@ import '../styles/globals.css';
 import Providers from '../context/providers';
 import { ReduxProvider } from '../globalRedux/provider';
 import { store } from '../globalRedux/store';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { allowedRoutes } from '../lib/constants';
 import { useRouter as useRouterNextNavigation } from 'next/navigation';
 import { useRouter as useRouterNextRouter } from 'next/router';
@@ -29,13 +29,13 @@ export default function App({ Component, pageProps }: AppProps) {
       router.push('/section/login');
     }
   }, [page.pathname]);
-  
+
 
   return (
-    <ReduxProvider>
-      <Providers>
-          <Component {...pageProps} />
-      </Providers>
-    </ReduxProvider>
+    <Providers>
+      <ReduxProvider>
+        <Component {...pageProps} />
+      </ReduxProvider>
+    </Providers>
   )
 }

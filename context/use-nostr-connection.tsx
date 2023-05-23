@@ -14,10 +14,7 @@ import {
   useRef,
   useState,
 } from "react";
-//import { useStatePersist } from "use-state-persist";
-import { usePersistState } from "./helperFunctions";
 import { DecryptionQueue } from "./decryptionQueue";
-import { useStatePersist } from "use-state-persist";
 
 export type NostrAccountConnection =
   | {
@@ -51,29 +48,45 @@ interface State {
 
 export const NostrConnectionContext = createContext<State | null>(null);
 
+
 export default function NostrConnectionProvider(props: PropsWithChildren<{}>) {
-  const [connection, setConnection] = useStatePersist<NostrAccountConnection | null>("nostr-connection", null);
+  // const [connection, setConnection] = useStatePersist<NostrAccountConnection | null>("nostr-connection", null);
+  const [connection, setConnection] = useState<NostrAccountConnection | null>(null);
   const nostrConnectRef = useRef<Connect | null>(null);
 
   useEffect(() => {
-    if (!connection) nostrConnectRef.current = null;
-
-    if (connection?.type === "nostr-connect") {
-      (async () => {
-        if (nostrConnectRef.current !== null) return;
-
-        const connect = new Connect({
-          relay: connection.relay,
-          secretKey: connection.secretKey,
-          target: connection.pubkey,
-        });
-
-        connect.init();
-
-        nostrConnectRef.current = connect;
-      })();
+    const storedConnection = localStorage.getItem('nostr-connection');
+    console.log(storedConnection)
+    if (storedConnection) {
+      setConnection(JSON.parse(storedConnection));
     }
-  }, [connection, setConnection]);
+  }, []);
+
+  useEffect(() => {
+    if (connection) {
+      localStorage.setItem('nostr-connection', JSON.stringify(connection));
+    }
+  }, [connection]);
+
+  // useEffect(() => {
+  //   if (!connection) nostrConnectRef.current = null;
+
+  //   if (connection?.type === "nostr-connect") {
+  //     (async () => {
+  //       if (nostrConnectRef.current !== null) return;
+
+  //       const connect = new Connect({
+  //         relay: connection.relay,
+  //         secretKey: connection.secretKey,
+  //         target: connection.pubkey,
+  //       });
+
+  //       connect.init();
+
+  //       nostrConnectRef.current = connect;
+  //     })();
+  //   }
+  // }, [connection, setConnection]);
 
   const signEvent = useCallback(
     async (event: UnsignedEvent) => {
@@ -144,6 +157,7 @@ export default function NostrConnectionProvider(props: PropsWithChildren<{}>) {
   useEffect(() => {
     DecryptionQueue.setDecryptFn(decryptMessage);
   }, [decryptMessage]);
+
 
   return (
     <NostrConnectionContext.Provider
