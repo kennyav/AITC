@@ -138,6 +138,28 @@ export default function Chart() {
                   d3.zoomIdentity.translate(width / 2, height / 2).scale(40).translate(-data[index].attributes.x, -data[index].attributes.y)
                )
             });
+         
+         points
+            .on("mouseover", (event, d) => {
+
+               console.log(d.attributes.label);
+               d3.select("#dashboard-tooltip")
+                  .style("opacity", 1)
+                  .style("display", "block")
+                  .html(
+                     `<div class="dashboard-tooltip-label"></div><b>${d.attributes.label}</b>`
+                  ); 
+            })
+            .on("mousemove", (event) => {
+               d3.select("#dashboard-tooltip")
+               .style("left", event.pageX + "px")
+               .style("top", event.pageY + "px");
+            })
+            .on("mouseleave", () => {
+               d3.select("#dashboard-tooltip")
+               .style("opacity", 0)
+               .style("display", "none");
+            })
 
          
       }
@@ -167,6 +189,10 @@ export default function Chart() {
          <svg width={"100%"} height={"100vh"}>
             <g></g>
          </svg>
+         <div id="dashboard-tooltip">
+            <div id="dashboard-tooltip-text">
+            </div>
+         </div>
          <UserSideMenu open={false} />
       </div>
    )
