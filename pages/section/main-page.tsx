@@ -1,9 +1,10 @@
 import * as d3 from "d3";
 import { useContext, useEffect, useRef, useState } from 'react';
-import jsonGraph from "../../data/newData.json";
+import jsonGraph from "../../data/data.json";
 import AccountButton from "../../components/AccountButton";
 import UserSideMenu from "@/components/UserSideMenu";
 import { NostrConnectionContext } from "@/context/use-nostr-connection";
+import { nodeModuleNameResolver } from "typescript";
 
 interface Props {
    graphData: string;
@@ -13,15 +14,16 @@ export default function Chart({ graphData }: Props) {
    const [nostrPubKey, setNostrPubKey] = useState<string>();
    const height = 800;
    const width = 1400;
-   //const data = JSON.parse(graphData).nodes;
-   let data: any = [];
-   if (graphData) {
-      try {
-         data = JSON.parse(graphData).nodes;
-      } catch (error) {
-         console.error('Error parsing graphData:', error);
-      }
-   }
+   const padding = 15;
+   const data = jsonGraph.nodes;
+   // let data: any = [];
+   // if (graphData) {
+   //    try {
+   //       data = JSON.parse(graphData).nodes;
+   //    } catch (error) {
+   //       console.error('Error parsing graphData:', error);
+   //    }
+   // }
    const result = useContext(NostrConnectionContext);
 
    let zoom: any = d3.zoom()
@@ -47,6 +49,14 @@ export default function Chart({ graphData }: Props) {
          const colorValue = (value: number) => {
             return Math.abs((value - 0) / 10);
          }
+
+         const simulation = d3.forceSimulation()
+               .force('link', d3.forceLink().id((d: any) => d.key))
+               .force('charge', d3.forceManyBody())
+               .force('center', d3.forceCenter(width/2, height/2));
+
+         // simulation.nodes(jsonGraph.nodes);
+         // simulation.force('link').links(jsonGraph.edges);
          
          const points = svg.select('g')
             .selectAll('circle')
@@ -59,6 +69,11 @@ export default function Chart({ graphData }: Props) {
             .attr('cy', function (d, i: number) { return data[i].attributes.y; })
             .attr('r', 4)
             .attr("fill", (d: any, i: number) => d3.interpolateRainbow(colorValue(data[i].attributes.x - data[i].attributes.y)));
+
+         // Add links
+         // const links = svg.selectAll('line')
+         //    .data(jsonGraph.edges, function (d:any) { return [d.source, d.target]})
+         //    .join('line');
 
          points
             .on("click", function (event, d) {
@@ -74,26 +89,59 @@ export default function Chart({ graphData }: Props) {
          
          points
             .on("mouseover", (event, d) => {
-
-               console.log(d.attributes.label);
+               console.log(d.key);
                d3.select("#dashboard-tooltip")
                   .style("opacity", 1)
                   .style("display", "block")
                   .html(
-                     `<div class="dashboard-tooltip-label"></div><b>${d.attributes.label}</b>`
+                     `<div class="dashboard-tooltip-label"></div>
+                        <b>${d.attributes.label}</b>
+                     `
                   ); 
             })
             .on("mousemove", (event) => {
                d3.select("#dashboard-tooltip")
-               .style("left", event.pageX + "px")
-               .style("top", event.pageY + "px");
+               .style("left", event.pageX + padding + "px")
+               .style("top", event.pageY + padding + "px");
             })
             .on("mouseleave", () => {
                d3.select("#dashboard-tooltip")
                .style("opacity", 0)
                .style("display", "none");
-            })
+            });
 
+            // simulation.on('tick', () => {
+
+            //    links
+            //       .attr('x1', d => {
+            //          var val = 0;
+            //          const temp = data.find(node => d.source == node.key);
+            //          if (temp) val = temp.attributes.x;
+            //          return val;
+            //       })
+            //       .attr('y1', d => {
+            //          var val = 0;
+            //          const temp = data.find(node => d.source == node.key);
+            //          if (temp) val = temp.attributes.y;
+            //          return val;
+            //       })
+            //       .attr('x2', d => {
+            //          var val = 0;
+            //          const temp = data.find(node => d.target == node.key);
+            //          if (temp) val = temp.attributes.x;
+            //          return val;
+            //       })
+            //       .attr('y2', d => {
+            //          var val = 0;
+            //          const temp = data.find(node => d.target == node.key);
+            //          if (temp) val = temp.attributes.y;
+            //          return val;
+            //       });
+           
+            //    points
+            //       .attr('cx', d => d.attributes.x)
+            //       .attr('cy', d => d.attributes.y);
+            // });
          
       }
    }, [data]);
