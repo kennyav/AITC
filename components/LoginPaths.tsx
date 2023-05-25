@@ -110,9 +110,15 @@ export default function LoginPaths() {
 
    return (
       <div className="flex items-center justify-center">
-         {!generateKey && !inputtedKey ?
-            <div>
-               <Button variant="outline" type="button" size="sm" className="justify-center text-white" onClick={() => {
+         {!generateKey && !inputtedKey &&
+            <div className='flex flex-col justitfy-center gap-1'>
+               <button className='text-white font-medium hover:bg-gray-400 rounded-lg p-2' onClick={() => setInputtedKey(true)}>Login</button>
+               <button className='text-white font-medium hover:bg-gray-400 rounded-lg p-2' onClick={() => {
+                  setGenerateKey(true)
+                  setPrivKey(generatePrivateKey())
+               }}>
+                  Create Account</button>
+               {/* <Button variant="outline" type="button" size="sm" className="justify-center text-white" onClick={() => {
                   setPrivKey(generatePrivateKey())
                   setGenerateKey(true)
                   setInputtedKey(false)
@@ -125,6 +131,7 @@ export default function LoginPaths() {
                }}>
                   Input Private Key
                </Button>
+               */}
                <Button variant="outline" type="button" size="sm" className="justify-center text-white" onClick={() => {
                   setGenerateKey(false)
                   setInputtedKey(false)
@@ -132,19 +139,25 @@ export default function LoginPaths() {
                }}>
                   Login through Nostr Extension
                </Button>
-            </div>
-            : (
-               generateKey && !inputtedKey ?
-                  <form onSubmit={() => clickConnect("generated-keys")}>
-                     <input type="text" placeholder="input private key ..." value={privKey} name="inputField" id="inputField" style={{ textOverflow: "ellipsis" }} onChange={(e) => setPrivKey(e.target.value)} />
-                     <Button type="submit"> Connect </Button>
-                  </form>
-                  :
-                  <form onSubmit={() => clickConnect("inputted-keys")}>
-                     <input type="text" placeholder="input private key ..." value={privKey} name="inputField" id="inputField" style={{ textOverflow: "ellipsis" }} onChange={(e) => setPrivKey(e.target.value)} />
-                     <Button type="submit"> Connect </Button>
-                  </form>
-            )}
+            </div>}
+         {generateKey &&
+            <form onSubmit={() => clickConnect("generated-keys")}>
+               <button className="text-white font-medium hover:bg-gray-400 rounded-lg p-2" onClick={() => {
+                  setGenerateKey(false)
+                  setPrivKey("")
+               }}>
+                  Back</button>
+               <input type="text" placeholder="input private key ..." value={privKey} name="inputField" id="inputField" style={{ textOverflow: "ellipsis" }} onChange={(e) => setPrivKey(e.target.value)} />
+               <Button type="submit"> Connect </Button>
+            </form>
+         }
+         {inputtedKey &&
+            <form onSubmit={() => clickConnect("inputted-keys")}>
+               <button className="text-white font-medium hover:bg-gray-400 rounded-lg p-2" onClick={() => setInputtedKey(false)}>Back</button>
+               <input type="text" placeholder="input private key ..." value={privKey} name="inputField" id="inputField" style={{ textOverflow: "ellipsis" }} onChange={(e) => setPrivKey(e.target.value)} />
+               <Button type="submit"> Connect </Button>
+            </form>
+         }
       </div>
    )
 }
