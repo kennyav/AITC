@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import Button from './Button'
+import Button from '../Button'
 import { utils as secpUtils } from "@noble/secp256k1";
 import { generatePrivateKey, getPublicKey, nip19 } from "nostr-tools";
 import { useState } from "react";
@@ -9,9 +9,13 @@ import { toggleConnectState } from '@/globalRedux/features/connectSlice';
 import {
    NostrAccountConnection,
    useNostrConnection,
-} from "../context/use-nostr-connection";
+} from "../../context/use-nostr-connection";
 
-export default function LoginPaths() {
+interface Props {
+   toggleBack: (back: boolean) => void;
+   back: boolean;
+}
+export default function LoginPaths({ toggleBack, back }: Props) {
    const { connection: nostrConnection, setConnection } = useNostrConnection();
    const router = useRouter();
    const dispatch = useDispatch();
@@ -111,9 +115,9 @@ export default function LoginPaths() {
    return (
       <div className="flex items-center justify-center">
          {!generateKey && !inputtedKey &&
-            <div className='flex flex-col justitfy-center gap-1'>
-               <button className='text-white font-medium hover:bg-gray-400 rounded-lg p-2' onClick={() => setInputtedKey(true)}>Login</button>
-               <button className='text-white font-medium hover:bg-gray-400 rounded-lg p-2' onClick={() => {
+            <div className='flex flex-col justitfy-start gap-1'>
+               <button className='text-white text-left font-medium text-xl hover:bg-gray-400 rounded-lg p-2' onClick={() => setInputtedKey(true)}>Login</button>
+               <button className='text-white text-left font-medium text-xl hover:bg-gray-400 rounded-lg p-2' onClick={() => {
                   setGenerateKey(true)
                   setPrivKey(generatePrivateKey())
                }}>
@@ -132,13 +136,18 @@ export default function LoginPaths() {
                   Input Private Key
                </Button>
                */}
-               <Button variant="outline" type="button" size="sm" className="justify-center text-white" onClick={() => {
+               <button className='text-white text-left font-medium text-xl hover:bg-gray-400 rounded-lg p-2' onClick={() => {
                   setGenerateKey(false)
                   setInputtedKey(false)
                   clickConnect("nostr-ext")
                }}>
-                  Login through Nostr Extension
-               </Button>
+                  Nostr Extension Login
+               </button>
+               <button className='text-white text-left font-medium text-xl hover:bg-gray-400 rounded-lg p-2' onClick={() => {
+                  toggleBack(!back)
+               }}>
+                  Back 
+               </button>
             </div>}
          {generateKey &&
             <form onSubmit={() => clickConnect("generated-keys")}>
