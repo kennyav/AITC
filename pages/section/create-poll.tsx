@@ -13,12 +13,13 @@ export default function Interests() {
 			setEncryptedKey(CryptoJS.AES.encrypt(nostrConnection.prvkey, 'AITCSunrise').toString());
 			console.log("encryptedKey", encryptedKey);
 		}
-	 }, [nostrConnection]);
+	}, [nostrConnection]);
 
 	const handlePageClick = (interest: string) => {
-
 		if (nostrConnection?.type === "generated-keys" || nostrConnection?.type === "inputted-keys") {
-			setEncryptedKey(CryptoJS.AES.encrypt(nostrConnection.prvkey, 'AITCSunrise').toString());
+			var encrypted = CryptoJS.AES.encrypt(nostrConnection.prvkey, 'AITCSunrise').toString();
+			var encryptedWithoutBackslashes = encrypted.replace(/\//g, '?');
+			setEncryptedKey(encryptedWithoutBackslashes);
 			console.log("click encryptedKey", encryptedKey);
 		}
 		window.open(`https://aitc-polling.vercel.app/boardroom/${interest.toLowerCase()}/${encryptedKey}`, "_blank");

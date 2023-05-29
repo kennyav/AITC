@@ -52,7 +52,7 @@ export default function Login() {
                 </div>
                 <div className="flex flex-col items-center">
                   <button type="submit" onClick={handleSubmit} className="text-white text-left font-medium text-xl hover:bg-gray-400 rounded-lg p-2">
-                    Sign in
+                    Enter Site
                   </button>
                 </div>
               </form>
