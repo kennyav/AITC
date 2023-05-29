@@ -7,17 +7,18 @@ export default function Interests() {
 	const { connection: nostrConnection } = useNostrConnection();
 	const [encryptedKey, setEncryptedKey] = useState<string>();
 
-	useEffect(() => {
-		if (!nostrConnection) return;
-		if (nostrConnection.type === "generated-keys" || nostrConnection.type === "inputted-keys") {
-			setEncryptedKey(CryptoJS.AES.encrypt(nostrConnection.prvkey, 'AITCSunrise').toString());
-			console.log("encryptedKey", encryptedKey);
-		}
-	}, [nostrConnection]);
+	// useEffect(() => {
+	// 	if (!nostrConnection) return;
+	// 	if (nostrConnection.type === "generated-keys" || nostrConnection.type === "inputted-keys") {
+	// 		setEncryptedKey(CryptoJS.AES.encrypt(nostrConnection.prvkey, 'AITCSunrise').toString());
+	// 		console.log("encryptedKey", encryptedKey);
+	// 	}
+	// }, [nostrConnection]);
 
 	const handlePageClick = (interest: string) => {
 		if (nostrConnection?.type === "generated-keys" || nostrConnection?.type === "inputted-keys") {
 			var encrypted = CryptoJS.AES.encrypt(nostrConnection.prvkey, 'AITCSunrise').toString();
+			// TODO: replace all non string characters with a sequence of characters that can be parsed
 			var encryptedWithoutBackslashes = encrypted.replace(/\//g, '?');
 			setEncryptedKey(encryptedWithoutBackslashes);
 			console.log("click encryptedKey", encryptedKey);
