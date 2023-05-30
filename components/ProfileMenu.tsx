@@ -34,9 +34,8 @@ const ProfileMenu: React.FC<ProfileMenuProps> = ({ pubkey, toggleMenu }) => {
     window.localStorage.removeItem('nostr-connection');
   };
 
-  const handleProfile = () => {
+  const handleClose = () => {
     toggleMenu(false);
-    router.push('/section/profile');
   }
 
   const handleClose = () => {
