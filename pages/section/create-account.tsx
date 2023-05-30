@@ -45,6 +45,7 @@ export default function CreateAccount() {
   // create a generated keys nostr account connection object
   const clickConnect = async (e: any, type: "generated-keys") => {
     e.preventDefault();
+    
     let connectionObject: NostrAccountConnection;
     console.log("click connect");
     try {
