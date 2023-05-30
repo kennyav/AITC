@@ -1,6 +1,5 @@
 import { useState } from "react";
-import Button from "../../components/Button";
-import LoginPaths from "../../components/LoginPaths";
+import LoginPaths from "../../components/Login/LoginPaths";
 
 
 export default function Login() {
@@ -26,27 +25,22 @@ export default function Login() {
 
 
   return (
-    <section className="bg-gray-50 dark:bg-gray-900">
-      <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+    <section>
+      <div className="flex flex-row items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
         <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8 text-center items-center justify-center">
-            <a
-              href="#"
-              className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white"
-            >
-              <div className="text-center">
-                AITC
-                <br />
-                The Artificial Intelligence Trust Council
-              </div>
-            </a>
+            <div className="">
+              <span className="sr-only">AITC Polling</span>
+              <img className="object-fill" src="/AITCWordsBorderBabyBlue.png" alt="" />
+            </div>
             {isLogin ?
-              <LoginPaths />
+              <LoginPaths toggleBack={setIsLogin} back={isLogin} />
               :
               <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
                 <input type="hidden" name="remember" defaultValue="true" />
                 <div className="rounded-md shadow-sm">
                   <input
+                    className="rounded-lg p-1"
                     type="password"
                     placeholder="input password ..."
                     value={password}
@@ -56,9 +50,9 @@ export default function Login() {
                   />
                 </div>
                 <div className="flex flex-col items-center">
-                  <Button type="submit" variant="outline" onClick={handleSubmit} size="sm" className="justify-center text-white">
-                    Sign in
-                  </Button>
+                  <button type="submit" onClick={handleSubmit} className="text-white text-left font-medium text-xl hover:bg-gray-400 rounded-lg p-2">
+                    Enter Site
+                  </button>
                 </div>
               </form>
             }

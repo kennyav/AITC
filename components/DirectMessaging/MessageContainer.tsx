@@ -1,5 +1,5 @@
 import { Event, UnsignedEvent, getEventHash } from "nostr-tools";
-import React, { useContext, useEffect, useMemo, useState } from "react";
+import React, {useEffect, useMemo, useState } from "react";
 import CopyToClipboard from "react-copy-to-clipboard";
 import { getProfileDataFromMetaData } from "../../context/helperFunctions";
 import { Relays } from "../../context/relays";
