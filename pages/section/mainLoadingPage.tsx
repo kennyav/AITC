@@ -57,7 +57,7 @@ export default function MainLoadingPage() {
                <div className="flex justify-center items-center">
                   <Switch toggleChart={setToggleChart} value={toggleChart} />
                </div>
-               {toggleChart ? <Chart graphData={graphData} /> : <h1 className='flex justify-center items-center font-large text-white'> Groups Page Coming Soon ... </h1>}
+               {toggleChart ? <h1 className='flex justify-center items-center font-large text-white'> Groups Page Coming Soon ... </h1> : <Chart graphData={graphData} />}
             </>
          ) : (
             <div className="flex justify-center items-center h-screen">

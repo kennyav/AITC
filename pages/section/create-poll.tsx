@@ -1,6 +1,6 @@
 import UserSideMenu from "@/components/UserSideMenu";
 import { useNostrConnection } from "@/context/use-nostr-connection";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 var CryptoJS = require("crypto-js");
 
 export default function Interests() {
@@ -42,6 +42,7 @@ export default function Interests() {
 				<div className="grid grid-cols-3 grid-flow-row gap-4 w-2/3">
 					{interestList.map((interest) => (
 						<button
+							key={interest}
 							className="text-white text-center font-medium relative rounded-xl h-full w-full hover:opacity-60"
 							onClick={() => handlePageClick(interest)}
 						>

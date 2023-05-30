@@ -33,16 +33,15 @@ export default function LoginPaths({ toggleBack, back }: Props) {
    const [inputtedKey, setInputtedKey] = useState(false);
    const [privKey, setPrivKey] = useState("");
 
-   const clickConnect = async (
-      type: "generated-keys" | "inputted-keys" | "nostr-ext"
-   ) => {
+   const clickConnect = async (e: any, type: "generated-keys" | "inputted-keys" | "nostr-ext") => {
+      e.preventDefault();
       let connectionObject: NostrAccountConnection;
       try {
          // checks if the user is using nostr extension
          if (type === "nostr-ext")
             connectionObject = await connectNostrExt();
-         else if (type === "generated-keys")
-            connectionObject = connectGeneratedKeys();
+         // else if (type === "generated-keys")
+         //    connectionObject = connectGeneratedKeys();
          else if (type === "inputted-keys")
             connectionObject = connectInputtedKey();
          else throw new Error("Invalid tab");
@@ -80,17 +79,17 @@ export default function LoginPaths({ toggleBack, back }: Props) {
       } as NostrAccountConnection;
    }
 
-   // handle if the user presses generate key
-   const connectGeneratedKeys = () => {
-      if (!privKey) throw new Error("Failed to generate private key");
+   // // handle if the user presses generate key
+   // const connectGeneratedKeys = () => {
+   //    if (!privKey) throw new Error("Failed to generate private key");
 
-      const pubKey = getPublicKey(privKey);
-      return {
-         type: "generated-keys",
-         prvkey: privKey,
-         pubkey: pubKey,
-      } as NostrAccountConnection;
-   }
+   //    const pubKey = getPublicKey(privKey);
+   //    return {
+   //       type: "generated-keys",
+   //       prvkey: privKey,
+   //       pubkey: pubKey,
+   //    } as NostrAccountConnection;
+   // }
 
    // handle if the user presses input private key
    const connectInputtedKey = () => {
@@ -118,50 +117,24 @@ export default function LoginPaths({ toggleBack, back }: Props) {
             <div className='flex flex-col justitfy-start gap-1'>
                <button className='text-white text-left font-medium text-xl hover:bg-gray-400 rounded-lg p-2' onClick={() => setInputtedKey(true)}>Login</button>
                <button className='text-white text-left font-medium text-xl hover:bg-gray-400 rounded-lg p-2' onClick={() => {
-                  setGenerateKey(true)
-                  setPrivKey(generatePrivateKey())
+                  router.push("/section/create-account");
                }}>
                   Create Account</button>
-               {/* <Button variant="outline" type="button" size="sm" className="justify-center text-white" onClick={() => {
-                  setPrivKey(generatePrivateKey())
-                  setGenerateKey(true)
-                  setInputtedKey(false)
-               }}>
-                  Generate Key
-               </Button>
-               <Button variant="outline" type="button" size="sm" className="justify-center text-white" onClick={() => {
-                  setGenerateKey(false)
-                  setInputtedKey(true)
-               }}>
-                  Input Private Key
-               </Button>
-               */}
-               <button className='text-white text-left font-medium text-xl hover:bg-gray-400 rounded-lg p-2' onClick={() => {
+               {/* <button className='text-white text-left font-medium text-xl hover:bg-gray-400 rounded-lg p-2' onClick={() => {
                   setGenerateKey(false)
                   setInputtedKey(false)
                   clickConnect("nostr-ext")
                }}>
                   Nostr Extension Login
-               </button>
+               </button> */}
                <button className='text-white text-left font-medium text-xl hover:bg-gray-400 rounded-lg p-2' onClick={() => {
                   toggleBack(!back)
                }}>
-                  Back 
+                  Back
                </button>
             </div>}
-         {generateKey &&
-            <form onSubmit={() => clickConnect("generated-keys")}>
-               <button className="text-white font-medium hover:bg-gray-400 rounded-lg p-2" onClick={() => {
-                  setGenerateKey(false)
-                  setPrivKey("")
-               }}>
-                  Back</button>
-               <input type="text" placeholder="input private key ..." value={privKey} name="inputField" id="inputField" style={{ textOverflow: "ellipsis" }} onChange={(e) => setPrivKey(e.target.value)} />
-               <Button type="submit"> Connect </Button>
-            </form>
-         }
          {inputtedKey &&
-            <form onSubmit={() => clickConnect("inputted-keys")}>
+            <form onSubmit={(e) => clickConnect(e, "inputted-keys")}>
                <button className="text-white font-medium hover:bg-gray-400 rounded-lg p-2" onClick={() => setInputtedKey(false)}>Back</button>
                <input type="text" placeholder="input private key ..." value={privKey} name="inputField" id="inputField" style={{ textOverflow: "ellipsis" }} onChange={(e) => setPrivKey(e.target.value)} />
                <Button type="submit"> Connect </Button>

@@ -67,11 +67,11 @@ export default function CustomizedSwitches({ toggleChart, value }: Props) {
             <FormControlLabel
                className='text-white'
                control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked />}
-               label="Trust Networks"
+               label="BoardRooms"
                labelPlacement="start"
                onChange={() => toggleChart(!value)}
             />
-            <Typography className="text-white">BoardRooms</Typography>
+            <Typography className="text-white">Trust Networks</Typography>
          </Stack>
       </FormGroup>
    );
