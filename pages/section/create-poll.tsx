@@ -7,21 +7,16 @@ export default function Interests() {
 	const { connection: nostrConnection } = useNostrConnection();
 	const [encryptedKey, setEncryptedKey] = useState<string>();
 
-	// useEffect(() => {
-	// 	if (!nostrConnection) return;
-	// 	if (nostrConnection.type === "generated-keys" || nostrConnection.type === "inputted-keys") {
-	// 		setEncryptedKey(CryptoJS.AES.encrypt(nostrConnection.prvkey, 'AITCSunrise').toString());
-	// 		console.log("encryptedKey", encryptedKey);
-	// 	}
-	// }, [nostrConnection]);
-
 	const handlePageClick = (interest: string) => {
 		if (nostrConnection?.type === "generated-keys" || nostrConnection?.type === "inputted-keys") {
-			var encrypted = CryptoJS.AES.encrypt(nostrConnection.prvkey, 'AITCSunrise').toString();
+			let encrypted = CryptoJS.AES.encrypt(JSON.stringify(nostrConnection.prvkey), 'AITCSunrise').toString();
 			// TODO: replace all non string characters with a sequence of characters that can be parsed
-			var encryptedWithoutBackslashes = encrypted.replace(/\//g, '?');
-			setEncryptedKey(encryptedWithoutBackslashes);
-			console.log("click encryptedKey", encryptedKey);
+			let encryptedWithoutSpecials = encrypted.replace(/\+/g,'p1L2u3S').replace(/\//g,'s1L2a3S4h').replace(/=/g,'e1Q2u3A4l');
+			setEncryptedKey(encryptedWithoutSpecials);
+
+			console.log("private key w/  specials: ", encrypted)
+			console.log("private key w/o specials: ", encryptedWithoutSpecials)
+			console.log("encrypted key ", encryptedKey)
 		}
 		window.open(`https://aitc-polling.vercel.app/boardroom/${interest.toLowerCase()}/${encryptedKey}`, "_blank");
 	};
