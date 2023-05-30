@@ -18,10 +18,12 @@ export default function Interests() {
 	const handlePageClick = (interest: string) => {
 		if (nostrConnection?.type === "generated-keys" || nostrConnection?.type === "inputted-keys") {
 			var encrypted = CryptoJS.AES.encrypt(nostrConnection.prvkey, 'AITCSunrise').toString();
-			// TODO: replace all non string characters with a sequence of characters that can be parsed
-			var encryptedWithoutBackslashes = encrypted.replace(/\//g, '?');
-			setEncryptedKey(encryptedWithoutBackslashes);
-			console.log("click encryptedKey", encryptedKey);
+
+			var encryptedWithoutSpecials = encrypted.replace(/\+/g,'p1L2u3S').replace(/\//g,'s1L2a3S4h').replace(/=/g,'e1Q2u3A4l');
+			setEncryptedKey(encryptedWithoutSpecials);
+
+			console.log("private key w/  specials: ", encrypted)
+			console.log("private key w/o specials: ", encryptedWithoutSpecials)
 		}
 		window.open(`https://aitc-polling.vercel.app/boardroom/${interest.toLowerCase()}/${encryptedKey}`, "_blank");
 	};
