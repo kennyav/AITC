@@ -6,7 +6,7 @@ import { useRelayPool } from "./use-relays-pool";
 
 type Props =
   | {
-      pubkeys: string[];
+      pubkeys: string[] | undefined;
     }
   | {
       pubkey: string;
