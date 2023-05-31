@@ -20,11 +20,11 @@ export default function Chart({ graphData }: Props) {
    const linesRef = useRef<any>();
 
    // modify line data to match the format required by d3
-   const lineData = jsonGraph.edges.map(edge => ({
-      source: data.find(node => node.key === edge.source),
-      target: data.find(node => node.key === edge.target),
-      attributes: edge.attributes
-   }));
+   // const lineData = jsonGraph.edges.map(edge => ({
+   //    source: data.find(node => node.key === edge.source),
+   //    target: data.find(node => node.key === edge.target),
+   //    attributes: edge.attributes
+   // }));
 
    // let data: any = [];
    // if (graphData) {
@@ -105,7 +105,7 @@ export default function Chart({ graphData }: Props) {
          //    .attr('stroke', 'white')
          //    .attr('stroke-width', d => d.attributes.size);
 
-         // Add links
+         //Add links
          // const links = svg.selectAll('line')
          //    .data(jsonGraph.edges, function (d:any) { return [d.source, d.target]})
          //    .join('line');

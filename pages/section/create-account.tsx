@@ -118,7 +118,7 @@ export default function CreateAccount() {
   return (
     <section>
       <div className="flex flex-row items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-        <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+        <div className="w-full rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
             <h1 className="text-2xl font-semibold text-gray-700 dark:text-white">Create Account</h1>
             <form className="mt-8 space-y-6" onSubmit={(e) => clickConnect(e, "generated-keys")}>

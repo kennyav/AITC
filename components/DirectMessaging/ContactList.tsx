@@ -1,9 +1,10 @@
 import { nip19 } from "nostr-tools";
-import React, { use, useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { getProfileDataFromMetaData } from "../../context/helperFunctions";
 import { useMetadata } from "../../context/use-metadata";
 import styles from '../../styles/Home.module.css'
 import CopyToClipboard from "react-copy-to-clipboard";
+import { set } from "superstruct";
 
 interface Props {
   pubkey: string;
@@ -12,32 +13,31 @@ interface Props {
 }
 
 export default function ContactsList({ pubkey, currentOpenContact, onOpenContact }: Props) {
-  // const [contacts, setContacts] = useStatePersist<Contact[]>(
-  //   `contacts:${pubkey}`,
-  //   [],
-  // );
-  const [contacts, setContacts] = useState<Contact[]>([]);
+
+  const [contacts, setContacts] = useState<Contact[] | null>(null);
   const [newContact, setNewContact] = useState("");
   const [name, setName] = useState<string>("Loading ...");
   const [image, setImage] = useState<string>("Loading ...");
 
+  // on start up load contacts from local storage for this user
   useEffect(() => {
+    // returns a string of contacts
     const storedContacts = localStorage.getItem(`contacts:${pubkey}`);
-    if (storedContacts) {
+    console.log(storedContacts)
+    if (storedContacts !== null) {
       setContacts(JSON.parse(storedContacts));
     }
-  }, []);
+  }, [pubkey]);
 
+  // whenever we add a new contact, save it to local storage
   useEffect(() => {
-    if (contacts) {
+    if (contacts !== null) {
       localStorage.setItem(`contacts:${pubkey}`, JSON.stringify(contacts));
     }
   }, [contacts]);
 
-
-
   const pubkeysToFetch = useMemo(
-    () => contacts.map((contact) => contact.pubkey),
+    () => contacts?.map((contact) => contact.pubkey),
     [contacts]
   );
 
@@ -57,14 +57,17 @@ export default function ContactsList({ pubkey, currentOpenContact, onOpenContact
     if (newContact.startsWith("npub"))
       hexPubkey = nip19.decode(newContact).data as string;
 
-    setContacts((contacts) => {
+    // check if contacts is null, if so create a new array with the new contact
+    if (!contacts) {
+      setContacts([{ pubkey: hexPubkey }])
+    } else {
+      // check if contact already exists
       if (contacts.find((contact) => contact.pubkey === hexPubkey))
         return contacts;
-      const newContacts = [...contacts, { pubkey: hexPubkey }];
-      return newContacts;
-    });
-    onOpenContact?.(hexPubkey);
+      setContacts([...contacts, { pubkey: hexPubkey }]);
+    }
 
+    onOpenContact?.(hexPubkey);
     setNewContact("");
   }
 
@@ -94,7 +97,7 @@ export default function ContactsList({ pubkey, currentOpenContact, onOpenContact
       </div>
       <div className="flex flex-col mt-8">
         <div className="flex flex-row items-center justify-between text-xs">
-          {contacts.length === 0 ? (
+          {contacts === null || contacts.length === 0 ? (
             <span className={`${styles.testFont}`}>No contacts yet</span>
           ) :
             (
@@ -106,7 +109,7 @@ export default function ContactsList({ pubkey, currentOpenContact, onOpenContact
               </div>
             )}
         </div>
-        {contacts.length > 0 && (
+        {contacts !== null && contacts.length > 0 && (
           <div className="overflow-y-scroll overflow-x-hidden h-60">
             <ul>
               {contacts.map((contact, i) => {
@@ -140,12 +143,12 @@ export default function ContactsList({ pubkey, currentOpenContact, onOpenContact
           <form onSubmit={onAddContact}>
             <input
               type="text"
-              // className="w-full mb-16 p-8"
+              className="shadow-sm border border-gray-300 rounded-lg p-1"
               placeholder="Enter a public HEX key"
               value={newContact}
               onChange={(e) => setNewContact(e.target.value)}
             />
-            <button type="submit" className="w-full mb-16 p-8">Add Contact</button>
+            <button type="submit" className="hover:bg-gray-400 rounded-lg p-1">Add Contact</button>
           </form>
         </div>
       </div >
