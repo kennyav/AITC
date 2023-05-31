@@ -26,7 +26,7 @@ export default function AccountButton({ pubkey }: AccountButtonProps) {
     <div className="relative">
       <div className="relative">
         <div className="absolute top-4 right-4 flex items-center space-x-4">
-          <div id="profile-button" className="font-medium dark:text-white text-right">
+          <div id="profile-button" className="font-medium text-white text-right">
             <div>{name}</div>
             <div className="text-sm text-gray-500 dark:text-gray-400">AITC {now.toISOString().slice(0, 10)} </div>
           </div>

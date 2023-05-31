@@ -44,8 +44,8 @@ export default function MessagesContainer({ currentOpenContact }: Props) {
   }, [nostrConnection]);
 
   useEffect(() => {
-    setName(getProfileDataFromMetaData(metadata, myPubkey).name)
-    setImage(getProfileDataFromMetaData(metadata, myPubkey).image)
+    setName(getProfileDataFromMetaData(metadata, currentOpenContact).name)
+    setImage(getProfileDataFromMetaData(metadata, currentOpenContact).image)
   }, [myPubkey, metadata]);
 
   useEffect(() => {
@@ -150,13 +150,13 @@ export default function MessagesContainer({ currentOpenContact }: Props) {
                 onCopy={() => alert("Copied public key!")}
               >
                 <button className="">
-                  {currentOpenContact.slice(0, 15)}...
+                  {currentOpenContact}...
                 </button>
               </CopyToClipboard>
             </div>
           </div>
         )}
-        <div className="h-screen h-80 bg-gray-200 overflow-y-scroll rounded-md">
+        <div className="h-screen h-80 bg-gray-200 overflow-y-scroll overflow-x-hidden rounded-md">
           <div className="flex flex-col-reverse bg-gray-200 grow gap-8 py-16">
             {messages.map((message) => (
               <div
@@ -164,7 +164,7 @@ export default function MessagesContainer({ currentOpenContact }: Props) {
                 className={`flex flex-col gap-4 rounded-24 px-16 py-8 ${message.pubkey === myPubkey
                   ? "place-self-end" : "place-self-start"} space-y-1`}
               >
-                <div className={`bg-white p-5 rounded-2xl ${message.pubkey === myPubkey ? "bg-green-100" : ""}`}>
+                <div className={`bg-white p-5 rounded-2xl ${message.pubkey === myPubkey ? "bg-green-400" : "bg-white"}`}>
                   <p className="text-body3">{message.content}</p>
                 </div>
               </div>
