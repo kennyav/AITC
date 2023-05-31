@@ -24,7 +24,7 @@ export default function DirectMessaging() {
         <div className="grid gap-6 grid-cols-3">
           <div className="col-span-1 w-full h-screen">
             <ContactsList
-              pubkey={nostrPubKey!}
+              pubkey={nostrPubKey}
               currentOpenContact={currentOpenContact}
               onOpenContact={setCurrentOpenContact}
             />
