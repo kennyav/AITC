@@ -1,25 +1,23 @@
 import UserSideMenu from "@/components/UserSideMenu";
 import { useNostrConnection } from "@/context/use-nostr-connection";
-import { useState } from "react";
 var CryptoJS = require("crypto-js");
 
 export default function Interests() {
 	const { connection: nostrConnection } = useNostrConnection();
-	const [encryptedKey, setEncryptedKey] = useState<string>();
 
 	const handlePageClick = (interest: string) => {
 		if (nostrConnection?.type === "generated-keys" || nostrConnection?.type === "inputted-keys") {
 			let encrypted = CryptoJS.AES.encrypt(JSON.stringify(nostrConnection.prvkey), 'AITCSunrise').toString();
-			// TODO: replace all non string characters with a sequence of characters that can be parsed
 			let encryptedWithoutSpecials = encrypted.replace(/\+/g,'p1L2u3S').replace(/\//g,'s1L2a3S4h').replace(/=/g,'e1Q2u3A4l');
-			setEncryptedKey(encryptedWithoutSpecials);
-
-			console.log("private key w/  specials: ", encrypted)
-			console.log("private key w/o specials: ", encryptedWithoutSpecials)
-			console.log("encrypted key ", encryptedKey)
+			deployEncryptedURL(interest, encryptedWithoutSpecials);
 		}
-		window.open(`https://aitc-polling.vercel.app/boardroom/${interest.toLowerCase()}/${encryptedKey}`, "_blank");
 	};
+
+	// send user to aitc polling 
+	function deployEncryptedURL(interest: string, encryptedKey: string) {
+		console.log(encryptedKey);
+		window.open(`https://aitc-polling.vercel.app/boardroom/${interest.toLowerCase()}/${encryptedKey}`, "_blank");
+	}
 
 	const interestList: string[] = [
 		"Animals",
