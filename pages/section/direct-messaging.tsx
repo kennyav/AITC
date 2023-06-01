@@ -20,7 +20,7 @@ export default function DirectMessaging() {
   return (
     <div>
       <AccountButton pubkey={nostrPubKey}/>
-      <div className="min-w-screen min-h-screen">
+      <div className="min-w-screen min-h-screen text-black">
         <div className="grid gap-6 grid-cols-3">
           <div className="col-span-1 w-full h-screen">
             <ContactsList

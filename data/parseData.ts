@@ -26,11 +26,30 @@ function generateRandomPointInCircle(centerX: number, centerY: number, radius: n
    return { x: finalX, y: finalY };
 }
 
+function createRandomClusters(numClusters: number, xMin: number, xMax: number, yMin: number, yMax: number): [number, number][][] {
+   const clusters: [number, number][][] = [];
+   for (let i = 0; i < numClusters; i++) {
+     const numPoints = Math.floor(Math.random() * 10) + 1; // Generate a random number of points
+     const points: [number, number][] = [];
+     for (let j = 0; j < numPoints; j++) {
+       const x = Math.random() * (xMax - xMin) + xMin; // Generate a random x-coordinate
+       const y = Math.random() * (yMax - yMin) + yMin; // Generate a random y-coordinate
+       points.push([x, y]);
+     }
+     clusters.push(points);
+   }
+   console.log(clusters);
+
+   return clusters;
+ }
+ 
+
 
 export function updateData(data: Props) {
    const centerX = 0; // X-coordinate of the center of the circle
    const centerY = 0; // Y-coordinate of the center of the circle
    const radius = 1000; // Radius of the circle
+
 
    // it is an list of objects with the key being the pubkey and the data as the value
    // we need to convert this into json data that matches our schema
@@ -41,8 +60,8 @@ export function updateData(data: Props) {
             "label": metadata.name || null,
             // "tag": null,
             // "cluster": null,
-            "x": generateRandomPointInCircle(centerX, centerY, radius).x,
-            "y": generateRandomPointInCircle(centerX, centerY, radius).y,
+            "x": 0,
+            "y": 0,
             // "score": 0,
             // "color": null,
             // "clusterLabel": null,
@@ -53,7 +72,6 @@ export function updateData(data: Props) {
          },
       };
    });
-
    const dataString = JSON.stringify({
       "attributes": {},
       "nodes": newData,
