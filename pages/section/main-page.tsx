@@ -8,7 +8,7 @@ import { line } from "d3-shape";
 import { nodeModuleNameResolver } from "typescript";
 
 interface Props {
-   graphData: string;
+   graphData: any;
 }
 
 export default function Chart({ graphData }: Props) {
@@ -16,9 +16,8 @@ export default function Chart({ graphData }: Props) {
    const height = 800;
    const width = 1400;
    const padding = 15;
-   const data = jsonGraph.nodes;
-   const linesRef = useRef<any>();
-
+   const linesRef = useRef<any>();  
+   const data = graphData;
    // modify line data to match the format required by d3
    // const lineData = jsonGraph.edges.map(edge => ({
    //    source: data.find(node => node.key === edge.source),
@@ -111,8 +110,8 @@ export default function Chart({ graphData }: Props) {
          //    .join('line');
 
          points
-            .on("click", function (event, d) {
-               var index = data.findIndex(function (obj) {
+            .on("click", function (event, d: any) {
+               var index = data.findIndex(function (obj: any) {
                   return obj.key == d.key
                })
                event.stopPropagation();
@@ -123,7 +122,7 @@ export default function Chart({ graphData }: Props) {
             });
 
          points
-            .on("mouseover", (event, d) => {
+            .on("mouseover", (event, d: any) => {
                console.log(d.key);
                d3.select("#dashboard-tooltip")
                   .style("opacity", 1)
@@ -200,8 +199,8 @@ export default function Chart({ graphData }: Props) {
    return (
       <div>
          <AccountButton pubkey={nostrPubKey!} />
-         <button className='absolute bg-blue-500 hover:bg-blue-700 active:bg-grey-700 focus:outline-none focus:ring focus:ring-grey-300 rounded w-32 truncate bottom-16 right-4' onClick={() => random()}>Random</button>
-         <button className='absolute bg-blue-500 hover:bg-blue-700 active:bg-grey-700 focus:outline-none focus:ring focus:ring-grey-300 rounded w-32 truncate bottom-24 right-4' onClick={() => reset()}>Reset</button>
+         <button className='absolute bg-blue-500 hover:bg-blue-700 active:bg-grey-700 focus:outline-none focus:ring focus:ring-grey-300 text-white rounded w-32 truncate bottom-16 right-4' onClick={() => random()}>Random</button>
+         <button className='absolute bg-blue-500 hover:bg-blue-700 active:bg-grey-700 focus:outline-none focus:ring focus:ring-grey-300 text-white rounded w-32 truncate bottom-24 right-4' onClick={() => reset()}>Reset</button>
          <svg width={"100%"} height={"100vh"}>
             <g></g>
          </svg>

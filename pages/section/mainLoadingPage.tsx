@@ -5,6 +5,7 @@ import { Metadata } from "@/data/parseData";
 import { useRelayPool } from "@/context/use-relays-pool";
 import { Relays } from "@/context/relays";
 import { updateData } from "@/data/parseData";
+import jsonGraph from "../../data/data.json";
 
 // components
 import Chart from '@/pages/section/main-page';
@@ -57,7 +58,7 @@ export default function MainLoadingPage() {
                <div className="flex justify-center items-center">
                   <Switch toggleChart={setToggleChart} value={toggleChart} />
                </div>
-               {toggleChart ? <h1 className='flex justify-center items-center font-large text-white'> Groups Page Coming Soon ... </h1> : <Chart graphData={graphData} />}
+               {toggleChart ? <Chart graphData={jsonGraph.nodes} /> : <Chart graphData={jsonGraph.nodes} />}
             </>
          ) : (
             <div className="flex justify-center items-center h-screen">

@@ -28,7 +28,7 @@ export default function Interests() {
 		"Travel"]
 
 	return (
-		<div className="flex flex-col gap-3 justify-center items-center">
+		<div className="flex flex-col gap-3 justify-center items-center h-screen">
 			<img className="w-32 h-auto pt-4" src="/AITCMainLogo.png" alt="" />
 			<h1 className="text-4xl text-center font-bold text-white">What are you interested in?</h1>
 			<div className="flex flex-col h-screen w-full items-center">
